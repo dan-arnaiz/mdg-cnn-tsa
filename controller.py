@@ -9,7 +9,7 @@ import numpy as np
 import torch  # Replaced joblib with torch
 
 # Updated path to point to your best_weights.pt
-MODEL_PATH = "models/cnn_tsa/standard_corr1_k32_w48s24/lr1e-05_wd1e-04_pat7/20251020_164647/best_weights.pt"
+MODEL_PATH = "models\cnn_tsa\corr1_k32\lr1e-05\main\best_weights.pt"
 LOG_DIR = "merged_outputs"
 
 class CNNTSAController(app_manager.RyuApp):
