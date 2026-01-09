@@ -6,9 +6,10 @@ from ryu.lib import hub
 import time
 import os
 import numpy as np
-import joblib
+import torch  # Replaced joblib with torch
 
-MODEL_PATH = "models/cnn_tsa/model.pkl"
+# Updated path to point to your best_weights.pt
+MODEL_PATH = "models/cnn_tsa/standard_corr1_k32_w48s24/lr1e-05_wd1e-04_pat7/20251020_164647/best_weights.pt"
 LOG_DIR = "merged_outputs"
 
 class CNNTSAController(app_manager.RyuApp):
@@ -22,37 +23,31 @@ class CNNTSAController(app_manager.RyuApp):
         if not os.path.exists(LOG_DIR):
             os.makedirs(LOG_DIR)
 
-        self.model = joblib.load(MODEL_PATH)
-        self.logger.info("CNN–TSA Controller initialized")
+        # Load PyTorch model on CPU
+        try:
+            # We use map_location='cpu' to ensure it loads even if trained on a GPU
+            self.model = torch.load(MODEL_PATH, map_location=torch.device('cpu'))
+            self.model.eval()  # Set model to evaluation mode for inference
+            self.logger.info("CNN–TSA Controller initialized with PyTorch model")
+        except Exception as e:
+            self.logger.error(f"Failed to load model: {e}")
 
-    # ---------------------------------------------------
-    # Switch connection
-    # ---------------------------------------------------
     @set_ev_cls(ofp_event.EventOFPSwitchFeatures, CONFIG_DISPATCHER)
     def switch_features_handler(self, ev):
         datapath = ev.msg.datapath
         self.datapaths[datapath.id] = datapath
-
         ofproto = datapath.ofproto
         parser = datapath.ofproto_parser
 
-        # Table-miss rule
         match = parser.OFPMatch()
         actions = [parser.OFPActionOutput(ofproto.OFPP_CONTROLLER,
                                           ofproto.OFPCML_NO_BUFFER)]
         inst = [parser.OFPInstructionActions(ofproto.OFPIT_APPLY_ACTIONS, actions)]
 
-        mod = parser.OFPFlowMod(
-            datapath=datapath,
-            priority=0,
-            match=match,
-            instructions=inst
-        )
+        mod = parser.OFPFlowMod(datapath=datapath, priority=0,
+                                match=match, instructions=inst)
         datapath.send_msg(mod)
 
-    # ---------------------------------------------------
-    # Periodic monitoring
-    # ---------------------------------------------------
     def monitor(self):
         while True:
             for dp in self.datapaths.values():
@@ -64,9 +59,6 @@ class CNNTSAController(app_manager.RyuApp):
         req = parser.OFPFlowStatsRequest(datapath)
         datapath.send_msg(req)
 
-    # ---------------------------------------------------
-    # Flow stats handler
-    # ---------------------------------------------------
     @set_ev_cls(ofp_event.EventOFPFlowStatsReply, MAIN_DISPATCHER)
     def flow_stats_reply_handler(self, ev):
         timestamp = time.time()
@@ -75,48 +67,40 @@ class CNNTSAController(app_manager.RyuApp):
             if flow.priority == 0:
                 continue
 
-            features = self.extract_features(flow)
-            prediction = self.model.predict([features])[0]
+            # Get features as a Torch Tensor
+            features_tensor = self.extract_features(flow)
+            
+            # Perform inference without tracking gradients
+            with torch.no_grad():
+                output = self.model(features_tensor)
+                # Assuming binary classification output (e.g., sigmoid or argmax)
+                prediction = torch.round(torch.sigmoid(output)).item() if output.dim() <= 1 else torch.argmax(output, dim=1).item()
 
             if prediction == 1:
                 self.logger.warning("DDoS detected — blocking flow")
                 self.block_flow(ev.msg.datapath, flow.match)
 
-            self.log_result(features, prediction, timestamp)
+            self.log_result(features_tensor.numpy(), prediction, timestamp)
 
-    # ---------------------------------------------------
-    # Feature extraction (CICDDoS2019-aligned)
-    # ---------------------------------------------------
     def extract_features(self, flow):
         duration = max(flow.duration_sec, 1)
         packets = flow.packet_count
         bytes_ = flow.byte_count
         pps = packets / duration
 
-        return np.array([
-            packets,
-            bytes_,
-            duration,
-            pps
-        ])
+        # Create numpy array and convert to PyTorch Tensor
+        feat_array = np.array([packets, bytes_, duration, pps], dtype=np.float32)
+        # Add batch dimension (1, 4) as CNNs expect a batch
+        return torch.from_numpy(feat_array).unsqueeze(0)
 
-    # ---------------------------------------------------
-    # Mitigation
-    # ---------------------------------------------------
     def block_flow(self, datapath, match):
         parser = datapath.ofproto_parser
-
-        mod = parser.OFPFlowMod(
-            datapath=datapath,
-            priority=100,
-            match=match,
-            instructions=[]
-        )
+        mod = parser.OFPFlowMod(datapath=datapath, priority=100,
+                                match=match, instructions=[])
         datapath.send_msg(mod)
 
-    # ---------------------------------------------------
-    # Logging (for Section 3.7)
-    # ---------------------------------------------------
     def log_result(self, features, prediction, timestamp):
+        if not os.path.exists(LOG_DIR):
+            os.makedirs(LOG_DIR)
         with open(f"{LOG_DIR}/detections.log", "a") as f:
             f.write(f"{timestamp},{features.tolist()},{prediction}\n")
