@@ -5,12 +5,46 @@ from ryu.ofproto import ofproto_v1_3
 from ryu.lib import hub
 import time
 import os
+import json
 import numpy as np
 import torch  # Replaced joblib with torch
 
-# Updated path to point to your best_weights.pt
-MODEL_PATH = "models/cnn_tsa/corr1_k32/lr1e-05/main/best_weights.pt"
-LOG_DIR = "merged_outputs"
+# Updated path to point to your best_weights.pt (use absolute paths for ryu-manager compatibility)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, "models/cnn_tsa/corr1_k32/lr1e-05/main/best_weights.pt")
+CONFIG_PATH = os.path.join(BASE_DIR, "models/cnn_tsa/corr1_k32/lr1e-05/main/config.json")
+LOG_DIR = os.path.join(BASE_DIR, "merged_outputs")
+
+
+# Define your CNN-TSA model architecture (adjust if different from your actual model)
+class CNNTSA(torch.nn.Module):
+    def __init__(self, num_features, num_heads, hidden_dim, dropout=0.1):
+        super(CNNTSA, self).__init__()
+        self.conv1 = torch.nn.Conv1d(1, 32, kernel_size=3, padding=1)
+        self.relu = torch.nn.ReLU()
+        self.pool = torch.nn.MaxPool1d(2)
+        self.attention = torch.nn.MultiheadAttention(32, num_heads, batch_first=True)
+        self.fc1 = torch.nn.Linear(32, hidden_dim)
+        self.dropout = torch.nn.Dropout(dropout)
+        self.fc2 = torch.nn.Linear(hidden_dim, 1)
+        self.sigmoid = torch.nn.Sigmoid()
+    
+    def forward(self, x):
+        # x shape: (batch_size, num_features) or (batch_size, 1, num_features)
+        if x.dim() == 2:
+            x = x.unsqueeze(1)  # Add channel dimension
+        x = self.conv1(x)
+        x = self.relu(x)
+        x = self.pool(x)
+        x = x.transpose(1, 2)  # Prepare for attention
+        attn_out, _ = self.attention(x, x, x)
+        x = attn_out.mean(dim=1)  # Global average pooling
+        x = self.fc1(x)
+        x = self.relu(x)
+        x = self.dropout(x)
+        x = self.fc2(x)
+        x = self.sigmoid(x)
+        return x
 
 class CNNTSAController(app_manager.RyuApp):
     OFP_VERSIONS = [ofproto_v1_3.OFP_VERSION]
@@ -23,10 +57,22 @@ class CNNTSAController(app_manager.RyuApp):
         if not os.path.exists(LOG_DIR):
             os.makedirs(LOG_DIR)
 
-        # Load PyTorch model on CPU
+        # Load configuration and model
         try:
-            # We use map_location='cpu' to ensure it loads even if trained on a GPU
-            self.model = torch.load(MODEL_PATH, map_location=torch.device('cpu'))
+            with open(CONFIG_PATH, 'r') as f:
+                config = json.load(f)
+            
+            # Create model with the architecture from config
+            self.model = CNNTSA(
+                num_features=config['num_features'],
+                num_heads=config['num_heads'],
+                hidden_dim=config['hidden_dim'],
+                dropout=config['regularization']['cnn_dropout']
+            )
+            
+            # Load the saved weights (state_dict)
+            state_dict = torch.load(MODEL_PATH, map_location=torch.device('cpu'))
+            self.model.load_state_dict(state_dict)
             self.model.eval()  # Set model to evaluation mode for inference
             self.logger.info("CNN–TSA Controller initialized with PyTorch model")
         except Exception as e:
@@ -87,10 +133,24 @@ class CNNTSAController(app_manager.RyuApp):
         packets = flow.packet_count
         bytes_ = flow.byte_count
         pps = packets / duration
-
-        # Create numpy array and convert to PyTorch Tensor
-        feat_array = np.array([packets, bytes_, duration, pps], dtype=np.float32)
-        # Add batch dimension (1, 4) as CNNs expect a batch
+        bps = (bytes_ * 8) / duration  # bits per second
+        
+        # Extract 8 base features
+        base_features = np.array([
+            packets, bytes_, duration, pps, bps,
+            packets / (duration * 1000) if duration > 0 else 0,  # packets per ms
+            bytes_ / (duration * 1000) if duration > 0 else 0,   # bytes per ms
+            packets / (bytes_ + 1)  # packet to byte ratio (avoid division by 0)
+        ], dtype=np.float32)
+        
+        # Pad to 32 features (required by model) with repeated statistics
+        feat_array = np.zeros(32, dtype=np.float32)
+        feat_array[:8] = base_features
+        feat_array[8:16] = base_features  # Repeat basic stats
+        feat_array[16:24] = base_features
+        feat_array[24:32] = base_features
+        
+        # Add batch dimension (1, 32) as CNNs expect batch and sequential data
         return torch.from_numpy(feat_array).unsqueeze(0)
 
     def block_flow(self, datapath, match):

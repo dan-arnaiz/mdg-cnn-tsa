@@ -25,7 +25,7 @@ def ddosTopology():
         'c0',
         controller=RemoteController,
         ip='127.0.0.1',
-        port=6633
+        port=6653
     )
 
     info('*** Adding switch\n')
@@ -43,7 +43,8 @@ def ddosTopology():
 
     info('*** Creating links\n')
     for h in [h1, h2, h3, h4, h5, h6, h7, h8]:
-        net.addLink(h, 's1', bw=100, delay='5ms')
+        # bw in Mbps, delay in ms - higher bandwidth for DDoS simulation
+        net.addLink(h, 's1', bw=1000, delay='1ms')
 
     info('*** Starting network\n')
     net.start()
