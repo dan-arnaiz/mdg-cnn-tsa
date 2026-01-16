@@ -197,6 +197,21 @@ class CNNTSAController(app_manager.RyuApp):
             if flow.priority == 0:
                 continue
 
+            # Pre-filter: Only analyze flows with significant traffic
+            # This reduces false positives on normal ping/ARP traffic
+            dur = max(flow.duration_sec, 1)
+            pkts = flow.packet_count
+            pkt_rate = pkts / dur
+            
+            # Skip flows that are clearly benign (low packet rate)
+            # DDoS attacks typically have high packet rates (>100 pps)
+            if pkt_rate < 50:  # Less than 50 packets/second = likely benign
+                continue
+            
+            # Skip very short flows (less than 2 seconds)
+            if dur < 2:
+                continue
+
             features = self.extract_features(flow)
 
             with torch.no_grad():
@@ -205,47 +220,72 @@ class CNNTSAController(app_manager.RyuApp):
             label = 1 if pred >= 0.5 else 0
 
             if label == 1:
-                self.logger.warning("DDoS detected — blocking flow")
+                self.logger.warning(f"DDoS detected (rate: {pkt_rate:.1f} pps, pred: {pred:.3f}) — blocking flow")
                 self.block_flow(ev.msg.datapath, flow.match)
 
             self.log_result(features.numpy(), pred, ts)
 
     def extract_features(self, flow):
         """
-        Extract 32 features from flow and reshape to (1, 32, 32)
+        Extract 32 network flow features and reshape to (1, 32, 32)
         
         The model expects input shape: (batch_size, channels=32, sequence_length=32)
-        We create 32 features and then reshape them properly.
         """
         dur = max(flow.duration_sec, 1)
-        pkts = flow.packet_count
-        bytes_ = flow.byte_count
-
-        # Create 32 base features
-        base_features = np.array([
-            pkts,
-            bytes_,
-            dur,
-            pkts / dur,
-            bytes_ / dur,
-            pkts / (bytes_ + 1),
-            pkts / 1000,
-            bytes_ / 1000
-        ], dtype=np.float32)
-
-        # Replicate to get 32 features total
-        feat = np.zeros(32, dtype=np.float32)
-        feat[:8] = base_features
-        feat[8:16] = base_features
-        feat[16:24] = base_features
-        feat[24:32] = base_features
-
-        # Reshape to (1, 32, 32): batch_size=1, channels=32, sequence=32
-        # Each of the 32 features becomes a channel with length 32
-        feat_reshaped = np.tile(feat, (32, 1)).T  # Shape: (32, 32)
+        pkts = max(flow.packet_count, 1)
+        bytes_ = max(flow.byte_count, 1)
         
-        # Convert to tensor and add batch dimension: (1, 32, 32)
-        return torch.tensor(feat_reshaped, dtype=torch.float32).unsqueeze(0)
+        # Calculate rates
+        pkt_rate = pkts / dur
+        byte_rate = bytes_ / dur
+        avg_pkt_size = bytes_ / pkts
+        
+        # Create 32 diverse features (normalized)
+        features = np.array([
+            pkts / 10000.0,              # 0: Normalized packet count
+            bytes_ / 1000000.0,          # 1: Normalized byte count  
+            dur / 100.0,                 # 2: Normalized duration
+            pkt_rate / 1000.0,           # 3: Packet rate
+            byte_rate / 100000.0,        # 4: Byte rate
+            avg_pkt_size / 1500.0,       # 5: Average packet size
+            pkts / (bytes_ + 1),         # 6: Packet/byte ratio
+            np.log1p(pkts),              # 7: Log packet count
+            np.log1p(bytes_),            # 8: Log byte count
+            np.log1p(pkt_rate),          # 9: Log packet rate
+            np.log1p(byte_rate),         # 10: Log byte rate
+            pkt_rate / (byte_rate + 1),  # 11: Rate ratio
+            1.0 / (dur + 1),             # 12: Inverse duration
+            1.0 / (avg_pkt_size + 1),    # 13: Inverse packet size
+            np.sqrt(pkts),               # 14: Sqrt packet count
+            np.sqrt(bytes_),             # 15: Sqrt byte count
+            pkts ** 0.33,                # 16: Cube root packets
+            bytes_ ** 0.33,              # 17: Cube root bytes
+            pkt_rate ** 0.5,             # 18: Sqrt packet rate
+            byte_rate ** 0.5,            # 19: Sqrt byte rate
+            pkts * dur,                  # 20: Packet-duration product
+            bytes_ * dur,                # 21: Byte-duration product
+            pkts / 100.0,                # 22: Scaled packets
+            bytes_ / 10000.0,            # 23: Scaled bytes
+            pkt_rate / 100.0,            # 24: Scaled packet rate
+            byte_rate / 10000.0,         # 25: Scaled byte rate
+            avg_pkt_size / 100.0,        # 26: Scaled avg packet size
+            (pkts + bytes_) / 10000.0,   # 27: Combined metric
+            (pkt_rate + byte_rate) / 1000.0,  # 28: Combined rate
+            np.tanh(pkt_rate / 100.0),   # 29: Tanh packet rate
+            np.tanh(byte_rate / 1000.0), # 30: Tanh byte rate
+            np.clip(avg_pkt_size / 1500.0, 0, 1)  # 31: Clipped packet size
+        ], dtype=np.float32)
+        
+        # Reshape to (32, 32) by creating a window of features
+        # Each row is slightly different to add temporal variation
+        feat_matrix = np.zeros((32, 32), dtype=np.float32)
+        for i in range(32):
+            # Add small noise/variation to simulate temporal sequence
+            noise = np.random.normal(0, 0.01, 32)
+            feat_matrix[i] = features + noise * features
+        
+        # Convert to tensor with batch dimension: (1, 32, 32)
+        return torch.tensor(feat_matrix, dtype=torch.float32).unsqueeze(0)
 
     def block_flow(self, dp, match):
         parser = dp.ofproto_parser
