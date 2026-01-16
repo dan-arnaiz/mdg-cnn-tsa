@@ -23,7 +23,12 @@ CONFIG_PATH = os.path.join(
 )
 LOG_DIR = os.path.join(BASE_DIR, "merged_outputs")
 
+with open(CONFIG_PATH) as f:
+    cfg = json.load(f)
 
+# assert cfg["num_features"] == 32
+# assert cfg["hidden_dim"] == 64
+# assert cfg["num_heads"] == 2
 
 class CNNTSA(nn.Module):
     def __init__(self):
@@ -37,12 +42,12 @@ class CNNTSA(nn.Module):
         # Transformer-style TSA block
         self.mhsa = nn.MultiheadAttention(
             embed_dim=64,
-            num_heads=4,
+            num_heads=2,
             batch_first=True
         )
         self.norm1 = nn.LayerNorm(64)
 
-        self.ffw = nn.Sequential(
+        self.ffn = nn.Sequential(
             nn.Linear(64, 128),
             nn.ReLU(),
             nn.Linear(128, 64)
@@ -65,8 +70,8 @@ class CNNTSA(nn.Module):
         attn_out, _ = self.mhsa(x, x, x)
         x = self.norm1(x + attn_out)
 
-        ffw_out = self.ffw(x)
-        x = self.norm2(x + ffw_out)
+        ffn_out = self.ffn(x)
+        x = self.norm2(x + ffn_out)
 
         # Global average pooling
         x = x.mean(dim=1)
@@ -141,7 +146,7 @@ class CNNTSAController(app_manager.RyuApp):
             label = 1 if pred >= 0.5 else 0
 
             if label == 1:
-                self.logger.warning("🚨 DDoS detected — blocking flow")
+                self.logger.warning("DDoS detected — blocking flow")
                 self.block_flow(ev.msg.datapath, flow.match)
 
             self.log_result(features.numpy(), pred, ts)
