@@ -24,40 +24,38 @@ CONFIG_PATH = os.path.join(
 LOG_DIR = os.path.join(BASE_DIR, "merged_outputs")
 
 
-# =======================
-# CORRECT CNN-TSA MODEL
-# =======================
+
 class CNNTSA(nn.Module):
     def __init__(self):
         super().__init__()
 
         # CNN feature extractor
         self.conv1 = nn.Conv1d(1, 32, kernel_size=5, padding=2)
-        self.conv2 = nn.Conv1d(32, 32, kernel_size=5, padding=2)
+        self.conv2 = nn.Conv1d(32, 64, kernel_size=5, padding=2)
         self.relu = nn.ReLU()
 
         # Transformer-style TSA block
         self.mhsa = nn.MultiheadAttention(
-            embed_dim=32,
+            embed_dim=64,
             num_heads=4,
             batch_first=True
         )
-        self.norm1 = nn.LayerNorm(32)
+        self.norm1 = nn.LayerNorm(64)
 
         self.ffw = nn.Sequential(
-            nn.Linear(32, 64),
+            nn.Linear(64, 128),
             nn.ReLU(),
-            nn.Linear(64, 32)
+            nn.Linear(128, 64)
         )
-        self.norm2 = nn.LayerNorm(32)
+        self.norm2 = nn.LayerNorm(64)
 
         # Classifier
-        self.fc1 = nn.Linear(32, 128)
+        self.fc1 = nn.Linear(64, 128)
         self.fc2 = nn.Linear(128, 1)
         self.sigmoid = nn.Sigmoid()
 
     def forward(self, x):
-        # x: (B, 1, 31)
+        # x: (B, 1, 32)
         x = self.relu(self.conv1(x))
         x = self.relu(self.conv2(x))
 
@@ -164,12 +162,11 @@ class CNNTSAController(app_manager.RyuApp):
             bytes_ / 1000
         ], dtype=np.float32)
 
-        feat = np.zeros(31, dtype=np.float32)
+        feat = np.zeros(32, dtype=np.float32)
         feat[:8] = base
         feat[8:16] = base
         feat[16:24] = base
-        feat[24:31] = base[:7]
-
+        feat[24:32] = base[:8]
         return torch.tensor(feat).unsqueeze(0).unsqueeze(0)
 
     def block_flow(self, dp, match):
