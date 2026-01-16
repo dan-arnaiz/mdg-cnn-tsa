@@ -26,18 +26,15 @@ LOG_DIR = os.path.join(BASE_DIR, "merged_outputs")
 with open(CONFIG_PATH) as f:
     cfg = json.load(f)
 
-# Commented out assertions in case config.json doesn't match saved weights
-# assert cfg["num_features"] == 32
-# assert cfg["hidden_dim"] == 64
-# assert cfg["num_heads"] == 2
-
 class CNNTSA(nn.Module):
     def __init__(self):
         super().__init__()
 
         # CNN feature extractor
-        self.conv1 = nn.Conv1d(1, 32, kernel_size=5, padding=2)
-        self.conv2 = nn.Conv1d(32, 64, kernel_size=5, padding=2)
+        # FIXED: Changed from (1, 32) to (32, 32) to match saved weights
+        self.conv1 = nn.Conv1d(32, 32, kernel_size=5, padding=2)
+        # FIXED: Changed kernel_size from 5 to 3
+        self.conv2 = nn.Conv1d(32, 64, kernel_size=3, padding=1)
         self.relu = nn.ReLU()
 
         # Transformer-style TSA block
@@ -48,12 +45,12 @@ class CNNTSA(nn.Module):
         )
         self.norm1 = nn.LayerNorm(64)
 
-        # FIXED: Added Dropout layer (ffn.2) to match saved weights
+        # FFN block with Dropout
         self.ffn = nn.Sequential(
-            nn.Linear(64, 128),      # ffn.0
-            nn.ReLU(),                # ffn.1
-            nn.Dropout(0.1),          # ffn.2
-            nn.Linear(128, 64)        # ffn.3
+            nn.Linear(64, 128),      # ffn.0.weight
+            nn.ReLU(),                # activation
+            nn.Dropout(0.1),          # ffn.2 (dropout layer)
+            nn.Linear(128, 64)        # ffn.3.weight
         )
         self.norm2 = nn.LayerNorm(64)
 
@@ -63,7 +60,7 @@ class CNNTSA(nn.Module):
         self.sigmoid = nn.Sigmoid()
 
     def forward(self, x):
-        # x: (B, 1, 32)
+        # x: (B, 32, 32) - CHANGED from (B, 1, 32)
         x = self.relu(self.conv1(x))
         x = self.relu(self.conv2(x))
 
@@ -155,11 +152,18 @@ class CNNTSAController(app_manager.RyuApp):
             self.log_result(features.numpy(), pred, ts)
 
     def extract_features(self, flow):
+        """
+        Extract 32 features from flow and reshape to (1, 32, 32)
+        
+        The model expects input shape: (batch_size, channels=32, sequence_length=32)
+        We create 32 features and then reshape them properly.
+        """
         dur = max(flow.duration_sec, 1)
         pkts = flow.packet_count
         bytes_ = flow.byte_count
 
-        base = np.array([
+        # Create 32 base features
+        base_features = np.array([
             pkts,
             bytes_,
             dur,
@@ -170,12 +174,19 @@ class CNNTSAController(app_manager.RyuApp):
             bytes_ / 1000
         ], dtype=np.float32)
 
+        # Replicate to get 32 features total
         feat = np.zeros(32, dtype=np.float32)
-        feat[:8] = base
-        feat[8:16] = base
-        feat[16:24] = base
-        feat[24:32] = base[:8]
-        return torch.tensor(feat).unsqueeze(0).unsqueeze(0)
+        feat[:8] = base_features
+        feat[8:16] = base_features
+        feat[16:24] = base_features
+        feat[24:32] = base_features
+
+        # Reshape to (1, 32, 32): batch_size=1, channels=32, sequence=32
+        # Each of the 32 features becomes a channel with length 32
+        feat_reshaped = np.tile(feat, (32, 1)).T  # Shape: (32, 32)
+        
+        # Convert to tensor and add batch dimension: (1, 32, 32)
+        return torch.tensor(feat_reshaped, dtype=torch.float32).unsqueeze(0)
 
     def block_flow(self, dp, match):
         parser = dp.ofproto_parser
