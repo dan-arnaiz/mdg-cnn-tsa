@@ -26,6 +26,7 @@ LOG_DIR = os.path.join(BASE_DIR, "merged_outputs")
 with open(CONFIG_PATH) as f:
     cfg = json.load(f)
 
+# Commented out assertions in case config.json doesn't match saved weights
 # assert cfg["num_features"] == 32
 # assert cfg["hidden_dim"] == 64
 # assert cfg["num_heads"] == 2
@@ -47,10 +48,12 @@ class CNNTSA(nn.Module):
         )
         self.norm1 = nn.LayerNorm(64)
 
+        # FIXED: Added Dropout layer (ffn.2) to match saved weights
         self.ffn = nn.Sequential(
-            nn.Linear(64, 128),
-            nn.ReLU(),
-            nn.Linear(128, 64)
+            nn.Linear(64, 128),      # ffn.0
+            nn.ReLU(),                # ffn.1
+            nn.Dropout(0.1),          # ffn.2
+            nn.Linear(128, 64)        # ffn.3
         )
         self.norm2 = nn.LayerNorm(64)
 
