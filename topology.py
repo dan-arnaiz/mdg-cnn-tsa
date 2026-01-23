@@ -3,10 +3,11 @@
 DDoS Simulation Topology
 8 hosts, 1 switch, 1 Ryu controller (OpenFlow 1.3)
 """
-
+import time
+import signal
+import sys
 from mininet.net import Mininet
 from mininet.node import RemoteController, OVSSwitch
-from mininet.cli import CLI
 from mininet.log import setLogLevel
 from mininet.link import TCLink
 
@@ -30,25 +31,28 @@ def run():
     # Victim
     h1 = net.addHost('h1', ip='10.0.0.1/24')
 
-    # Benign
-    h2 = net.addHost('h2', ip='10.0.0.2/24')
-    h3 = net.addHost('h3', ip='10.0.0.3/24')
-    h4 = net.addHost('h4', ip='10.0.0.4/24')
-    h5 = net.addHost('h5', ip='10.0.0.5/24')
+    # Benign and Attackers
+    hosts = []
+    for i in range(2, 9):
+        hosts.append(net.addHost(f'h{i}', ip=f'10.0.0.{i}/24'))
 
-    # Attackers
-    h6 = net.addHost('h6', ip='10.0.0.6/24')
-    h7 = net.addHost('h7', ip='10.0.0.7/24')
-    h8 = net.addHost('h8', ip='10.0.0.8/24')
-
-    for h in [h1,h2,h3,h4,h5,h6,h7,h8]:
+    # Link all hosts to switch
+    for h in [h1] + hosts:
         net.addLink(h, s1, bw=100, delay='5ms')
 
     net.build()
     c0.start()
     s1.start([c0])
 
-    # CLI(net)
+    print("*** Topology is now active. ***")
+    
+    # Keep the script running so namespaces stay alive for master.sh
+    try:
+        while True:
+            time.sleep(1)
+    except KeyboardInterrupt:
+        pass
+    
     net.stop()
 
 if __name__ == '__main__':
