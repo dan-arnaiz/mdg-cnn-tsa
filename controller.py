@@ -204,23 +204,34 @@ class CNNTSAController(app_manager.RyuApp):
     @set_ev_cls(ofp_event.EventOFPFlowStatsReply, MAIN_DISPATCHER)
     def flow_stats_reply_handler(self, ev):
         ts = time.time()
+        
+        total_flows = 0
+        analyzed_flows = 0
 
         for flow in ev.msg.body:
             if flow.priority == 0:
                 continue
+            
+            total_flows += 1
 
             # Pre-filter: Only analyze flows with significant traffic
             dur = max(flow.duration_sec, 1)
             pkts = flow.packet_count
             pkt_rate = pkts / dur
             
+            # DEBUG: Log all flows
+            if total_flows % 10 == 0:  # Log every 10th flow
+                self.logger.info(f"Flow: pkts={pkts}, dur={dur:.1f}s, rate={pkt_rate:.1f}pps")
+            
             # Skip flows that are clearly benign (low packet rate)
-            if pkt_rate < 50:
+            if pkt_rate < 10:
                 continue
             
             # Skip very short flows
-            if dur < 2:
+            if dur < 1:
                 continue
+            
+            analyzed_flows += 1
 
             features = self.extract_features(flow)
 
@@ -233,9 +244,12 @@ class CNNTSAController(app_manager.RyuApp):
                 self.logger.warning(f"DDoS detected (rate: {pkt_rate:.1f} pps, pred: {pred:.3f}) — blocking flow")
                 self.block_flow(ev.msg.datapath, flow.match)
 
-            # Log with ground truth placeholder (0 for benign, 1 for attack)
-            # In real scenario, you'd track attack timing from your test script
+            # Log with ground truth placeholder
             self.log_result(pred, label, ts, pkt_rate)
+        
+        # DEBUG: Summary every monitoring cycle
+        if analyzed_flows > 0:
+            self.logger.info(f"Analyzed {analyzed_flows}/{total_flows} flows")
 
     def extract_features(self, flow):
         """
