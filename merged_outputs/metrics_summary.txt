@@ -1,6 +1,6 @@
-Accuracy: 100.00%
+Accuracy: 56.45%
 Precision: 0.00%
 Recall: 0.00%
 F1-Score: 0.00%
 FPR: 0.00%
-ROC-AUC: 0.0000
+ROC-AUC: 1.0000
