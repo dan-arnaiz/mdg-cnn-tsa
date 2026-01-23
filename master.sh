@@ -1,5 +1,5 @@
 #!/bin/bash
-# Master Test Script for CNN-TSA DDoS Detection Thesis - FIXED
+# Master Test Script for CNN-TSA DDoS Detection Thesis
 
 # --- 1. Cleanup ---
 echo "========================================="
@@ -8,39 +8,36 @@ sudo pkill -9 -f ryu-manager
 sudo pkill -9 -f mininet
 sudo mn -c
 rm -rf merged_outputs/*; mkdir -p merged_outputs
-echo "Done Cleaning up."
+echo "Cleanup complete."
 echo "========================================="
 
-echo "========================================="
 # --- 2. Start Ryu Controller ---
+echo "========================================="
 echo "[2/7] Starting Ryu Controller..."
+# Controller logs 39 features and hidden_dim=64
 ryu-manager controller.py > controller.log 2>&1 &
 RYU_PID=$!
-sleep 15 # Wait for model to load
-echo "Model Succesfully Loaded into Ryu Controller."
+sleep 15 
+echo "Model Successfully Loaded into Ryu Controller."
 echo "========================================="
-
-
 
 # --- 3. Start Mininet Topology ---
 echo "========================================="
 echo "[3/7] Starting Mininet Topology..."
-# Running in background so the script can continue
+# Note: Ensure CLI(net) is commented out in topology.py for full automation
 sudo python3 topology.py & 
-sleep 20 # Wait for switches to connect and STP to settle
+sleep 20 
 echo "Mininet Topology is up and running."
 echo "========================================="
-
-
 
 # --- 4. Benign Phase ---
 echo "========================================="
 echo "[4/7] Phase 1: Benign Traffic (60 seconds)..."
-# Using 'm' command to execute on specific hosts
-sudo h2 ./benign_traffic.sh 10.0.0.1 60 &
-sudo h3 ./benign_traffic.sh 10.0.0.1 60 &
-sudo h4 ./benign_traffic.sh 10.0.0.1 60 &
-sudo h5 ./benign_traffic.sh 10.0.0.1 60 &
+# Executing within the specific network namespaces of your 8 hosts
+sudo ip netns exec mininet-h2 ./benign_traffic.sh 10.0.0.1 60 &
+sudo ip netns exec mininet-h3 ./benign_traffic.sh 10.0.0.1 60 &
+sudo ip netns exec mininet-h4 ./benign_traffic.sh 10.0.0.1 60 &
+sudo ip netns exec mininet-h5 ./benign_traffic.sh 10.0.0.1 60 &
 sleep 70 
 
 echo "Gap period: Waiting 20 seconds..."
@@ -48,13 +45,13 @@ sleep 20
 echo "Done with Benign Traffic Phase."
 echo "========================================="
 
-
 # --- 5. Attack Phase ---
 echo "========================================="
 echo "[5/7] Phase 2: DDoS Attack (60 seconds)..."
-sudo h6 ./ddos_attack.sh 10.0.0.1 60 2000 &
-sudo h7 ./ddos_attack.sh 10.0.0.1 60 2000 &
-sudo h8 ./ddos_attack.sh 10.0.0.1 60 2000 &
+# Attackers h6, h7, and h8 targeting the victim h1 (10.0.0.1)
+sudo ip netns exec mininet-h6 ./ddos_attack.sh 10.0.0.1 60 2000 &
+sudo ip netns exec mininet-h7 ./ddos_attack.sh 10.0.0.1 60 2000 &
+sudo ip netns exec mininet-h8 ./ddos_attack.sh 10.0.0.1 60 2000 &
 sleep 80 
 echo "Done with DDoS Attack Phase."
 echo "========================================="
@@ -62,7 +59,8 @@ echo "========================================="
 # --- 6. Analysis and Reporting ---
 echo "========================================="
 echo "[6/7] Generating Comprehensive Report..."
-sudo python3 analyze_results.py
+# analyze_results.py uses the 0.40 threshold for correct metrics
+sudo python3 analyze_results.py | tee merged_outputs/live_report.txt
 echo "Report successfully generated."
 echo "========================================="
 

@@ -48,7 +48,7 @@ def run():
     c0.start()
     s1.start([c0])
 
-    CLI(net)
+    # CLI(net)
     net.stop()
 
 if __name__ == '__main__':
