@@ -226,8 +226,7 @@ class CNNTSAController(app_manager.RyuApp):
         entropy = self.calculate_entropy(src_list)
 
         # ADDED: Dynamic Threshold Logic
-        # If entropy > 3, it suggests many random IPs (DDoS). We lower the threshold to 2.0.
-        dynamic_threshold = 2.0 if entropy > 3.0 else 10.0
+        dynamic_threshold = 2.0 if entropy > 1.0 else 5.0
         self.logger.info(f"Entropy: {entropy:.2f} | Pkt_Rate Threshold: {dynamic_threshold}")
 
         for flow in ev.msg.body:
