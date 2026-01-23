@@ -1,0 +1,5 @@
+timestamp,phase,description
+1769141971,start,Test started
+1769142181,benign_start,Benign traffic started (60s)
+1769142423,benign_end,Benign phase completed
+1769142753,attack_start,DDoS Attack Started (60s, 6000pps total)
