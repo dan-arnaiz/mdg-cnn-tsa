@@ -226,7 +226,7 @@ class CNNTSAController(app_manager.RyuApp):
         entropy = self.calculate_entropy(src_list)
 
         # ADDED: Dynamic Threshold Logic
-        dynamic_threshold = 2.0 if entropy > 1.0 else 5.0
+        dynamic_threshold = 2.0 if entropy > 1.2 else 5.0
         self.logger.info(f"Entropy: {entropy:.2f} | Pkt_Rate Threshold: {dynamic_threshold}")
 
         for flow in ev.msg.body:

