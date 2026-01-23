@@ -1,7 +1,0 @@
-loading app controller.py
-loading app ryu.controller.ofp_handler
-instantiating app controller.py of CNNTSAController
-CNN-TSA model loaded successfully
-Model config: features=39, hidden=64, heads=2
-instantiating app ryu.controller.ofp_handler of OFPHandler
-Entropy: 0.00 | Total Pkts: 0 | Threshold: 5.0
