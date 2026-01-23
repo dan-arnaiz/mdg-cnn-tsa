@@ -1,0 +1,11 @@
+*** Adding controller
+*** Adding switch
+*** Adding hosts
+*** Adding links
+(100.00Mbit 5ms delay) (100.00Mbit 5ms delay) (100.00Mbit 5ms delay) (100.00Mbit 5ms delay) (100.00Mbit 5ms delay) (100.00Mbit 5ms delay) (100.00Mbit 5ms delay) (100.00Mbit 5ms delay) (100.00Mbit 5ms delay) (100.00Mbit 5ms delay) (100.00Mbit 5ms delay) (100.00Mbit 5ms delay) (100.00Mbit 5ms delay) (100.00Mbit 5ms delay) (100.00Mbit 5ms delay) (100.00Mbit 5ms delay) *** Building network
+*** Configuring hosts
+h1 h2 h3 h4 h5 h6 h7 h8 
+*** Starting controller
+*** Starting switch
+(100.00Mbit 5ms delay) (100.00Mbit 5ms delay) (100.00Mbit 5ms delay) (100.00Mbit 5ms delay) (100.00Mbit 5ms delay) (100.00Mbit 5ms delay) (100.00Mbit 5ms delay) (100.00Mbit 5ms delay) *** Mininet is READY (automation mode)
+TOPOLOGY_READY

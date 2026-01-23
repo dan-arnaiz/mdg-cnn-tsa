@@ -1,0 +1,4 @@
+1769160756,benign_start,Benign traffic phase started
+1769160826,benign_end,Benign traffic phase completed
+1769160846,attack_start,DDoS attack phase started (6000 pps total)
+1769160917,attack_end,DDoS attack phase completed
