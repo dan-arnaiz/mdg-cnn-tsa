@@ -37,10 +37,10 @@ echo "========================================="
 echo "========================================="
 echo "[4/7] Phase 1: Benign Traffic (60 seconds)..."
 # Using 'm' command to execute on specific hosts
-sudo m h2 ./benign_traffic.sh 10.0.0.1 60 &
-sudo m h3 ./benign_traffic.sh 10.0.0.1 60 &
-sudo m h4 ./benign_traffic.sh 10.0.0.1 60 &
-sudo m h5 ./benign_traffic.sh 10.0.0.1 60 &
+sudo h2 ./benign_traffic.sh 10.0.0.1 60 &
+sudo h3 ./benign_traffic.sh 10.0.0.1 60 &
+sudo h4 ./benign_traffic.sh 10.0.0.1 60 &
+sudo h5 ./benign_traffic.sh 10.0.0.1 60 &
 sleep 70 
 
 echo "Gap period: Waiting 20 seconds..."
@@ -52,9 +52,9 @@ echo "========================================="
 # --- 5. Attack Phase ---
 echo "========================================="
 echo "[5/7] Phase 2: DDoS Attack (60 seconds)..."
-sudo m h6 ./ddos_attack.sh 10.0.0.1 60 2000 &
-sudo m h7 ./ddos_attack.sh 10.0.0.1 60 2000 &
-sudo m h8 ./ddos_attack.sh 10.0.0.1 60 2000 &
+sudo h6 ./ddos_attack.sh 10.0.0.1 60 2000 &
+sudo h7 ./ddos_attack.sh 10.0.0.1 60 2000 &
+sudo h8 ./ddos_attack.sh 10.0.0.1 60 2000 &
 sleep 80 
 echo "Done with DDoS Attack Phase."
 echo "========================================="
