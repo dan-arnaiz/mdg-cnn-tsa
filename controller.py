@@ -16,11 +16,11 @@ import torch.nn as nn
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(
     BASE_DIR,
-    "models/cnn_tsa/corr1_k32/lr1e-05/main/best_weights.pt"
+    "models/cnn_tsa/baseline_model/main/standard_k45/best_weights.pt"
 )
 CONFIG_PATH = os.path.join(
     BASE_DIR,
-    "models/cnn_tsa/corr1_k32/lr1e-05/main/config.json"
+    "models/cnn_tsa/baseline_model/main/standard_k45/config.json"
 )
 LOG_DIR = os.path.join(BASE_DIR, "merged_outputs")
 
