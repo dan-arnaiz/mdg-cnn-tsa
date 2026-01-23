@@ -220,24 +220,38 @@ class CNNTSAController(app_manager.RyuApp):
         ts = time.time()
         total_flows = 0
         analyzed_flows = 0
+        total_packets_in_cycle = 0 # ADDED: Track total packets in this batch
 
-        # ADDED: Extract all source MACs to check for spoofing randomness
-        src_list = [flow.match.get('eth_src') for flow in ev.msg.body if 'eth_src' in flow.match]
+        # Extract all source MACs and sum total packets
+        src_list = []
+        for flow in ev.msg.body:
+            if flow.priority == 0:
+                continue
+            
+            total_packets_in_cycle += flow.packet_count # ADDED: Accumulate packet count
+            
+            if 'eth_src' in flow.match:
+                src_list.append(flow.match.get('eth_src'))
+
+        # Calculate entropy based on the collected source list
         entropy = self.calculate_entropy(src_list)
 
-        # ADDED: Dynamic Threshold Logic
+        # UPDATED: Dynamic Threshold Logic (Triggered at 1.2 based on your tests)
         dynamic_threshold = 2.0 if entropy > 1.2 else 5.0
-        self.logger.info(f"Entropy: {entropy:.2f} | Pkt_Rate Threshold: {dynamic_threshold}")
+        
+        # UPDATED: Log both Entropy and Total Packets for debugging
+        self.logger.info(f"Entropy: {entropy:.2f} | Total Pkts: {total_packets_in_cycle} | Threshold: {dynamic_threshold}")
 
         for flow in ev.msg.body:
             if flow.priority == 0:
                 continue
+            
             total_flows += 1
             dur = max(flow.duration_sec, 1)
             pkts = flow.packet_count
             pkt_rate = pkts / dur
 
-            # UPDATED: Using the dynamic threshold instead of hardcoded 10
+            # Sensitivity filter
             if pkt_rate < dynamic_threshold:
                 continue
             if dur < 1:
@@ -249,6 +263,7 @@ class CNNTSAController(app_manager.RyuApp):
             with torch.no_grad():
                 pred = self.model(features).item()
 
+            # Threshold for detection (currently 0.5)
             label = 1 if pred >= 0.5 else 0
             if label == 1:
                 self.logger.warning(f"DDoS detected (rate: {pkt_rate:.1f} pps) — blocking flow")
@@ -322,9 +337,10 @@ class CNNTSAController(app_manager.RyuApp):
         feat_matrix = np.zeros((39, sequence_length), dtype=np.float32)
         
         for i in range(sequence_length):
-            # Add small temporal variation
-            noise = np.random.normal(0, 0.01, 39)
-            feat_matrix[:, i] = features + noise * features
+            # Removing noise addition for consistency
+            # noise = np.random.normal(0, 0.01, 39)
+            # feat_matrix[:, i] = features + noise * features
+            feat_matrix[:, i] = features
         
         # Convert to tensor: (1, 39, 32)
         return torch.tensor(feat_matrix, dtype=torch.float32).unsqueeze(0)
