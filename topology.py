@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """
-DDoS Simulation Topology - Automation Optimized
+DDoS Simulation Topology - Persistence Optimized
 8 hosts, 1 switch, 1 Ryu controller (OpenFlow 1.3)
 """
 import time
+import sys
 from mininet.net import Mininet
 from mininet.node import RemoteController, OVSSwitch
 from mininet.log import setLogLevel
@@ -26,13 +27,16 @@ def run():
 
     s1 = net.addSwitch('s1', protocols='OpenFlow13')
 
-    # Add all 8 hosts
+    # Victim
+    h1 = net.addHost('h1', ip='10.0.0.1/24')
+
+    # Benign and Attackers
     hosts = []
-    for i in range(1, 9):
+    for i in range(2, 9):
         hosts.append(net.addHost(f'h{i}', ip=f'10.0.0.{i}/24'))
 
     # Link all hosts to switch
-    for h in hosts:
+    for h in [h1] + hosts:
         net.addLink(h, s1, bw=100, delay='5ms')
 
     net.build()
@@ -40,16 +44,17 @@ def run():
     s1.start([c0])
 
     print("=========================================")
-    print("*** TOPOLOGY ACTIVE ***")
+    print("*** TOPOLOGY IS NOW RUNNING ***")
     print("=========================================")
     
-    # KEEP ACTIVE: This prevents the 'No such file or directory' namespace error
+    # CRITICAL: This loop keeps namespaces alive for master.sh
     try:
         while True:
             time.sleep(1)
     except KeyboardInterrupt:
         pass
     
+    print("\nShutting down topology...")
     net.stop()
 
 if __name__ == '__main__':
