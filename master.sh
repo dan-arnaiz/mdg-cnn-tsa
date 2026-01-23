@@ -99,11 +99,11 @@ sleep 5
 
 log_info "Verifying network namespaces..."
 
-if sudo ip netns exec mn-h2 ip addr show > /dev/null 2>&1; then
-    log_info "Network namespaces verified"
+if pgrep -f "mininet:h2" > /dev/null; then
+    log_info "Mininet host namespaces verified"
 else
-    log_error "Mininet namespaces NOT found"
-    sudo ip netns list
+    log_error "Mininet host processes not found!"
+    ps aux | grep mininet
     exit 1
 fi
 
@@ -120,9 +120,10 @@ log_info "Starting benign traffic from h2, h3, h4, h5..."
 
 # Launch benign traffic
 for i in {2..5}; do
-    sudo ip netns exec mn-h${i} bash -c "cd $SCRIPT_DIR && ./benign_traffic.sh 10.0.0.1 60" > /dev/null 2>&1 &
-    BENIGN_PIDS[$i]=$!
-    log_info "  h${i}: Started (PID: ${BENIGN_PIDS[$i]})"
+    PID=$(pgrep -f "mininet:h${i}")
+    sudo mnexec -a $PID bash -c \
+        "cd $SCRIPT_DIR && ./benign_traffic.sh 10.0.0.1 60" \
+        > /dev/null 2>&1 &
 done
 
 log_info "Benign traffic running. Waiting 70 seconds..."
@@ -154,9 +155,10 @@ log_info "Launching DDoS attack from h6, h7, h8..."
 
 # Launch attack traffic
 for i in {6..8}; do
-    sudo ip netns exec mn-h${i} bash -c "cd $SCRIPT_DIR && ./ddos_attack.sh 10.0.0.1 60 2000" > /dev/null 2>&1 &
-    ATTACK_PIDS[$i]=$!
-    log_info "  h${i}: Attack started (PID: ${ATTACK_PIDS[$i]})"
+    PID=$(pgrep -f "mininet:h${i}")
+    sudo mnexec -a $PID bash -c \
+        "cd $SCRIPT_DIR && ./ddos_attack.sh 10.0.0.1 60 2000" \
+        > /dev/null 2>&1 &
 done
 
 log_info "Attack in progress. Waiting 70 seconds..."
