@@ -11,6 +11,8 @@ import json
 import numpy as np
 import torch
 import torch.nn as nn
+import math
+from collections import Counter
 
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -118,6 +120,18 @@ class CNNTSAController(app_manager.RyuApp):
         except Exception as e:
             self.logger.error(f"MODEL LOAD FAILURE: {e}")
             raise RuntimeError("Model architecture mismatch")
+        
+    # ADDED: Entropy calculation method to identify spoofing
+    def calculate_entropy(self, src_list):
+        if not src_list:
+            return 0
+        counts = Counter(src_list)
+        total = len(src_list)
+        entropy = 0
+        for count in counts.values():
+            p = count / total
+            entropy -= p * math.log2(p)
+        return entropy
 
     @set_ev_cls(ofp_event.EventOFPSwitchFeatures, CONFIG_DISPATCHER)
     def switch_features_handler(self, ev):
@@ -199,55 +213,50 @@ class CNNTSAController(app_manager.RyuApp):
         while True:
             for dp in self.datapaths.values():
                 dp.send_msg(dp.ofproto_parser.OFPFlowStatsRequest(dp))
-            hub.sleep(5)
+            hub.sleep(2) # ADJUSTED from 5s to 2s to catch bursts faster
 
     @set_ev_cls(ofp_event.EventOFPFlowStatsReply, MAIN_DISPATCHER)
     def flow_stats_reply_handler(self, ev):
         ts = time.time()
-        
         total_flows = 0
         analyzed_flows = 0
+
+        # ADDED: Extract all source MACs to check for spoofing randomness
+        src_list = [flow.match.get('eth_src') for flow in ev.msg.body if 'eth_src' in flow.match]
+        entropy = self.calculate_entropy(src_list)
+
+        # ADDED: Dynamic Threshold Logic
+        # If entropy > 3, it suggests many random IPs (DDoS). We lower the threshold to 2.0.
+        dynamic_threshold = 2.0 if entropy > 3.0 else 10.0
+        self.logger.info(f"Entropy: {entropy:.2f} | Pkt_Rate Threshold: {dynamic_threshold}")
 
         for flow in ev.msg.body:
             if flow.priority == 0:
                 continue
-            
             total_flows += 1
-
-            # Pre-filter: Only analyze flows with significant traffic
             dur = max(flow.duration_sec, 1)
             pkts = flow.packet_count
             pkt_rate = pkts / dur
-            
-            # DEBUG: Log all flows
-            if total_flows % 10 == 0:  # Log every 10th flow
-                self.logger.info(f"Flow: pkts={pkts}, dur={dur:.1f}s, rate={pkt_rate:.1f}pps")
-            
-            # Skip flows that are clearly benign (low packet rate)
-            if pkt_rate < 10:
+
+            # UPDATED: Using the dynamic threshold instead of hardcoded 10
+            if pkt_rate < dynamic_threshold:
                 continue
-            
-            # Skip very short flows
             if dur < 1:
                 continue
-            
-            analyzed_flows += 1
 
+            analyzed_flows += 1
             features = self.extract_features(flow)
 
             with torch.no_grad():
                 pred = self.model(features).item()
 
             label = 1 if pred >= 0.5 else 0
-
             if label == 1:
-                self.logger.warning(f"DDoS detected (rate: {pkt_rate:.1f} pps, pred: {pred:.3f}) — blocking flow")
+                self.logger.warning(f"DDoS detected (rate: {pkt_rate:.1f} pps) — blocking flow")
                 self.block_flow(ev.msg.datapath, flow.match)
 
-            # Log with ground truth placeholder
             self.log_result(pred, label, ts, pkt_rate)
-        
-        # DEBUG: Summary every monitoring cycle
+
         if analyzed_flows > 0:
             self.logger.info(f"Analyzed {analyzed_flows}/{total_flows} flows")
 
@@ -327,6 +336,7 @@ class CNNTSAController(app_manager.RyuApp):
             datapath=dp,
             priority=100,
             match=match,
+            idle_timeout=30,
             instructions=[]
         ))
 
