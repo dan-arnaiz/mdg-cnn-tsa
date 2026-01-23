@@ -263,8 +263,8 @@ class CNNTSAController(app_manager.RyuApp):
             with torch.no_grad():
                 pred = self.model(features).item()
 
-            # Threshold for detection (currently 0.5)
-            label = 1 if pred >= 0.5 else 0
+            # Change from 0.5 to 0.4 to trigger the Warning and Block_Flow
+            label = 1 if pred >= 0.40 else 0
             if label == 1:
                 self.logger.warning(f"DDoS detected (rate: {pkt_rate:.1f} pps) — blocking flow")
                 self.block_flow(ev.msg.datapath, flow.match)
