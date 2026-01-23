@@ -1,5 +1,5 @@
 #!/bin/bash
-# Master Test Script for CNN-TSA DDoS Detection 
+# Master Test Script for CNN-TSA DDoS Detection - FULLY AUTOMATED
 
 # --- 1. Cleanup ---
 echo "========================================="
@@ -14,65 +14,63 @@ echo "========================================="
 # --- 2. Start Ryu Controller ---
 echo "========================================="
 echo "[2/7] Starting Ryu Controller..."
-# Loading model with 39 features
 ryu-manager controller.py > controller.log 2>&1 &
 RYU_PID=$!
 sleep 15 
 echo "Ryu Controller Active."
 echo "========================================="
 
-
 # --- 3. Start Mininet Topology ---
 echo "========================================="
 echo "[3/7] Starting Mininet Topology..."
-sudo python3 topology.py & 
+sudo python3 topology.py > topology.log 2>&1 &
 TOPO_PID=$!
-sleep 20 # Essential: Wait for namespaces to initialize
-echo "Mininet Topology Active in background."
-echo "========================================="
+sleep 20 # Wait for namespaces to initialize
 
+# --- DYNAMIC NAMESPACE CHECK ---
+# This looks at what Linux actually created
+NS_PREFIX=""
+if sudo ip netns | grep -q "mininet-h2"; then
+    NS_PREFIX="mininet-"
+    echo "Detected Namespace Prefix: 'mininet-'"
+else
+    echo "Detected Namespace Prefix: None"
+fi
+echo "Mininet running in the background."
+echo "========================================="
 
 # --- 4. Benign Phase ---
 echo "========================================="
 echo "[4/7] Phase 1: Benign Traffic (60 seconds)..."
-
-# Using standard host names for namespaces
-sudo ip netns exec h2 ./benign_traffic.sh 10.0.0.1 60 &
-sudo ip netns exec h3 ./benign_traffic.sh 10.0.0.1 60 &
-sudo ip netns exec h4 ./benign_traffic.sh 10.0.0.1 60 &
-sudo ip netns exec h5 ./benign_traffic.sh 10.0.0.1 60 &
+for i in {2..5}; do
+    sudo ip netns exec ${NS_PREFIX}h${i} ./benign_traffic.sh 10.0.0.1 60 &
+done
 sleep 70 
 
 echo "Gap period: Waiting 20 seconds..."
 sleep 20
 echo "========================================="
 
-
 # --- 5. Attack Phase ---
 echo "========================================="
-
 echo "[5/7] Phase 2: DDoS Attack (60 seconds)..."
-# High-intensity flood targeting 10.0.0.1
-sudo ip netns exec h6 ./ddos_attack.sh 10.0.0.1 60 2000 &
-sudo ip netns exec h7 ./ddos_attack.sh 10.0.0.1 60 2000 &
-sudo ip netns exec h8 ./ddos_attack.sh 10.0.0.1 60 2000 &
+# Target h1 (10.0.0.1) with 3 simultaneous attackers
+for i in {6..8}; do
+    sudo ip netns exec ${NS_PREFIX}h${i} ./ddos_attack.sh 10.0.0.1 60 2000 &
+done
 sleep 80 
 echo "Traffic Phases Complete."
 echo "========================================="
 
-
 # --- 6. Analysis and Reporting ---
 echo "========================================="
-
 echo "[6/7] Generating Comprehensive Report..."
 # Synced threshold 0.40 catches detections peaking at 0.42
 sudo python3 analyze_results.py | tee merged_outputs/live_report.txt
 echo "========================================="
 
-
 # --- 7. Final Cleanup ---
 echo "========================================="
-
 echo "[7/7] Experiment Complete. Cleaning up..."
 sudo kill $RYU_PID
 sudo kill $TOPO_PID
