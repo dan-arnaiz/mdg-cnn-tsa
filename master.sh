@@ -68,51 +68,42 @@ sleep 15
 
 # Verify controller is running
 if ps -p $RYU_PID > /dev/null; then
-    log_info "✓ Ryu Controller is running (PID: $RYU_PID)"
+    log_info "Ryu Controller is running (PID: $RYU_PID)"
 else
     log_error "Controller failed to start! Check merged_outputs/controller.log"
     exit 1
 fi
 
 echo ""
-
-# --- PHASE 2: Start Mininet Topology ---
 echo "========================================="
-log_info "Phase 2: Starting Mininet Topology"
+log_info "Phase 2: Starting Mininet"
 echo "========================================="
 
-# Start topology in automation mode
-sudo python3 topology.py --automation > merged_outputs/topology.log 2>&1 &
+sudo python3 topology.py > merged_outputs/topology.log 2>&1 &
 TOPO_PID=$!
 
-log_info "Waiting for topology initialization..."
-
-# Wait for ready signal (max 30 seconds)
 TIMEOUT=30
 ELAPSED=0
-while [ $ELAPSED -lt $TIMEOUT ]; do
-    if [ -f /tmp/mininet_ready ]; then
-        log_info "✓ Mininet topology is ready"
-        break
-    fi
+
+while [ ! -f /tmp/mininet_ready ] && [ $ELAPSED -lt $TIMEOUT ]; do
     sleep 1
     ELAPSED=$((ELAPSED + 1))
 done
 
-if [ $ELAPSED -ge $TIMEOUT ]; then
-    log_error "Topology failed to start! Check merged_outputs/topology.log"
+if [ ! -f /tmp/mininet_ready ]; then
+    log_error "Mininet failed to start"
     exit 1
 fi
 
-# Additional wait for network stabilization
 sleep 5
 
-# Verify hosts are accessible
-log_info "Verifying network connectivity..."
-if sudo ip netns exec h2 ip addr show > /dev/null 2>&1; then
-    log_info "✓ Network namespaces are active"
+log_info "Verifying network namespaces..."
+
+if sudo ip netns exec mn-h2 ip addr show > /dev/null 2>&1; then
+    log_info "Network namespaces verified"
 else
-    log_error "Network namespaces not found!"
+    log_error "Mininet namespaces NOT found"
+    sudo ip netns list
     exit 1
 fi
 
@@ -129,7 +120,7 @@ log_info "Starting benign traffic from h2, h3, h4, h5..."
 
 # Launch benign traffic
 for i in {2..5}; do
-    sudo ip netns exec h${i} bash -c "cd $SCRIPT_DIR && ./benign_traffic.sh 10.0.0.1 60" > /dev/null 2>&1 &
+    sudo ip netns exec mn-h${i} bash -c "cd $SCRIPT_DIR && ./benign_traffic.sh 10.0.0.1 60" > /dev/null 2>&1 &
     BENIGN_PIDS[$i]=$!
     log_info "  h${i}: Started (PID: ${BENIGN_PIDS[$i]})"
 done
@@ -144,7 +135,7 @@ done
 echo ""
 
 echo "$(date +%s),benign_end,Benign traffic phase completed" >> merged_outputs/test_timeline.txt
-log_info "✓ Benign phase complete"
+log_info "Benign phase complete"
 
 # Gap period
 log_info "Gap period: Waiting 20 seconds for traffic to settle..."
@@ -163,7 +154,7 @@ log_info "Launching DDoS attack from h6, h7, h8..."
 
 # Launch attack traffic
 for i in {6..8}; do
-    sudo ip netns exec h${i} bash -c "cd $SCRIPT_DIR && ./ddos_attack.sh 10.0.0.1 60 2000" > /dev/null 2>&1 &
+    sudo ip netns exec mn-h${i} bash -c "cd $SCRIPT_DIR && ./ddos_attack.sh 10.0.0.1 60 2000" > /dev/null 2>&1 &
     ATTACK_PIDS[$i]=$!
     log_info "  h${i}: Attack started (PID: ${ATTACK_PIDS[$i]})"
 done
@@ -178,7 +169,7 @@ done
 echo ""
 
 echo "$(date +%s),attack_end,DDoS attack phase completed" >> merged_outputs/test_timeline.txt
-log_info "✓ Attack phase complete"
+log_info "Attack phase complete"
 
 # Additional wait for final flow stats
 log_info "Waiting 10 seconds for final flow statistics..."
@@ -197,7 +188,7 @@ if [ -f merged_outputs/detections.log ]; then
     
     if [ $LOG_SIZE -gt 0 ]; then
         python3 analyze_results.py | tee merged_outputs/analysis_report.txt
-        log_info "✓ Analysis complete"
+        log_info "Analysis complete"
     else
         log_warn "Detection log is empty! No analysis performed."
         log_warn "Check merged_outputs/controller.log for issues"
