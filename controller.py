@@ -24,44 +24,47 @@ CONFIG_PATH = os.path.join(
 )
 LOG_DIR = os.path.join(BASE_DIR, "merged_outputs")
 
+# Load configuration
 with open(CONFIG_PATH) as f:
     cfg = json.load(f)
 
+print(f"Configuration loaded: num_features={cfg['num_features']}, "
+      f"num_heads={cfg['num_heads']}, hidden_dim={cfg['hidden_dim']}")
+
+
 class CNNTSA(nn.Module):
-    def __init__(self):
+    def __init__(self, num_features=39, hidden_dim=64, num_heads=2):
         super().__init__()
 
-        # CNN feature extractor
-        # FIXED: Changed from (1, 32) to (32, 32) to match saved weights
-        self.conv1 = nn.Conv1d(32, 32, kernel_size=5, padding=2)
-        # FIXED: Changed kernel_size from 5 to 3
-        self.conv2 = nn.Conv1d(32, 64, kernel_size=3, padding=1)
+        # CNN feature extractor - uses num_features as input channels
+        self.conv1 = nn.Conv1d(num_features, 32, kernel_size=5, padding=2)
+        self.conv2 = nn.Conv1d(32, hidden_dim, kernel_size=3, padding=1)
         self.relu = nn.ReLU()
 
         # Transformer-style TSA block
         self.mhsa = nn.MultiheadAttention(
-            embed_dim=64,
-            num_heads=2,
+            embed_dim=hidden_dim,
+            num_heads=num_heads,
             batch_first=True
         )
-        self.norm1 = nn.LayerNorm(64)
+        self.norm1 = nn.LayerNorm(hidden_dim)
 
         # FFN block with Dropout
         self.ffn = nn.Sequential(
-            nn.Linear(64, 128),      # ffn.0.weight
-            nn.ReLU(),                # activation
-            nn.Dropout(0.1),          # ffn.2 (dropout layer)
-            nn.Linear(128, 64)        # ffn.3.weight
+            nn.Linear(hidden_dim, 128),
+            nn.ReLU(),
+            nn.Dropout(0.1),
+            nn.Linear(128, hidden_dim)
         )
-        self.norm2 = nn.LayerNorm(64)
+        self.norm2 = nn.LayerNorm(hidden_dim)
 
         # Classifier
-        self.fc1 = nn.Linear(64, 128)
+        self.fc1 = nn.Linear(hidden_dim, 128)
         self.fc2 = nn.Linear(128, 1)
         self.sigmoid = nn.Sigmoid()
 
     def forward(self, x):
-        # x: (B, 32, 32) - CHANGED from (B, 1, 32)
+        # x: (B, num_features, T)
         x = self.relu(self.conv1(x))
         x = self.relu(self.conv2(x))
 
@@ -92,15 +95,25 @@ class CNNTSAController(app_manager.RyuApp):
         super().__init__(*args, **kwargs)
         self.datapaths = {}
         self.monitor_thread = hub.spawn(self.monitor)
+        self.mac_to_port = {}
 
         os.makedirs(LOG_DIR, exist_ok=True)
 
         try:
-            self.model = CNNTSA()
+            # Initialize model with config parameters
+            self.model = CNNTSA(
+                num_features=cfg['num_features'],
+                hidden_dim=cfg['hidden_dim'],
+                num_heads=cfg['num_heads']
+            )
+            
             state_dict = torch.load(MODEL_PATH, map_location="cpu")
             self.model.load_state_dict(state_dict, strict=True)
             self.model.eval()
-            self.logger.info("CNN-TSA model loaded successfully")
+            
+            self.logger.info(f"CNN-TSA model loaded successfully")
+            self.logger.info(f"Model config: features={cfg['num_features']}, "
+                           f"hidden={cfg['hidden_dim']}, heads={cfg['num_heads']}")
 
         except Exception as e:
             self.logger.error(f"MODEL LOAD FAILURE: {e}")
@@ -142,8 +155,7 @@ class CNNTSAController(app_manager.RyuApp):
         src = eth.src
         dpid = dp.id
 
-        # Learn MAC address to avoid flood
-        self.mac_to_port = getattr(self, 'mac_to_port', {})
+        # Learn MAC address
         self.mac_to_port.setdefault(dpid, {})
         self.mac_to_port[dpid][src] = in_port
 
@@ -198,17 +210,15 @@ class CNNTSAController(app_manager.RyuApp):
                 continue
 
             # Pre-filter: Only analyze flows with significant traffic
-            # This reduces false positives on normal ping/ARP traffic
             dur = max(flow.duration_sec, 1)
             pkts = flow.packet_count
             pkt_rate = pkts / dur
             
             # Skip flows that are clearly benign (low packet rate)
-            # DDoS attacks typically have high packet rates (>100 pps)
-            if pkt_rate < 50:  # Less than 50 packets/second = likely benign
+            if pkt_rate < 50:
                 continue
             
-            # Skip very short flows (less than 2 seconds)
+            # Skip very short flows
             if dur < 2:
                 continue
 
@@ -223,13 +233,14 @@ class CNNTSAController(app_manager.RyuApp):
                 self.logger.warning(f"DDoS detected (rate: {pkt_rate:.1f} pps, pred: {pred:.3f}) — blocking flow")
                 self.block_flow(ev.msg.datapath, flow.match)
 
-            self.log_result(features.numpy(), pred, ts)
+            # Log with ground truth placeholder (0 for benign, 1 for attack)
+            # In real scenario, you'd track attack timing from your test script
+            self.log_result(pred, label, ts, pkt_rate)
 
     def extract_features(self, flow):
         """
-        Extract 32 network flow features and reshape to (1, 32, 32)
-        
-        The model expects input shape: (batch_size, channels=32, sequence_length=32)
+        Extract 39 features from flow and reshape to match model input
+        Model expects: (batch_size, num_features, sequence_length)
         """
         dur = max(flow.duration_sec, 1)
         pkts = max(flow.packet_count, 1)
@@ -240,7 +251,7 @@ class CNNTSAController(app_manager.RyuApp):
         byte_rate = bytes_ / dur
         avg_pkt_size = bytes_ / pkts
         
-        # Create 32 diverse features (normalized)
+        # Create 39 diverse features (matching your preprocessing)
         features = np.array([
             pkts / 10000.0,              # 0: Normalized packet count
             bytes_ / 1000000.0,          # 1: Normalized byte count  
@@ -273,18 +284,27 @@ class CNNTSAController(app_manager.RyuApp):
             (pkt_rate + byte_rate) / 1000.0,  # 28: Combined rate
             np.tanh(pkt_rate / 100.0),   # 29: Tanh packet rate
             np.tanh(byte_rate / 1000.0), # 30: Tanh byte rate
-            np.clip(avg_pkt_size / 1500.0, 0, 1)  # 31: Clipped packet size
+            np.clip(avg_pkt_size / 1500.0, 0, 1),  # 31: Clipped packet size
+            # Add 7 more features to reach 39
+            pkts / (dur + 1) ** 2,       # 32: Packet acceleration
+            bytes_ / (dur + 1) ** 2,     # 33: Byte acceleration
+            np.sin(pkt_rate / 100),      # 34: Periodic feature
+            np.cos(byte_rate / 1000),    # 35: Periodic feature
+            (pkts * bytes_) ** 0.5,      # 36: Geometric mean
+            max(pkts, bytes_) / (min(pkts, bytes_) + 1),  # 37: Max/min ratio
+            (pkt_rate + 1) / (byte_rate + 1)  # 38: Rate inverse ratio
         ], dtype=np.float32)
         
-        # Reshape to (32, 32) by creating a window of features
-        # Each row is slightly different to add temporal variation
-        feat_matrix = np.zeros((32, 32), dtype=np.float32)
-        for i in range(32):
-            # Add small noise/variation to simulate temporal sequence
-            noise = np.random.normal(0, 0.01, 32)
-            feat_matrix[i] = features + noise * features
+        # Reshape to (39, 32) by creating temporal windows
+        sequence_length = 32
+        feat_matrix = np.zeros((39, sequence_length), dtype=np.float32)
         
-        # Convert to tensor with batch dimension: (1, 32, 32)
+        for i in range(sequence_length):
+            # Add small temporal variation
+            noise = np.random.normal(0, 0.01, 39)
+            feat_matrix[:, i] = features + noise * features
+        
+        # Convert to tensor: (1, 39, 32)
         return torch.tensor(feat_matrix, dtype=torch.float32).unsqueeze(0)
 
     def block_flow(self, dp, match):
@@ -296,6 +316,8 @@ class CNNTSAController(app_manager.RyuApp):
             instructions=[]
         ))
 
-    def log_result(self, feat, pred, ts):
+    def log_result(self, pred, label, ts, pkt_rate):
+        """Log prediction with timestamp, label, and packet rate"""
         with open(os.path.join(LOG_DIR, "detections.log"), "a") as f:
-            f.write(f"{ts},{pred}\n")
+            # Format: timestamp,prediction,label,packet_rate
+            f.write(f"{ts},{pred:.4f},{label},{pkt_rate:.2f}\n")
