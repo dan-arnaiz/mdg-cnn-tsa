@@ -60,7 +60,7 @@ echo "========================================="
 log_info "Phase 1: Starting Ryu Controller"
 echo "========================================="
 
-ryu-manager controller.py > merged_outputs/controller.log 2>&1 &
+python3 -m ryu.cmd.manager controller.py > merged_outputs/controller.log 2>&1 &
 RYU_PID=$!
 
 log_info "Waiting for controller initialization (15 seconds)..."
