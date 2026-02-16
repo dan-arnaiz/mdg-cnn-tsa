@@ -1,0 +1,56 @@
+================================================================================
+DDOS DETECTION ANALYSIS - COMPREHENSIVE REPORT
+================================================================================
+
+OVERALL STATISTICS:
+--------------------------------------------------------------------------------
+Total Predictions:     214
+Actual DDoS Flows:     102 (47.66%)
+Actual Benign Flows:   112 (52.34%)
+
+Mean Prediction Score: 0.3386
+Variance:              0.0068
+Std Deviation:         0.0823
+Max Prediction:        0.4251
+Min Prediction:        0.1542
+
+Start Time:            2026-02-16 02:41:57.406084
+End Time:              2026-02-16 02:44:47.561949
+Duration:              170.16 seconds
+
+CONFUSION MATRIX:
+--------------------------------------------------------------------------------
+                         Predicted Benign     Predicted Attack
+Actual Benign                         112                    0
+Actual Attack                           0                  102
+
+PERFORMANCE METRICS:
+--------------------------------------------------------------------------------
+Accuracy:              100.00%
+Precision:             100.00%
+Recall (Sensitivity):  100.00%
+F1-Score:              100.00%
+False Positive Rate:     0.00%
+ROC-AUC:               1.0000
+
+TIME-SERIES ANALYSIS (10-second windows):
+--------------------------------------------------------------------------------
+Window   Time Range      Flows    Detected   Actual   Det.Rate   Status    
+--------------------------------------------------------------------------------
+1           0-10  s     1        0          0          0.0%     NORMAL    
+10         90-100 s     21       9          9         42.9%     ATTACK    
+11        100-110 s     30       15         15        50.0%     ATTACK    
+12        110-120 s     30       15         15        50.0%     ATTACK    
+13        120-130 s     30       15         15        50.0%     ATTACK    
+14        130-140 s     30       15         15        50.0%     ATTACK    
+15        140-150 s     30       15         15        50.0%     ATTACK    
+16        150-160 s     24       9          9         37.5%     ATTACK    
+17        160-170 s     15       9          9         60.0%     ATTACK    
+18        170-180 s     3        0          0          0.0%     NORMAL    
+
+================================================================================
+END OF REPORT
+================================================================================
+
+All visualizations saved to merged_outputs/
+Metrics summary saved to merged_outputs/metrics_summary.txt
