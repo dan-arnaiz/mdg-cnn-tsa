@@ -1,0 +1,27 @@
+loading app controller.py
+Traceback (most recent call last):
+  File "/home/mininet/.local/bin/ryu-manager", line 8, in <module>
+    sys.exit(main())
+  File "/usr/lib/python3/dist-packages/ryu/cmd/manager.py", line 98, in main
+    app_mgr.load_apps(app_lists)
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 415, in load_apps
+    cls = self.load_app(app_cls_name)
+  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 392, in load_app
+    mod = utils.import_module(name)
+  File "/usr/lib/python3/dist-packages/ryu/utils.py", line 99, in import_module
+    return _import_module_file(modname)
+  File "/usr/lib/python3/dist-packages/ryu/utils.py", line 88, in _import_module_file
+    return load_source(modname, abspath)
+  File "/usr/lib/python3/dist-packages/ryu/utils.py", line 42, in load_source
+    return loader.load_module(name)
+  File "<frozen importlib._bootstrap_external>", line 522, in _check_name_wrapper
+  File "<frozen importlib._bootstrap_external>", line 1027, in load_module
+  File "<frozen importlib._bootstrap_external>", line 852, in load_module
+  File "<frozen importlib._bootstrap>", line 265, in _load_module_shim
+  File "<frozen importlib._bootstrap>", line 702, in _load
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/mininet/mdg-cnn-tsa/controller.py", line 12, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
