@@ -1,31 +1,238 @@
 loading app controller.py
-Traceback (most recent call last):
-  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
-    return _run_code(code, main_globals, None,
-  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
-    exec(code, run_globals)
-  File "/usr/lib/python3/dist-packages/ryu/cmd/manager.py", line 118, in <module>
-    main()
-  File "/usr/lib/python3/dist-packages/ryu/cmd/manager.py", line 98, in main
-    app_mgr.load_apps(app_lists)
-  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 415, in load_apps
-    cls = self.load_app(app_cls_name)
-  File "/usr/lib/python3/dist-packages/ryu/base/app_manager.py", line 392, in load_app
-    mod = utils.import_module(name)
-  File "/usr/lib/python3/dist-packages/ryu/utils.py", line 99, in import_module
-    return _import_module_file(modname)
-  File "/usr/lib/python3/dist-packages/ryu/utils.py", line 88, in _import_module_file
-    return load_source(modname, abspath)
-  File "/usr/lib/python3/dist-packages/ryu/utils.py", line 42, in load_source
-    return loader.load_module(name)
-  File "<frozen importlib._bootstrap_external>", line 522, in _check_name_wrapper
-  File "<frozen importlib._bootstrap_external>", line 1027, in load_module
-  File "<frozen importlib._bootstrap_external>", line 852, in load_module
-  File "<frozen importlib._bootstrap>", line 265, in _load_module_shim
-  File "<frozen importlib._bootstrap>", line 702, in _load
-  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
-  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
-  File "/home/mininet/mdg-cnn-tsa/controller.py", line 12, in <module>
-    import torch
-ModuleNotFoundError: No module named 'torch'
+loading app ryu.controller.ofp_handler
+instantiating app controller.py of CNNTSAController
+CNN-TSA model loaded successfully
+Model config: features=39, hidden=64, heads=2
+instantiating app ryu.controller.ofp_handler of OFPHandler
+Entropy: 0.00 | Total Pkts: 0 | Threshold: 5.0
+Entropy: 0.00 | Total Pkts: 0 | Threshold: 5.0
+Entropy: 0.00 | Total Pkts: 0 | Threshold: 5.0
+Entropy: 2.00 | Total Pkts: 24 | Threshold: 2.0
+Analyzed 8/8 flows
+Entropy: 2.00 | Total Pkts: 40 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 58 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 82 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 106 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 122 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 142 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 162 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 190 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 204 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 230 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 248 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 268 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 294 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 310 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 334 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 358 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 380 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 398 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 416 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 442 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 468 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 486 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 510 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 533 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 556 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 571 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 598 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 622 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 644 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 654 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 660 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 662 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 662 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 662 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 662 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 662 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 662 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 662 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 662 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 662 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 662 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 662 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 662 | Threshold: 2.0
+Entropy: 2.00 | Total Pkts: 662 | Threshold: 2.0
+Entropy: 2.73 | Total Pkts: 27816 | Threshold: 2.0
+Analyzed 3/11 flows
+Entropy: 2.73 | Total Pkts: 74294 | Threshold: 2.0
+Analyzed 3/11 flows
+Entropy: 2.73 | Total Pkts: 122757 | Threshold: 2.0
+DDoS detected (rate: 11836.5 pps) \u2014 blocking flow
+Analyzed 3/11 flows
+Entropy: 2.75 | Total Pkts: 165597 | Threshold: 2.0
+DDoS detected (rate: 7891.0 pps) \u2014 blocking flow
+Analyzed 4/12 flows
+Entropy: 2.75 | Total Pkts: 221760 | Threshold: 2.0
+DDoS detected (rate: 5918.2 pps) \u2014 blocking flow
+DDoS detected (rate: 18471.2 pps) \u2014 blocking flow
+DDoS detected (rate: 16947.2 pps) \u2014 blocking flow
+Analyzed 4/12 flows
+Entropy: 2.81 | Total Pkts: 278037 | Threshold: 2.0
+DDoS detected (rate: 4734.6 pps) \u2014 blocking flow
+DDoS detected (rate: 12314.2 pps) \u2014 blocking flow
+DDoS detected (rate: 12054.0 pps) \u2014 blocking flow
+Analyzed 6/14 flows
+Entropy: 2.81 | Total Pkts: 334720 | Threshold: 2.0
+DDoS detected (rate: 3945.5 pps) \u2014 blocking flow
+DDoS detected (rate: 9235.6 pps) \u2014 blocking flow
+DDoS detected (rate: 9040.5 pps) \u2014 blocking flow
+Analyzed 6/14 flows
+Entropy: 2.81 | Total Pkts: 391206 | Threshold: 2.0
+DDoS detected (rate: 3381.9 pps) \u2014 blocking flow
+DDoS detected (rate: 7388.5 pps) \u2014 blocking flow
+DDoS detected (rate: 7232.4 pps) \u2014 blocking flow
+Analyzed 6/14 flows
+Entropy: 2.81 | Total Pkts: 448183 | Threshold: 2.0
+DDoS detected (rate: 2959.1 pps) \u2014 blocking flow
+DDoS detected (rate: 6157.1 pps) \u2014 blocking flow
+DDoS detected (rate: 6027.0 pps) \u2014 blocking flow
+Analyzed 6/14 flows
+Entropy: 2.81 | Total Pkts: 504633 | Threshold: 2.0
+DDoS detected (rate: 2630.3 pps) \u2014 blocking flow
+DDoS detected (rate: 5277.5 pps) \u2014 blocking flow
+DDoS detected (rate: 5166.0 pps) \u2014 blocking flow
+Analyzed 6/14 flows
+Entropy: 2.81 | Total Pkts: 560710 | Threshold: 2.0
+DDoS detected (rate: 2367.3 pps) \u2014 blocking flow
+DDoS detected (rate: 4617.8 pps) \u2014 blocking flow
+DDoS detected (rate: 4520.2 pps) \u2014 blocking flow
+Analyzed 6/14 flows
+Entropy: 2.81 | Total Pkts: 617268 | Threshold: 2.0
+DDoS detected (rate: 2152.1 pps) \u2014 blocking flow
+DDoS detected (rate: 4104.7 pps) \u2014 blocking flow
+DDoS detected (rate: 4018.0 pps) \u2014 blocking flow
+Analyzed 6/14 flows
+Entropy: 2.81 | Total Pkts: 674836 | Threshold: 2.0
+DDoS detected (rate: 1972.8 pps) \u2014 blocking flow
+DDoS detected (rate: 3694.2 pps) \u2014 blocking flow
+DDoS detected (rate: 3616.2 pps) \u2014 blocking flow
+Analyzed 6/14 flows
+Entropy: 2.81 | Total Pkts: 730657 | Threshold: 2.0
+DDoS detected (rate: 1821.0 pps) \u2014 blocking flow
+DDoS detected (rate: 3358.4 pps) \u2014 blocking flow
+DDoS detected (rate: 3287.5 pps) \u2014 blocking flow
+Analyzed 6/14 flows
+Entropy: 2.52 | Total Pkts: 786495 | Threshold: 2.0
+DDoS detected (rate: 1690.9 pps) \u2014 blocking flow
+DDoS detected (rate: 3078.5 pps) \u2014 blocking flow
+DDoS detected (rate: 3013.5 pps) \u2014 blocking flow
+Analyzed 6/10 flows
+Entropy: 2.52 | Total Pkts: 842772 | Threshold: 2.0
+DDoS detected (rate: 1578.2 pps) \u2014 blocking flow
+DDoS detected (rate: 2841.7 pps) \u2014 blocking flow
+DDoS detected (rate: 2781.7 pps) \u2014 blocking flow
+Analyzed 6/10 flows
+Entropy: 2.25 | Total Pkts: 903805 | Threshold: 2.0
+DDoS detected (rate: 1479.6 pps) \u2014 blocking flow
+DDoS detected (rate: 2638.8 pps) \u2014 blocking flow
+DDoS detected (rate: 2583.0 pps) \u2014 blocking flow
+Analyzed 6/8 flows
+Entropy: 1.58 | Total Pkts: 953417 | Threshold: 2.0
+DDoS detected (rate: 1392.5 pps) \u2014 blocking flow
+DDoS detected (rate: 2462.8 pps) \u2014 blocking flow
+DDoS detected (rate: 2410.8 pps) \u2014 blocking flow
+Analyzed 6/6 flows
+Entropy: 1.58 | Total Pkts: 1009550 | Threshold: 2.0
+DDoS detected (rate: 1315.2 pps) \u2014 blocking flow
+DDoS detected (rate: 2308.9 pps) \u2014 blocking flow
+DDoS detected (rate: 2260.1 pps) \u2014 blocking flow
+Analyzed 6/6 flows
+Entropy: 1.58 | Total Pkts: 1066099 | Threshold: 2.0
+DDoS detected (rate: 1245.9 pps) \u2014 blocking flow
+DDoS detected (rate: 2173.1 pps) \u2014 blocking flow
+DDoS detected (rate: 2127.2 pps) \u2014 blocking flow
+Analyzed 6/6 flows
+Entropy: 1.58 | Total Pkts: 1122980 | Threshold: 2.0
+DDoS detected (rate: 1183.7 pps) \u2014 blocking flow
+DDoS detected (rate: 2052.4 pps) \u2014 blocking flow
+DDoS detected (rate: 2009.0 pps) \u2014 blocking flow
+Analyzed 6/6 flows
+Entropy: 1.58 | Total Pkts: 1179251 | Threshold: 2.0
+DDoS detected (rate: 1127.3 pps) \u2014 blocking flow
+DDoS detected (rate: 1944.3 pps) \u2014 blocking flow
+DDoS detected (rate: 1903.3 pps) \u2014 blocking flow
+Analyzed 6/6 flows
+Entropy: 1.58 | Total Pkts: 1235695 | Threshold: 2.0
+DDoS detected (rate: 1076.0 pps) \u2014 blocking flow
+DDoS detected (rate: 1847.1 pps) \u2014 blocking flow
+DDoS detected (rate: 1808.1 pps) \u2014 blocking flow
+Analyzed 6/6 flows
+Entropy: 1.58 | Total Pkts: 1297329 | Threshold: 2.0
+DDoS detected (rate: 1029.3 pps) \u2014 blocking flow
+DDoS detected (rate: 1759.2 pps) \u2014 blocking flow
+DDoS detected (rate: 1722.0 pps) \u2014 blocking flow
+Analyzed 6/6 flows
+Entropy: 1.58 | Total Pkts: 1345937 | Threshold: 2.0
+DDoS detected (rate: 986.4 pps) \u2014 blocking flow
+DDoS detected (rate: 1679.2 pps) \u2014 blocking flow
+DDoS detected (rate: 1643.7 pps) \u2014 blocking flow
+Analyzed 6/6 flows
+Entropy: 1.58 | Total Pkts: 1402423 | Threshold: 2.0
+DDoS detected (rate: 946.9 pps) \u2014 blocking flow
+DDoS detected (rate: 1606.2 pps) \u2014 blocking flow
+DDoS detected (rate: 1572.3 pps) \u2014 blocking flow
+Analyzed 6/6 flows
+Entropy: 1.58 | Total Pkts: 1458198 | Threshold: 2.0
+DDoS detected (rate: 910.5 pps) \u2014 blocking flow
+DDoS detected (rate: 1539.3 pps) \u2014 blocking flow
+DDoS detected (rate: 1506.8 pps) \u2014 blocking flow
+Analyzed 6/6 flows
+Entropy: 1.58 | Total Pkts: 1514266 | Threshold: 2.0
+DDoS detected (rate: 876.8 pps) \u2014 blocking flow
+DDoS detected (rate: 1477.7 pps) \u2014 blocking flow
+DDoS detected (rate: 1446.5 pps) \u2014 blocking flow
+Analyzed 6/6 flows
+Entropy: 1.58 | Total Pkts: 1570569 | Threshold: 2.0
+DDoS detected (rate: 845.5 pps) \u2014 blocking flow
+DDoS detected (rate: 1420.9 pps) \u2014 blocking flow
+DDoS detected (rate: 1390.8 pps) \u2014 blocking flow
+Analyzed 6/6 flows
+Entropy: 1.58 | Total Pkts: 1632901 | Threshold: 2.0
+DDoS detected (rate: 816.3 pps) \u2014 blocking flow
+DDoS detected (rate: 1368.2 pps) \u2014 blocking flow
+DDoS detected (rate: 1339.3 pps) \u2014 blocking flow
+Analyzed 6/6 flows
+Entropy: 1.58 | Total Pkts: 1643786 | Threshold: 2.0
+DDoS detected (rate: 789.1 pps) \u2014 blocking flow
+DDoS detected (rate: 1319.4 pps) \u2014 blocking flow
+DDoS detected (rate: 1291.5 pps) \u2014 blocking flow
+Analyzed 6/6 flows
+Entropy: 1.58 | Total Pkts: 1643786 | Threshold: 2.0
+DDoS detected (rate: 763.6 pps) \u2014 blocking flow
+DDoS detected (rate: 1252.3 pps) \u2014 blocking flow
+DDoS detected (rate: 1247.0 pps) \u2014 blocking flow
+Analyzed 6/6 flows
+Entropy: 1.58 | Total Pkts: 1643786 | Threshold: 2.0
+DDoS detected (rate: 739.8 pps) \u2014 blocking flow
+DDoS detected (rate: 1211.2 pps) \u2014 blocking flow
+DDoS detected (rate: 1205.4 pps) \u2014 blocking flow
+Analyzed 6/6 flows
+Entropy: 1.52 | Total Pkts: 1596440 | Threshold: 2.0
+DDoS detected (rate: 1172.8 pps) \u2014 blocking flow
+DDoS detected (rate: 1166.5 pps) \u2014 blocking flow
+Analyzed 5/5 flows
+Entropy: 1.50 | Total Pkts: 1522555 | Threshold: 2.0
+DDoS detected (rate: 1130.1 pps) \u2014 blocking flow
+Analyzed 4/4 flows
+Entropy: 1.58 | Total Pkts: 1450231 | Threshold: 2.0
+DDoS detected (rate: 84273.8 pps) \u2014 blocking flow
+Analyzed 3/3 flows
+Entropy: 1.58 | Total Pkts: 1450231 | Threshold: 2.0
+DDoS detected (rate: 78505.5 pps) \u2014 blocking flow
+DDoS detected (rate: 118388.8 pps) \u2014 blocking flow
+Analyzed 3/3 flows
+Entropy: 1.58 | Total Pkts: 1450231 | Threshold: 2.0
+DDoS detected (rate: 126410.8 pps) \u2014 blocking flow
+Analyzed 3/3 flows
+Entropy: 1.58 | Total Pkts: 1450231 | Threshold: 2.0
+DDoS detected (rate: 117758.2 pps) \u2014 blocking flow
+DDoS detected (rate: 118388.8 pps) \u2014 blocking flow
+Analyzed 3/3 flows
+Entropy: 1.58 | Total Pkts: 1450231 | Threshold: 2.0
+DDoS detected (rate: 126410.8 pps) \u2014 blocking flow
+Analyzed 3/3 flows
+Entropy: 1.58 | Total Pkts: 1450231 | Threshold: 2.0
+DDoS detected (rate: 117758.2 pps) \u2014 blocking flow
+DDoS detected (rate: 118388.8 pps) \u2014 blocking flow
+Analyzed 3/3 flows
