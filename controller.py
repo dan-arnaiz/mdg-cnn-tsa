@@ -95,6 +95,10 @@ class CNNTSAController(app_manager.RyuApp):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        
+        self.simulation_start = time.time()
+        self.attack_start_delay = 30  # Seconds before attack traffic starts
+        
         self.datapaths = {}
         self.monitor_thread = hub.spawn(self.monitor)
         self.mac_to_port = {}
@@ -355,7 +359,14 @@ class CNNTSAController(app_manager.RyuApp):
         ))
 
     def log_result(self, pred, label, ts, pkt_rate):
-        """Log prediction with timestamp, label, and packet rate"""
+        """
+        Log prediction with timestamp, predicted label,
+        packet rate, and TRUE ground-truth label
+        """
+        elapsed = ts - self.simulation_start
+        
+        # Ground truth: attack phase begins after delay
+        true_label = 1 if elapsed >= self.attack_start_delay else 0
+
         with open(os.path.join(LOG_DIR, "detections.log"), "a") as f:
-            # Format: timestamp,prediction,label,packet_rate
-            f.write(f"{ts},{pred:.4f},{label},{pkt_rate:.2f}\n")
+            f.write(f"{ts},{pred:.4f},{label},{true_label},{pkt_rate:.2f}\n")
