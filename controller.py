@@ -96,10 +96,6 @@ class CNNTSA(nn.Module):
 class CNNTSAController(app_manager.RyuApp):
     OFP_VERSIONS = [ofproto_v1_3.OFP_VERSION]
 
-    # Load trained model
-    model = torch.load("models/cnn_tsa/baseline_model/main/standard_k45/best_weights.pt")
-    model.eval()
-
     # Load preprocessing artifacts
     preprocessor = joblib.load("preprocessing_output/v1_std_corr90_k45_w48s24/preprocessor.joblib")
     selector = joblib.load("preprocessing_output/v1_std_corr90_k45_w48s24/selector.joblib")
