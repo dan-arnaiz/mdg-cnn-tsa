@@ -5,14 +5,17 @@ from ryu.ofproto import ofproto_v1_3
 from ryu.lib import hub
 from ryu.lib.packet import packet, ethernet
 
+import joblib
 import time
 import os
 import json
 import numpy as np
+import pandas as pd
 import torch
 import torch.nn as nn
 import math
 from collections import Counter
+
 
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -93,6 +96,21 @@ class CNNTSA(nn.Module):
 class CNNTSAController(app_manager.RyuApp):
     OFP_VERSIONS = [ofproto_v1_3.OFP_VERSION]
 
+    # Load trained model
+    model = torch.load("models/cnn_tsa/baseline_model/main/standard_k45/best_weights.pt")
+    model.eval()
+
+    # Load preprocessing artifacts
+    preprocessor = joblib.load("preprocessing_output/v1_std_corr90_k45_w48s24/preprocessor.joblib")
+    selector = joblib.load("preprocessing_output/v1_std_corr90_k45_w48s24/selector.joblib")
+
+    # Load metadata to ensure correct feature names
+    with open("preprocessing_output/v1_std_corr90_k45_w48s24/preprocess_metadata.json") as f:
+        metadata = json.load(f)
+
+    selected_features = metadata["selected_features"]
+    
+    
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         
@@ -136,6 +154,27 @@ class CNNTSAController(app_manager.RyuApp):
             p = count / total
             entropy -= p * math.log2(p)
         return entropy
+    
+    def preprocess_live_features(self, raw_feature_dict):
+        """
+        Preprocesses a raw feature dict through the training pipeline.
+        The preprocessor expects column names WITHOUT the 'num__' prefix
+        (that prefix is added by sklearn's ColumnTransformer internally).
+        """
+        import pandas as pd
+        df = pd.DataFrame([raw_feature_dict])
+
+        # Apply training preprocessor (StandardScaler + ColumnTransformer)
+        Xt = self.preprocessor.transform(df)
+
+        # Convert sparse to dense if needed
+        if hasattr(Xt, "toarray"):
+            Xt = Xt.toarray()
+
+        # Apply SelectKBest (k=45 → then reduced to 39 after corr drop)
+        Xt_sel = self.selector.transform(Xt)
+
+        return Xt_sel  # shape: (1, 39)
 
     @set_ev_cls(ofp_event.EventOFPSwitchFeatures, CONFIG_DISPATCHER)
     def switch_features_handler(self, ev):
@@ -261,13 +300,18 @@ class CNNTSAController(app_manager.RyuApp):
             if dur < 1:
                 continue
 
-            analyzed_flows += 1
-            features = self.extract_features(flow)
+            raw_feature_dict = self.extract_raw_features(flow)
+            Xt_live = self.preprocess_live_features(raw_feature_dict)
+
+            # Model expects (batch, num_features, sequence_length)
+            # We have (1, 39) → expand to (1, 39, 1)
+            Xt_tensor = torch.tensor(Xt_live, dtype=torch.float32).unsqueeze(-1)
 
             with torch.no_grad():
-                pred = self.model(features).item()
+                output = self.model(Xt_tensor)
+                pred = output.item()  # sigmoid already applied in model.forward()
 
-            DETECTION_THRESHOLD = 0.35
+            DETECTION_THRESHOLD = 0.50
             label = 1 if pred >= DETECTION_THRESHOLD else 0
             if label == 1:
                 self.logger.warning(f"DDoS detected (rate: {pkt_rate:.1f} pps) — blocking flow")
@@ -278,75 +322,63 @@ class CNNTSAController(app_manager.RyuApp):
         if analyzed_flows > 0:
             self.logger.info(f"Analyzed {analyzed_flows}/{total_flows} flows")
 
-    def extract_features(self, flow):
+    def extract_raw_features(self, flow):
         """
-        Extract 39 features from flow and reshape to match model input
-        Model expects: (batch_size, num_features, sequence_length)
+        Returns a raw feature dict with EXACT column names matching the training
+        preprocessor. Keys match selected_features in preprocess_metadata.json
+        (without the 'num__' prefix, which is added internally by ColumnTransformer).
         """
-        dur = max(flow.duration_sec, 1)
-        pkts = max(flow.packet_count, 1)
-        bytes_ = max(flow.byte_count, 1)
-        
-        # Calculate rates
-        pkt_rate = pkts / dur
-        byte_rate = bytes_ / dur
-        avg_pkt_size = bytes_ / pkts
-        
-        # Create 39 diverse features (matching your preprocessing)
-        features = np.array([
-            pkts / 10000.0,              # 0: Normalized packet count
-            bytes_ / 1000000.0,          # 1: Normalized byte count  
-            dur / 100.0,                 # 2: Normalized duration
-            pkt_rate / 1000.0,           # 3: Packet rate
-            byte_rate / 100000.0,        # 4: Byte rate
-            avg_pkt_size / 1500.0,       # 5: Average packet size
-            pkts / (bytes_ + 1),         # 6: Packet/byte ratio
-            np.log1p(pkts),              # 7: Log packet count
-            np.log1p(bytes_),            # 8: Log byte count
-            np.log1p(pkt_rate),          # 9: Log packet rate
-            np.log1p(byte_rate),         # 10: Log byte rate
-            pkt_rate / (byte_rate + 1),  # 11: Rate ratio
-            1.0 / (dur + 1),             # 12: Inverse duration
-            1.0 / (avg_pkt_size + 1),    # 13: Inverse packet size
-            np.sqrt(pkts),               # 14: Sqrt packet count
-            np.sqrt(bytes_),             # 15: Sqrt byte count
-            pkts ** 0.33,                # 16: Cube root packets
-            bytes_ ** 0.33,              # 17: Cube root bytes
-            pkt_rate ** 0.5,             # 18: Sqrt packet rate
-            byte_rate ** 0.5,            # 19: Sqrt byte rate
-            pkts * dur,                  # 20: Packet-duration product
-            bytes_ * dur,                # 21: Byte-duration product
-            pkts / 100.0,                # 22: Scaled packets
-            bytes_ / 10000.0,            # 23: Scaled bytes
-            pkt_rate / 100.0,            # 24: Scaled packet rate
-            byte_rate / 10000.0,         # 25: Scaled byte rate
-            avg_pkt_size / 100.0,        # 26: Scaled avg packet size
-            (pkts + bytes_) / 10000.0,   # 27: Combined metric
-            (pkt_rate + byte_rate) / 1000.0,  # 28: Combined rate
-            np.tanh(pkt_rate / 100.0),   # 29: Tanh packet rate
-            np.tanh(byte_rate / 1000.0), # 30: Tanh byte rate
-            np.clip(avg_pkt_size / 1500.0, 0, 1),  # 31: Clipped packet size
-            # Add 7 more features to reach 39
-            pkts / (dur + 1) ** 2,       # 32: Packet acceleration
-            bytes_ / (dur + 1) ** 2,     # 33: Byte acceleration
-            np.sin(pkt_rate / 100),      # 34: Periodic feature
-            np.cos(byte_rate / 1000),    # 35: Periodic feature
-            (pkts * bytes_) ** 0.5,      # 36: Geometric mean
-            max(pkts, bytes_) / (min(pkts, bytes_) + 1),  # 37: Max/min ratio
-            (pkt_rate + 1) / (byte_rate + 1)  # 38: Rate inverse ratio
-        ], dtype=np.float32)
-        
-        # Reshape to (39, 32) by creating temporal windows
-        sequence_length = 32
-        feat_matrix = np.zeros((39, sequence_length), dtype=np.float32)
-        
-        for i in range(sequence_length):
-            noise = np.random.normal(0, 0.015, 39)   # 1.5% Gaussian noise
-            noisy_features = features + (features * noise)
-            feat_matrix[:, i] = noisy_features
-        
-        # Convert to tensor: (1, 39, 32)
-        return torch.tensor(feat_matrix, dtype=torch.float32).unsqueeze(0)
+        dur_us  = max(flow.duration_sec * 1e6, 1)   # CICFlowMeter uses microseconds
+        dur_sec = max(flow.duration_sec, 1e-6)
+        pkts    = max(flow.packet_count, 1)
+        bytes_  = max(flow.byte_count, 1)
+
+        flow_bytes_per_s = bytes_ / dur_sec
+        flow_pkts_per_s  = pkts   / dur_sec
+        avg_pkt_size     = bytes_ / pkts
+        fwd_header_len   = 20   # Min IPv4+TCP header in bytes
+
+        return {
+            "ACK Flag Count":           0,
+            "CWE Flag Count":           0,
+            "SYN Flag Count":           0,
+            "URG Flag Count":           0,
+            "Fwd PSH Flags":            0,
+            "Average Packet Size":      avg_pkt_size,
+            "Max Packet Length":        avg_pkt_size,
+            "Fwd Packet Length Max":    avg_pkt_size,
+            "Fwd Packet Length Std":    0.0,
+            "Bwd Packet Length Max":    0.0,
+            "Bwd Packet Length Min":    0.0,
+            "Avg Bwd Segment Size":     0.0,
+            "Flow Duration":            dur_us,
+            "Flow IAT Max":             dur_us,
+            "Flow IAT Mean":            dur_us / max(pkts - 1, 1),
+            "Flow IAT Min":             0.0,
+            "Flow IAT Std":             0.0,
+            "Bwd IAT Total":            0.0,
+            "Bwd IAT Max":              0.0,
+            "Bwd IAT Mean":             0.0,
+            "Bwd IAT Min":              0.0,
+            "Fwd Header Length":        fwd_header_len * pkts,
+            "Bwd Header Length":        float(fwd_header_len),
+            "Flow Bytes/s":             flow_bytes_per_s,
+            "Flow Packets/s":           flow_pkts_per_s,
+            "Bwd Packets/s":            0.0,
+            "Subflow Fwd Packets":      pkts,
+            "Subflow Fwd Bytes":        bytes_,
+            "Subflow Bwd Bytes":        0,
+            "Init_Win_bytes_forward":   65535,
+            "Init_Win_bytes_backward":  65535,
+            "Active Max":               0.0,
+            "Active Mean":              0.0,
+            "Active Std":               0.0,
+            "Idle Std":                 0.0,
+            "Down/Up Ratio":            0.0,
+            "Protocol":                 6,
+            "act_data_pkt_fwd":         pkts,
+            "min_seg_size_forward":     20,
+        }
 
     def block_flow(self, dp, match):
         parser = dp.ofproto_parser
