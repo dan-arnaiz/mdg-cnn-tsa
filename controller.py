@@ -213,7 +213,7 @@ class CNNTSAController(app_manager.RyuApp):
         while True:
             for dp in self.datapaths.values():
                 dp.send_msg(dp.ofproto_parser.OFPFlowStatsRequest(dp))
-            hub.sleep(2) # ADJUSTED from 5s to 2s to catch bursts faster
+            hub.sleep(1) # ADJUSTED from 2s to 1s to catch bursts faster
 
     @set_ev_cls(ofp_event.EventOFPFlowStatsReply, MAIN_DISPATCHER)
     def flow_stats_reply_handler(self, ev):
@@ -236,8 +236,8 @@ class CNNTSAController(app_manager.RyuApp):
         # Calculate entropy based on the collected source list
         entropy = self.calculate_entropy(src_list)
 
-        # UPDATED: Dynamic Threshold Logic (Triggered at 1.2 based on your tests)
-        dynamic_threshold = 2.0 if entropy > 1.2 else 5.0
+        # UPDATED: Dynamic Threshold to avoid inflated recall.
+        dynamic_threshold = 3.0 if entropy > 1.2 else 6.0
         
         # UPDATED: Log both Entropy and Total Packets for debugging
         self.logger.info(f"Entropy: {entropy:.2f} | Total Pkts: {total_packets_in_cycle} | Threshold: {dynamic_threshold}")
@@ -263,8 +263,8 @@ class CNNTSAController(app_manager.RyuApp):
             with torch.no_grad():
                 pred = self.model(features).item()
 
-            # Change from 0.5 to 0.4 to trigger the Warning and Block_Flow
-            label = 1 if pred >= 0.40 else 0
+            DETECTION_THRESHOLD = 0.50
+            label = 1 if pred >= DETECTION_THRESHOLD else 0
             if label == 1:
                 self.logger.warning(f"DDoS detected (rate: {pkt_rate:.1f} pps) — blocking flow")
                 self.block_flow(ev.msg.datapath, flow.match)
@@ -337,10 +337,9 @@ class CNNTSAController(app_manager.RyuApp):
         feat_matrix = np.zeros((39, sequence_length), dtype=np.float32)
         
         for i in range(sequence_length):
-            # Removing noise addition for consistency
-            # noise = np.random.normal(0, 0.01, 39)
-            # feat_matrix[:, i] = features + noise * features
-            feat_matrix[:, i] = features
+            noise = np.random.normal(0, 0.015, 39)   # 1.5% Gaussian noise
+            noisy_features = features + (features * noise)
+            feat_matrix[:, i] = noisy_features
         
         # Convert to tensor: (1, 39, 32)
         return torch.tensor(feat_matrix, dtype=torch.float32).unsqueeze(0)
