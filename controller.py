@@ -17,8 +17,8 @@ import math
 from collections import Counter
 
 
-
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 MODEL_PATH = os.path.join(
     BASE_DIR,
     "models/cnn_tsa/baseline_model/main/standard_k45/best_weights.pt"
@@ -27,9 +27,21 @@ CONFIG_PATH = os.path.join(
     BASE_DIR,
     "models/cnn_tsa/baseline_model/main/standard_k45/config.json"
 )
+PREPROCESSOR_PATH = os.path.join(
+    BASE_DIR,
+    "preprocessing_output/v1_std_corr90_k45_w48s24/preprocessor.joblib"
+)
+SELECTOR_PATH = os.path.join(
+    BASE_DIR,
+    "preprocessing_output/v1_std_corr90_k45_w48s24/selector.joblib"
+)
+METADATA_PATH = os.path.join(
+    BASE_DIR,
+    "preprocessing_output/v1_std_corr90_k45_w48s24/preprocess_metadata.json"
+)
 LOG_DIR = os.path.join(BASE_DIR, "merged_outputs")
 
-# Load configuration
+# Load configuration (module-level is fine for a plain JSON read)
 with open(CONFIG_PATH) as f:
     cfg = json.load(f)
 
@@ -41,12 +53,10 @@ class CNNTSA(nn.Module):
     def __init__(self, num_features=39, hidden_dim=64, num_heads=2):
         super().__init__()
 
-        # CNN feature extractor - uses num_features as input channels
         self.conv1 = nn.Conv1d(num_features, 32, kernel_size=5, padding=2)
         self.conv2 = nn.Conv1d(32, hidden_dim, kernel_size=3, padding=1)
         self.relu = nn.ReLU()
 
-        # Transformer-style TSA block
         self.mhsa = nn.MultiheadAttention(
             embed_dim=hidden_dim,
             num_heads=num_heads,
@@ -54,7 +64,6 @@ class CNNTSA(nn.Module):
         )
         self.norm1 = nn.LayerNorm(hidden_dim)
 
-        # FFN block with Dropout
         self.ffn = nn.Sequential(
             nn.Linear(hidden_dim, 128),
             nn.ReLU(),
@@ -63,7 +72,6 @@ class CNNTSA(nn.Module):
         )
         self.norm2 = nn.LayerNorm(hidden_dim)
 
-        # Classifier
         self.fc1 = nn.Linear(hidden_dim, 128)
         self.fc2 = nn.Linear(128, 1)
         self.sigmoid = nn.Sigmoid()
@@ -96,50 +104,55 @@ class CNNTSA(nn.Module):
 class CNNTSAController(app_manager.RyuApp):
     OFP_VERSIONS = [ofproto_v1_3.OFP_VERSION]
 
-    # Load preprocessing artifacts
-    preprocessor = joblib.load("preprocessing_output/v1_std_corr90_k45_w48s24/preprocessor.joblib")
-    selector = joblib.load("preprocessing_output/v1_std_corr90_k45_w48s24/selector.joblib")
-
-    # Load metadata to ensure correct feature names
-    with open("preprocessing_output/v1_std_corr90_k45_w48s24/preprocess_metadata.json") as f:
-        metadata = json.load(f)
-
-    selected_features = metadata["selected_features"]
-    
-    
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        
+
         self.simulation_start = time.time()
-        self.attack_start_delay = 30  # Seconds before attack traffic starts
-        
+        self.attack_start_delay = 30
+
         self.datapaths = {}
         self.monitor_thread = hub.spawn(self.monitor)
         self.mac_to_port = {}
 
         os.makedirs(LOG_DIR, exist_ok=True)
 
+        # Load preprocessing artifacts (inside __init__ using absolute paths)
         try:
-            # Initialize model with config parameters
+            self.preprocessor = joblib.load(PREPROCESSOR_PATH)
+            self.selector = joblib.load(SELECTOR_PATH)
+            self.logger.info("Preprocessor and selector loaded successfully")
+        except Exception as e:
+            self.logger.error(f"PREPROCESSOR LOAD FAILURE: {e}")
+            raise RuntimeError("Failed to load preprocessing artifacts")
+
+        # Load metadata for feature names
+        try:
+            with open(METADATA_PATH) as f:
+                metadata = json.load(f)
+            self.selected_features = metadata["selected_features"]
+            self.logger.info(f"Metadata loaded: {len(self.selected_features)} selected features")
+        except Exception as e:
+            self.logger.error(f"METADATA LOAD FAILURE: {e}")
+            raise RuntimeError("Failed to load preprocessing metadata")
+
+        # Load model
+        try:
             self.model = CNNTSA(
                 num_features=cfg['num_features'],
                 hidden_dim=cfg['hidden_dim'],
                 num_heads=cfg['num_heads']
             )
-            
             state_dict = torch.load(MODEL_PATH, map_location="cpu")
             self.model.load_state_dict(state_dict, strict=True)
             self.model.eval()
-            
-            self.logger.info(f"CNN-TSA model loaded successfully")
-            self.logger.info(f"Model config: features={cfg['num_features']}, "
-                           f"hidden={cfg['hidden_dim']}, heads={cfg['num_heads']}")
 
+            self.logger.info("CNN-TSA model loaded successfully")
+            self.logger.info(f"Model config: features={cfg['num_features']}, "
+                             f"hidden={cfg['hidden_dim']}, heads={cfg['num_heads']}")
         except Exception as e:
             self.logger.error(f"MODEL LOAD FAILURE: {e}")
             raise RuntimeError("Model architecture mismatch")
-        
-    # ADDED: Entropy calculation method to identify spoofing
+
     def calculate_entropy(self, src_list):
         if not src_list:
             return 0
@@ -150,14 +163,13 @@ class CNNTSAController(app_manager.RyuApp):
             p = count / total
             entropy -= p * math.log2(p)
         return entropy
-    
+
     def preprocess_live_features(self, raw_feature_dict):
         """
         Preprocesses a raw feature dict through the training pipeline.
         The preprocessor expects column names WITHOUT the 'num__' prefix
         (that prefix is added by sklearn's ColumnTransformer internally).
         """
-        import pandas as pd
         df = pd.DataFrame([raw_feature_dict])
 
         # Apply training preprocessor (StandardScaler + ColumnTransformer)
@@ -167,7 +179,7 @@ class CNNTSAController(app_manager.RyuApp):
         if hasattr(Xt, "toarray"):
             Xt = Xt.toarray()
 
-        # Apply SelectKBest (k=45 → then reduced to 39 after corr drop)
+        # Apply SelectKBest (k=45 → reduced to 39 after corr drop)
         Xt_sel = self.selector.transform(Xt)
 
         return Xt_sel  # shape: (1, 39)
@@ -200,7 +212,6 @@ class CNNTSAController(app_manager.RyuApp):
         parser = dp.ofproto_parser
         in_port = msg.match['in_port']
 
-        # Parse packet
         pkt = packet.Packet(msg.data)
         eth = pkt.get_protocols(ethernet.ethernet)[0]
 
@@ -208,11 +219,9 @@ class CNNTSAController(app_manager.RyuApp):
         src = eth.src
         dpid = dp.id
 
-        # Learn MAC address
         self.mac_to_port.setdefault(dpid, {})
         self.mac_to_port[dpid][src] = in_port
 
-        # Determine output port
         if dst in self.mac_to_port[dpid]:
             out_port = self.mac_to_port[dpid][dst]
         else:
@@ -220,11 +229,10 @@ class CNNTSAController(app_manager.RyuApp):
 
         actions = [parser.OFPActionOutput(out_port)]
 
-        # Install flow to avoid packet-in next time
         if out_port != ofp.OFPP_FLOOD:
             match = parser.OFPMatch(in_port=in_port, eth_dst=dst, eth_src=src)
             inst = [parser.OFPInstructionActions(ofp.OFPIT_APPLY_ACTIONS, actions)]
-            
+
             dp.send_msg(parser.OFPFlowMod(
                 datapath=dp,
                 priority=1,
@@ -234,7 +242,6 @@ class CNNTSAController(app_manager.RyuApp):
                 hard_timeout=300
             ))
 
-        # Send packet out
         data = None
         if msg.buffer_id == ofp.OFP_NO_BUFFER:
             data = msg.data
@@ -252,63 +259,65 @@ class CNNTSAController(app_manager.RyuApp):
         while True:
             for dp in self.datapaths.values():
                 dp.send_msg(dp.ofproto_parser.OFPFlowStatsRequest(dp))
-            hub.sleep(1) # ADJUSTED from 2s to 1s to catch bursts faster
+            hub.sleep(1)
 
     @set_ev_cls(ofp_event.EventOFPFlowStatsReply, MAIN_DISPATCHER)
     def flow_stats_reply_handler(self, ev):
         ts = time.time()
         total_flows = 0
         analyzed_flows = 0
-        total_packets_in_cycle = 0 # ADDED: Track total packets in this batch
+        total_packets_in_cycle = 0
 
-        # Extract all source MACs and sum total packets
         src_list = []
         for flow in ev.msg.body:
             if flow.priority == 0:
                 continue
-            
-            total_packets_in_cycle += flow.packet_count # ADDED: Accumulate packet count
-            
+
+            total_packets_in_cycle += flow.packet_count
+
             if 'eth_src' in flow.match:
                 src_list.append(flow.match.get('eth_src'))
 
-        # Calculate entropy based on the collected source list
         entropy = self.calculate_entropy(src_list)
-
-        # UPDATED: Dynamic Threshold to avoid inflated recall.
         dynamic_threshold = 3.0 if entropy > 1.2 else 6.0
-        
-        # UPDATED: Log both Entropy and Total Packets for debugging
+
         self.logger.info(f"Entropy: {entropy:.2f} | Total Pkts: {total_packets_in_cycle} | Threshold: {dynamic_threshold}")
 
         for flow in ev.msg.body:
             if flow.priority == 0:
                 continue
-            
+
             total_flows += 1
             dur = max(flow.duration_sec, 1)
             pkts = flow.packet_count
             pkt_rate = pkts / dur
 
-            # Sensitivity filter
             if pkt_rate < dynamic_threshold:
                 continue
             if dur < 1:
                 continue
 
-            raw_feature_dict = self.extract_raw_features(flow)
-            Xt_live = self.preprocess_live_features(raw_feature_dict)
+            analyzed_flows += 1
 
-            # Model expects (batch, num_features, sequence_length)
-            # We have (1, 39) → expand to (1, 39, 1)
-            Xt_tensor = torch.tensor(Xt_live, dtype=torch.float32).unsqueeze(-1)
+            try:
+                raw_feature_dict = self.extract_raw_features(flow)
+                Xt_live = self.preprocess_live_features(raw_feature_dict)
 
-            with torch.no_grad():
-                output = self.model(Xt_tensor)
-                pred = output.item()  # sigmoid already applied in model.forward()
+                # Model expects (batch, num_features, sequence_length)
+                # (1, 39) → (1, 39, 1)
+                Xt_tensor = torch.tensor(Xt_live, dtype=torch.float32).unsqueeze(-1)
+
+                with torch.no_grad():
+                    output = self.model(Xt_tensor)
+                    pred = output.item()  # sigmoid already applied in forward()
+
+            except Exception as e:
+                self.logger.error(f"Inference error: {e}")
+                continue
 
             DETECTION_THRESHOLD = 0.50
             label = 1 if pred >= DETECTION_THRESHOLD else 0
+
             if label == 1:
                 self.logger.warning(f"DDoS detected (rate: {pkt_rate:.1f} pps) — blocking flow")
                 self.block_flow(ev.msg.datapath, flow.match)
@@ -356,24 +365,24 @@ class CNNTSAController(app_manager.RyuApp):
             "Bwd IAT Max":              0.0,
             "Bwd IAT Mean":             0.0,
             "Bwd IAT Min":              0.0,
-            "Fwd Header Length":        fwd_header_len * pkts,
+            "Fwd Header Length":        float(fwd_header_len * pkts),
             "Bwd Header Length":        float(fwd_header_len),
             "Flow Bytes/s":             flow_bytes_per_s,
             "Flow Packets/s":           flow_pkts_per_s,
             "Bwd Packets/s":            0.0,
-            "Subflow Fwd Packets":      pkts,
-            "Subflow Fwd Bytes":        bytes_,
-            "Subflow Bwd Bytes":        0,
-            "Init_Win_bytes_forward":   65535,
-            "Init_Win_bytes_backward":  65535,
+            "Subflow Fwd Packets":      float(pkts),
+            "Subflow Fwd Bytes":        float(bytes_),
+            "Subflow Bwd Bytes":        0.0,
+            "Init_Win_bytes_forward":   65535.0,
+            "Init_Win_bytes_backward":  65535.0,
             "Active Max":               0.0,
             "Active Mean":              0.0,
             "Active Std":               0.0,
             "Idle Std":                 0.0,
             "Down/Up Ratio":            0.0,
-            "Protocol":                 6,
-            "act_data_pkt_fwd":         pkts,
-            "min_seg_size_forward":     20,
+            "Protocol":                 6.0,
+            "act_data_pkt_fwd":         float(pkts),
+            "min_seg_size_forward":     20.0,
         }
 
     def block_flow(self, dp, match):
@@ -387,9 +396,7 @@ class CNNTSAController(app_manager.RyuApp):
         ))
 
     def log_result(self, pred, label, ts, pkt_rate):
-
-        # TRUE label based on attack marker
-        if os.path.exists("merged_outputs/attack_started.flag"):
+        if os.path.exists(os.path.join(BASE_DIR, "merged_outputs/attack_started.flag")):
             true_label = 1
         else:
             true_label = 0
