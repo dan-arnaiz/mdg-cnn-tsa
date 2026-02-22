@@ -359,14 +359,12 @@ class CNNTSAController(app_manager.RyuApp):
         ))
 
     def log_result(self, pred, label, ts, pkt_rate):
-        """
-        Log prediction with timestamp, predicted label,
-        packet rate, and TRUE ground-truth label
-        """
-        elapsed = ts - self.simulation_start
-        
-        # Ground truth: attack phase begins after delay
-        true_label = 1 if elapsed >= self.attack_start_delay else 0
+
+        # TRUE label based on attack marker
+        if os.path.exists("merged_outputs/attack_started.flag"):
+            true_label = 1
+        else:
+            true_label = 0
 
         with open(os.path.join(LOG_DIR, "detections.log"), "a") as f:
-            f.write(f"{ts},{pred:.4f},{label},{true_label},{pkt_rate:.2f}\n")
+            f.write(f"{ts},{pred:.6f},{label},{true_label},{pkt_rate:.2f}\n")

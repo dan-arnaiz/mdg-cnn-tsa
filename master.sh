@@ -151,6 +151,9 @@ echo "========================================="
 
 echo "$(date +%s),attack_start,DDoS attack phase started (6000 pps total)" >> merged_outputs/test_timeline.txt
 
+# ===== CREATE ATTACK MARKER FILE =====
+touch merged_outputs/attack_started.flag
+
 log_info "Launching DDoS attack from h6, h7, h8..."
 
 # Launch attack traffic
@@ -171,6 +174,8 @@ done
 echo ""
 
 echo "$(date +%s),attack_end,DDoS attack phase completed" >> merged_outputs/test_timeline.txt
+# ===== REMOVE ATTACK MARKER FILE =====
+rm -f merged_outputs/attack_started.flag
 log_info "Attack phase complete"
 
 # Additional wait for final flow stats
