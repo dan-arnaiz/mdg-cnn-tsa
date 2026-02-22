@@ -9,264 +9,257 @@ Entropy: 0.00 | Total Pkts: 0 | Threshold: 6.0
 Entropy: 0.00 | Total Pkts: 0 | Threshold: 6.0
 Entropy: 0.00 | Total Pkts: 0 | Threshold: 6.0
 Entropy: 0.00 | Total Pkts: 0 | Threshold: 6.0
-Entropy: 2.00 | Total Pkts: 4 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 11 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 5 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 12 | Threshold: 3.0
 Entropy: 2.00 | Total Pkts: 24 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 34 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 46 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 54 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 68 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 80 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 90 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 100 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 38 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 50 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 58 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 72 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 86 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 96 | Threshold: 3.0
 Entropy: 2.00 | Total Pkts: 108 | Threshold: 3.0
 Entropy: 2.00 | Total Pkts: 114 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 130 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 144 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 154 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 166 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 124 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 138 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 148 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 158 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 170 | Threshold: 3.0
 Entropy: 2.00 | Total Pkts: 178 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 186 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 194 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 204 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 218 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 230 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 240 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 192 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 206 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 212 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 226 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 242 | Threshold: 3.0
 Entropy: 2.00 | Total Pkts: 252 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 258 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 270 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 260 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 272 | Threshold: 3.0
 Entropy: 2.00 | Total Pkts: 282 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 296 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 308 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 316 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 327 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 336 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 347 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 355 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 367 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 376 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 290 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 306 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 318 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 322 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 334 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 348 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 362 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 374 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 380 | Threshold: 3.0
 Entropy: 2.00 | Total Pkts: 388 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 400 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 398 | Threshold: 3.0
 Entropy: 2.00 | Total Pkts: 412 | Threshold: 3.0
 Entropy: 2.00 | Total Pkts: 425 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 429 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 441 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 448 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 460 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 472 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 437 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 446 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 458 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 470 | Threshold: 3.0
 Entropy: 2.00 | Total Pkts: 480 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 486 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 495 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 508 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 490 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 502 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 514 | Threshold: 3.0
 Entropy: 2.00 | Total Pkts: 524 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 534 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 544 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 552 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 564 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 536 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 546 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 560 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 572 | Threshold: 3.0
 Entropy: 2.00 | Total Pkts: 580 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 592 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 598 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 590 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 600 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 608 | Threshold: 3.0
 Entropy: 2.00 | Total Pkts: 612 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 622 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 634 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 626 | Threshold: 3.0
 Entropy: 2.00 | Total Pkts: 642 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 648 | Threshold: 3.0
 Entropy: 2.00 | Total Pkts: 652 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 652 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 652 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 652 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 652 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 652 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 652 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 652 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 652 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 652 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 652 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 652 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 652 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 652 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 652 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 652 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 652 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 652 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 652 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 652 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 652 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 652 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 652 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 652 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 652 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 652 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 652 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 652 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 652 | Threshold: 3.0
-Entropy: 2.52 | Total Pkts: 11675 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 658 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 666 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 668 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 668 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 668 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 668 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 668 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 668 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 668 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 668 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 668 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 668 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 668 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 668 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 668 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 668 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 668 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 668 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 668 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 668 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 668 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 668 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 668 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 668 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 668 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 668 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 668 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 668 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 668 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 668 | Threshold: 3.0
+Entropy: 2.52 | Total Pkts: 1213 | Threshold: 3.0
 Analyzed 2/10 flows
-Entropy: 2.73 | Total Pkts: 28195 | Threshold: 3.0
+Entropy: 2.73 | Total Pkts: 21947 | Threshold: 3.0
 Analyzed 3/11 flows
-Entropy: 2.73 | Total Pkts: 49273 | Threshold: 3.0
+Entropy: 2.73 | Total Pkts: 45015 | Threshold: 3.0
 Analyzed 3/11 flows
-Entropy: 2.73 | Total Pkts: 69984 | Threshold: 3.0
+Entropy: 2.73 | Total Pkts: 68222 | Threshold: 3.0
 Analyzed 3/11 flows
-Entropy: 2.73 | Total Pkts: 90972 | Threshold: 3.0
+Entropy: 2.73 | Total Pkts: 91334 | Threshold: 3.0
 Analyzed 3/11 flows
-Entropy: 2.73 | Total Pkts: 107090 | Threshold: 3.0
+Entropy: 2.73 | Total Pkts: 103736 | Threshold: 3.0
 Analyzed 3/11 flows
-Entropy: 2.73 | Total Pkts: 133254 | Threshold: 3.0
+Entropy: 2.73 | Total Pkts: 130286 | Threshold: 3.0
 Analyzed 3/11 flows
-Entropy: 2.73 | Total Pkts: 160207 | Threshold: 3.0
+Entropy: 2.73 | Total Pkts: 158130 | Threshold: 3.0
 Analyzed 3/11 flows
-Entropy: 2.73 | Total Pkts: 187863 | Threshold: 3.0
+Entropy: 2.73 | Total Pkts: 186130 | Threshold: 3.0
 Analyzed 3/11 flows
-Entropy: 2.73 | Total Pkts: 215617 | Threshold: 3.0
+Entropy: 2.73 | Total Pkts: 213875 | Threshold: 3.0
 Analyzed 3/11 flows
-Entropy: 2.73 | Total Pkts: 243503 | Threshold: 3.0
+Entropy: 2.73 | Total Pkts: 241698 | Threshold: 3.0
 Analyzed 3/11 flows
-Entropy: 2.73 | Total Pkts: 271490 | Threshold: 3.0
+Entropy: 2.73 | Total Pkts: 269524 | Threshold: 3.0
 Analyzed 3/11 flows
-Entropy: 2.73 | Total Pkts: 299401 | Threshold: 3.0
+Entropy: 2.73 | Total Pkts: 297452 | Threshold: 3.0
 Analyzed 3/11 flows
-Entropy: 2.73 | Total Pkts: 327316 | Threshold: 3.0
+Entropy: 2.73 | Total Pkts: 325068 | Threshold: 3.0
 Analyzed 3/11 flows
-Entropy: 2.73 | Total Pkts: 355101 | Threshold: 3.0
+Entropy: 2.73 | Total Pkts: 352963 | Threshold: 3.0
 Analyzed 3/11 flows
-Entropy: 2.73 | Total Pkts: 383147 | Threshold: 3.0
+Entropy: 2.73 | Total Pkts: 380801 | Threshold: 3.0
 Analyzed 3/11 flows
-Entropy: 2.73 | Total Pkts: 411221 | Threshold: 3.0
+Entropy: 2.73 | Total Pkts: 408653 | Threshold: 3.0
 Analyzed 3/11 flows
-Entropy: 2.73 | Total Pkts: 439045 | Threshold: 3.0
+Entropy: 2.73 | Total Pkts: 436632 | Threshold: 3.0
 Analyzed 3/11 flows
-Entropy: 2.73 | Total Pkts: 467066 | Threshold: 3.0
+Entropy: 2.73 | Total Pkts: 464548 | Threshold: 3.0
 Analyzed 3/11 flows
-Entropy: 2.73 | Total Pkts: 494966 | Threshold: 3.0
+Entropy: 2.73 | Total Pkts: 492518 | Threshold: 3.0
 Analyzed 3/11 flows
-Entropy: 2.73 | Total Pkts: 522927 | Threshold: 3.0
+Entropy: 2.73 | Total Pkts: 520617 | Threshold: 3.0
 Analyzed 3/11 flows
-Entropy: 2.73 | Total Pkts: 550740 | Threshold: 3.0
+Entropy: 2.73 | Total Pkts: 548515 | Threshold: 3.0
 Analyzed 3/11 flows
-Entropy: 2.73 | Total Pkts: 578046 | Threshold: 3.0
+Entropy: 2.73 | Total Pkts: 576501 | Threshold: 3.0
 Analyzed 3/11 flows
-Entropy: 2.73 | Total Pkts: 606039 | Threshold: 3.0
+Entropy: 2.73 | Total Pkts: 604428 | Threshold: 3.0
 Analyzed 3/11 flows
-Entropy: 2.73 | Total Pkts: 633906 | Threshold: 3.0
+Entropy: 2.73 | Total Pkts: 632296 | Threshold: 3.0
 Analyzed 3/11 flows
-Entropy: 2.73 | Total Pkts: 661920 | Threshold: 3.0
+Entropy: 2.73 | Total Pkts: 660199 | Threshold: 3.0
 Analyzed 3/11 flows
-Entropy: 2.73 | Total Pkts: 689960 | Threshold: 3.0
+Entropy: 2.73 | Total Pkts: 688035 | Threshold: 3.0
 Analyzed 3/11 flows
-Entropy: 2.64 | Total Pkts: 717933 | Threshold: 3.0
+Entropy: 2.73 | Total Pkts: 715720 | Threshold: 3.0
+Analyzed 3/11 flows
+Entropy: 2.73 | Total Pkts: 743550 | Threshold: 3.0
+Analyzed 3/11 flows
+Entropy: 2.73 | Total Pkts: 771477 | Threshold: 3.0
+Analyzed 3/11 flows
+Entropy: 2.64 | Total Pkts: 799293 | Threshold: 3.0
 Analyzed 3/9 flows
-Entropy: 2.64 | Total Pkts: 745873 | Threshold: 3.0
-Analyzed 3/9 flows
-Entropy: 2.64 | Total Pkts: 773842 | Threshold: 3.0
-Analyzed 3/9 flows
-Entropy: 2.32 | Total Pkts: 801580 | Threshold: 3.0
+Entropy: 2.32 | Total Pkts: 827126 | Threshold: 3.0
 Analyzed 3/5 flows
-Entropy: 1.58 | Total Pkts: 828774 | Threshold: 3.0
+Entropy: 2.32 | Total Pkts: 855070 | Threshold: 3.0
+Analyzed 3/5 flows
+Entropy: 1.58 | Total Pkts: 883002 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 856727 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 910864 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 884738 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 938840 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 912599 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 966652 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 940627 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 994410 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 968582 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1022305 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 993292 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1050141 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1018034 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1077936 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1045901 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1105799 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1073912 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1133673 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1101907 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1159394 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1129870 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1187294 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1157806 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1215039 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1185725 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1242982 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1213703 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1269028 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1241574 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1296947 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1269422 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1324716 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1297422 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1352699 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1325349 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1380464 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1353246 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1408269 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1381083 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1436087 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1409034 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1463087 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1436686 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1490969 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1464677 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1518863 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1492673 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1546421 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1520649 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1574316 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1548643 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1602284 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1576650 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1630153 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1604654 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1640084 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1611212 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1640084 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1611212 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1640084 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1611212 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1640084 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1611212 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1640084 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1611212 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1640084 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1611212 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1640084 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1611212 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1640084 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1611212 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1640084 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1611212 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1640084 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1611212 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1640084 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1611212 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1640084 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1611212 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1640084 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1611212 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1640084 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1611212 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1640084 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1611212 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1640084 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1611212 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1640084 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1611212 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1640084 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1611212 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1640084 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1611212 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1640084 | Threshold: 3.0
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1611212 | Threshold: 3.0
-Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1611212 | Threshold: 3.0
-Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1611212 | Threshold: 3.0
-Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1611212 | Threshold: 3.0
-Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1611212 | Threshold: 3.0
-Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1611212 | Threshold: 3.0
+Entropy: 1.58 | Total Pkts: 1640084 | Threshold: 3.0
 Analyzed 3/3 flows
