@@ -10,7 +10,7 @@ from datetime import datetime
 from sklearn.metrics import roc_curve, auc, confusion_matrix
 import seaborn as sns
 
-DETECTION_THRESHOLD = 0.50
+DETECTION_THRESHOLD = 0.35
 
 
 def load_detection_data(log_file):
