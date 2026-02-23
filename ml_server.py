@@ -72,7 +72,7 @@ state_dict = torch.load(MODEL_PATH, map_location="cpu")
 model.load_state_dict(state_dict, strict=True)
 model.eval()
 
-print(f"[ml_server] Model loaded — features={cfg['num_features']}, "
+print(f"[ml_server] Model loaded - features={cfg['num_features']}, "
       f"hidden={cfg['hidden_dim']}, heads={cfg['num_heads']}")
 
 
