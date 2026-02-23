@@ -16,6 +16,7 @@ DETECTION_THRESHOLD = 0.50
 def load_detection_data(log_file):
     timestamps = []
     predictions = []
+    predicted_labels = []
     true_labels = []
     packet_rates = []
 
@@ -29,6 +30,7 @@ def load_detection_data(log_file):
                     ts, pred, pred_label, true_label, pkt_rate = parts
                     timestamps.append(float(ts))
                     predictions.append(float(pred))
+                    predicted_labels.append(int(pred_label))
                     true_labels.append(int(true_label))
                     packet_rates.append(float(pkt_rate))
 
@@ -38,18 +40,12 @@ def load_detection_data(log_file):
 
     return (np.array(timestamps),
             np.array(predictions),
+            np.array(predicted_labels),
             np.array(true_labels),
             np.array(packet_rates))
 
 
-def calculate_metrics(y_true, y_pred_proba):
-
-    # ----------------------------------------
-    # CRITICAL FIX: invert ground-truth labels
-    # ----------------------------------------
-    y_true = 1 - y_true
-
-    y_pred = (y_pred_proba >= DETECTION_THRESHOLD).astype(int)
+def calculate_metrics(y_true, y_pred, y_pred_proba):
 
     cm = confusion_matrix(y_true, y_pred)
 
@@ -127,13 +123,13 @@ def plot_roc(metrics, path):
 
 def main():
     log_file = "merged_outputs/detections.log"
-    timestamps, predictions, labels, pkt = load_detection_data(log_file)
+    timestamps, predictions, predicted_labels, labels, pkt = load_detection_data(log_file)
 
     if timestamps is None or len(predictions) == 0:
         print("No data.")
         return
 
-    metrics = calculate_metrics(labels, predictions)
+    metrics = calculate_metrics(labels, predicted_labels, predictions)
 
     print("="*80)
     print("DDOS DETECTION ANALYSIS - CORRECTED REPORT")
