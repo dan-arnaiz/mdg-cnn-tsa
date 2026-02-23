@@ -126,11 +126,17 @@ def predict():
 
         # 8. Model Inference
         with torch.no_grad():
-            prob = model(Xt_tensor).item()
+            prob_benign = model(Xt_tensor).item()
 
-        # 9. Classification using 0.5 threshold
-        label = 1 if prob >= 0.50 else 0
-        return jsonify({"prediction": round(prob, 6), "label": label})
+            # Convert to DDoS probability
+            prob_ddos = 1.0 - prob_benign
+
+            label = 1 if prob_ddos >= 0.50 else 0
+
+            return jsonify({
+                "prediction": round(prob_ddos, 6),
+                "label": label
+            })
 
     except Exception as e:
         import traceback
