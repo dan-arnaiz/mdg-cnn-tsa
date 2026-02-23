@@ -14,8 +14,19 @@ import pandas as pd
 import torch
 import torch.nn as nn
 import math
+import sys
+import types
+import ryu.cmd.manager
 from collections import Counter
 
+def sanitize_array(X):
+    X = np.nan_to_num(X)
+    X[X == np.inf] = 0
+    X[X == -np.inf] = 0
+    return X
+
+# Inject into ryu namespace so pickle can resolve it
+ryu.cmd.manager.sanitize_array = sanitize_array
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
