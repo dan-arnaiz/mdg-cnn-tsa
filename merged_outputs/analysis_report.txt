@@ -4,17 +4,17 @@ DDOS DETECTION ANALYSIS - CORRECTED REPORT
 
 OVERALL STATISTICS
 --------------------------------------------------------------------------------
-Total Predictions: 426
-Actual DDoS Flows: 391
-Actual Benign Flows: 35
+Total Predictions: 422
+Actual DDoS Flows: 385
+Actual Benign Flows: 37
 
 PERFORMANCE METRICS
 --------------------------------------------------------------------------------
-Accuracy: 92.02%
-Precision: 92.60%
-Recall: 99.23%
-F1-Score: 95.80%
-False Positive Rate: 88.57%
-ROC-AUC: 0.1490
+Accuracy: 90.76%
+Precision: 91.19%
+Recall: 99.48%
+F1-Score: 95.16%
+False Positive Rate: 100.00%
+ROC-AUC: 0.0855
 
 Visualizations saved to merged_outputs/
