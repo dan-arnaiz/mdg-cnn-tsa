@@ -1,0 +1,15 @@
+*** Creating network
+*** Adding remote controller (Ryu at 127.0.0.1:6653)
+*** Adding switch s1 (OpenFlow13)
+*** Adding victim host h1 (10.0.0.1)
+*** Adding attacker/benign hosts h2\u2013h8
+*** Creating links
+(100.00Mbit 5ms delay 0.00000% loss) (100.00Mbit 5ms delay 0.00000% loss) (100.00Mbit 5ms delay 0.00000% loss) (100.00Mbit 5ms delay 0.00000% loss) (100.00Mbit 5ms delay 0.00000% loss) (100.00Mbit 5ms delay 0.00000% loss) (100.00Mbit 5ms delay 0.00000% loss) (100.00Mbit 5ms delay 0.00000% loss) (100.00Mbit 5ms delay 0.00000% loss) (100.00Mbit 5ms delay 0.00000% loss) (100.00Mbit 5ms delay 0.00000% loss) (100.00Mbit 5ms delay 0.00000% loss) (100.00Mbit 5ms delay 0.00000% loss) (100.00Mbit 5ms delay 0.00000% loss) (100.00Mbit 5ms delay 0.00000% loss) (100.00Mbit 5ms delay 0.00000% loss) *** Building network
+*** Configuring hosts
+h1 h2 h3 h4 h5 h6 h7 h8 
+*** Starting controller
+*** Starting switch
+(100.00Mbit 5ms delay 0.00000% loss) (100.00Mbit 5ms delay 0.00000% loss) (100.00Mbit 5ms delay 0.00000% loss) (100.00Mbit 5ms delay 0.00000% loss) (100.00Mbit 5ms delay 0.00000% loss) (100.00Mbit 5ms delay 0.00000% loss) (100.00Mbit 5ms delay 0.00000% loss) (100.00Mbit 5ms delay 0.00000% loss) *** Waiting for switch-controller handshake...
+*** WARNING: Switch not yet connected to controller
+TOPOLOGY_READY
+*** Topology ready for automation
