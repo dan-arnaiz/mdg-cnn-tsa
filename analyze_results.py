@@ -47,6 +47,7 @@ def load_detection_data(log_file):
 
 def calculate_metrics(y_true, y_pred, y_pred_proba):
 
+    # Confusion Matrix (use actual predicted labels from log)
     cm = confusion_matrix(y_true, y_pred)
 
     if cm.shape == (2, 2):
@@ -67,8 +68,15 @@ def calculate_metrics(y_true, y_pred, y_pred_proba):
 
     fpr = fp / (fp + tn) if (fp + tn) > 0 else 0
 
+    # -----------------------------
+    # CRITICAL FIX: specify pos_label
+    # -----------------------------
     if len(np.unique(y_true)) > 1:
-        fpr_curve, tpr_curve, _ = roc_curve(y_true, y_pred_proba)
+        fpr_curve, tpr_curve, _ = roc_curve(
+            y_true,
+            y_pred_proba,
+            pos_label=1   # explicitly define attack as positive
+        )
         roc_auc = auc(fpr_curve, tpr_curve)
     else:
         fpr_curve, tpr_curve, roc_auc = None, None, 0.5
