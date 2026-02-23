@@ -6,6 +6,9 @@ set -e  # Exit on error
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd "$SCRIPT_DIR"
 
+# Ensure the user has ownership before starting
+sudo chown -R mininet:mininet ~/mdg-cnn-tsa/merged_outputs || true
+
 # Color codes for output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -258,6 +261,9 @@ sleep 2
 
 log_info "Cleaning up network..."
 sudo mn -c > /dev/null 2>&1 || true
+
+# RESTORE OWNERSHIP BEFORE FINISHING
+sudo chown -R mininet:mininet ~/mdg-cnn-tsa/merged_outputs
 
 echo ""
 
