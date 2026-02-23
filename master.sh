@@ -61,7 +61,17 @@ echo "========================================="
 log_info "Phase 1: Starting ML Inference Server (Python 3.10 / sklearn 1.7)"
 echo "========================================="
 
-python3.10 ml_server.py > merged_outputs/ml_server.log 2>&1 &
+# Use pyenv ml_env Python directly via its absolute path
+ML_PYTHON="$HOME/.pyenv/versions/ml_env/bin/python"
+
+if [ ! -f "$ML_PYTHON" ]; then
+    log_error "Cannot find pyenv ml_env Python at: $ML_PYTHON"
+    log_error "Run: pyenv virtualenv 3.10.0 ml_env && pyenv activate ml_env && pip install flask torch scikit-learn joblib pandas numpy"
+    exit 1
+fi
+
+log_info "Using Python: $ML_PYTHON"
+$ML_PYTHON ml_server.py > merged_outputs/ml_server.log 2>&1 &
 ML_PID=$!
 
 log_info "Waiting for ML server to initialize (10 seconds)..."

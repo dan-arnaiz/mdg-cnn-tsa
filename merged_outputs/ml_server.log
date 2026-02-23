@@ -1,9 +1,0 @@
-pyenv: python3.10: command not found
-
-The `python3.10' command exists in these Python versions:
-  3.10.0
-  3.10.0/envs/ml_env
-  ml_env
-
-Note: See 'pyenv help global' for tips on allowing both
-      python2 and python3 to be found.
