@@ -81,7 +81,6 @@ print(f"[ml_server] Model loaded - features={cfg['num_features']}, "
 def predict():
     """
     Expects JSON body: { "features": { "Flow Duration": 1234, "Protocol": 6, ... } }
-    Keys must match the column names in preprocess_metadata.json (without 'num__' prefix).
     Returns: { "prediction": 0.83, "label": 1 }
     """
     try:
@@ -89,29 +88,43 @@ def predict():
         if raw is None:
             return jsonify({"error": "Missing 'features' key in request body"}), 400
 
-        # Build DataFrame with exact training column names
-        df = pd.DataFrame([raw])[selected_features]
+        # 1. Start with the raw features from the controller
+        df = pd.DataFrame([raw])
 
-        # Apply preprocessor (StandardScaler / ColumnTransformer)
+        # 2. Get the list of all columns the preprocessor expects
+        # Scikit-learn transformers store this in 'feature_names_in_'
+        expected_cols = preprocessor.feature_names_in_
+
+        # 3. Add any missing columns as 0 to satisfy the preprocessor
+        for col in expected_cols:
+            if col not in df.columns:
+                df[col] = 0
+
+        # 4. Reorder columns to match the training schema exactly
+        df = df[expected_cols]
+
+        # 5. Apply preprocessor (StandardScaler / ColumnTransformer)
         Xt = preprocessor.transform(df)
         if hasattr(Xt, "toarray"):
             Xt = Xt.toarray()
 
-        # Apply SelectKBest
-        Xt_sel = selector.transform(Xt)   # shape: (1, 39)
+        # 6. Apply SelectKBest (This picks the relevant features for the model)
+        Xt_sel = selector.transform(Xt)
 
-        # Reshape for CNN-TSA: (1, 39) → (1, 39, 1)
+        # 7. Reshape for CNN-TSA: (1, num_features) → (1, num_features, 1)
         Xt_tensor = torch.tensor(Xt_sel, dtype=torch.float32).unsqueeze(-1)
 
+        # 8. Model Inference
         with torch.no_grad():
-            prob = model(Xt_tensor).item()   # sigmoid already in forward()
+            prob = model(Xt_tensor).item()
 
+        # 9. Classification using 0.5 threshold
         label = 1 if prob >= 0.50 else 0
         return jsonify({"prediction": round(prob, 6), "label": label})
 
     except Exception as e:
         import traceback
-        traceback.print_exc()
+        traceback.print_exc() # Logs the full error to merged_outputs/ml_server.log
         return jsonify({"error": str(e)}), 500
 
 
