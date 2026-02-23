@@ -110,6 +110,8 @@ def predict():
         return jsonify({"prediction": round(prob, 6), "label": label})
 
     except Exception as e:
+        import traceback
+        traceback.print_exc()
         return jsonify({"error": str(e)}), 500
 
 

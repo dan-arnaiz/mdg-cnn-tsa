@@ -104,6 +104,7 @@ log_info "Phase 2: Starting Ryu Controller (Python 3.8)"
 echo "========================================="
 
 python3 -m ryu.cmd.manager controller.py > merged_outputs/controller.log 2>&1 &
+sleep 5
 RYU_PID=$!
 
 log_info "Waiting for controller initialization (15 seconds)..."
