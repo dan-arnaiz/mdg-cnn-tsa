@@ -27,13 +27,16 @@ log_error() {
 
 cleanup_all() {
     log_warn "Cleaning up all processes..."
-    sudo pkill -9 -f ryu-manager 2>/dev/null || true
-    sudo pkill -9 -f topology.py 2>/dev/null || true
+    sudo pkill -9 -f ryu-manager   2>/dev/null || true
+    sudo pkill -9 -f topology.py   2>/dev/null || true
     sudo pkill -9 -f python3.*topology 2>/dev/null || true
-    sudo mn -c 2>/dev/null || true
-    sudo killall -9 ping 2>/dev/null || true
-    sudo killall -9 hping3 2>/dev/null || true
-    rm -f /tmp/mininet_ready 2>/dev/null || true
+    # Kill ML server (ml_server.py on port 5000)
+    sudo pkill -9 -f ml_server.py  2>/dev/null || true
+    fuser -k 5000/tcp              2>/dev/null || true
+    sudo mn -c                     2>/dev/null || true
+    sudo killall -9 ping           2>/dev/null || true
+    sudo killall -9 hping3         2>/dev/null || true
+    rm -f /tmp/mininet_ready       2>/dev/null || true
 }
 
 # Trap for cleanup on exit
@@ -44,20 +47,50 @@ echo "========================================="
 log_info "Phase 0: Preparation"
 echo "========================================="
 
-# Cleanup old processes and logs
 cleanup_all
 rm -rf merged_outputs/*
 mkdir -p merged_outputs
 
-# Make scripts executable
 chmod +x benign_traffic.sh ddos_attack.sh topology.py analyze_results.py
 
 log_info "Cleanup complete."
 echo ""
 
-# --- PHASE 1: Start Ryu Controller ---
+# --- PHASE 1: Start ML Inference Server ---
 echo "========================================="
-log_info "Phase 1: Starting Ryu Controller"
+log_info "Phase 1: Starting ML Inference Server (Python 3.10 / sklearn 1.7)"
+echo "========================================="
+
+python3.10 ml_server.py > merged_outputs/ml_server.log 2>&1 &
+ML_PID=$!
+
+log_info "Waiting for ML server to initialize (10 seconds)..."
+sleep 10
+
+# Verify ML server is running
+if ps -p $ML_PID > /dev/null; then
+    log_info "ML server is running (PID: $ML_PID)"
+else
+    log_error "ML server failed to start! Check merged_outputs/ml_server.log"
+    cat merged_outputs/ml_server.log
+    exit 1
+fi
+
+# Health check
+HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1:5000/health 2>/dev/null || echo "000")
+if [ "$HTTP_STATUS" = "200" ]; then
+    log_info "ML server health check passed"
+else
+    log_error "ML server health check failed (HTTP $HTTP_STATUS)"
+    log_error "Check merged_outputs/ml_server.log for details"
+    exit 1
+fi
+
+echo ""
+
+# --- PHASE 2: Start Ryu Controller ---
+echo "========================================="
+log_info "Phase 2: Starting Ryu Controller (Python 3.8)"
 echo "========================================="
 
 python3 -m ryu.cmd.manager controller.py > merged_outputs/controller.log 2>&1 &
@@ -66,17 +99,19 @@ RYU_PID=$!
 log_info "Waiting for controller initialization (15 seconds)..."
 sleep 15
 
-# Verify controller is running
 if ps -p $RYU_PID > /dev/null; then
     log_info "Ryu Controller is running (PID: $RYU_PID)"
 else
     log_error "Controller failed to start! Check merged_outputs/controller.log"
+    cat merged_outputs/controller.log
     exit 1
 fi
 
 echo ""
+
+# --- PHASE 3: Start Mininet ---
 echo "========================================="
-log_info "Phase 2: Starting Mininet"
+log_info "Phase 3: Starting Mininet"
 echo "========================================="
 
 sudo python3 topology.py > merged_outputs/topology.log 2>&1 &
@@ -91,14 +126,13 @@ while [ ! -f /tmp/mininet_ready ] && [ $ELAPSED -lt $TIMEOUT ]; do
 done
 
 if [ ! -f /tmp/mininet_ready ]; then
-    log_error "Mininet failed to start"
+    log_error "Mininet failed to start within ${TIMEOUT}s"
     exit 1
 fi
 
 sleep 5
 
 log_info "Verifying network namespaces..."
-
 if pgrep -f "mininet:h2" > /dev/null; then
     log_info "Mininet host namespaces verified"
 else
@@ -109,16 +143,15 @@ fi
 
 echo ""
 
-# --- PHASE 3: Benign Traffic ---
+# --- PHASE 4: Benign Traffic ---
 echo "========================================="
-log_info "Phase 3: Benign Traffic (60 seconds)"
+log_info "Phase 4: Benign Traffic (60 seconds)"
 echo "========================================="
 
 echo "$(date +%s),benign_start,Benign traffic phase started" > merged_outputs/test_timeline.txt
 
 log_info "Starting benign traffic from h2, h3, h4, h5..."
 
-# Launch benign traffic
 for i in {2..5}; do
     PID=$(pgrep -f "mininet:h${i}")
     sudo mnexec -a $PID bash -c \
@@ -127,8 +160,6 @@ for i in {2..5}; do
 done
 
 log_info "Benign traffic running. Waiting 70 seconds..."
-
-# Wait with progress indicator
 for i in {1..70}; do
     echo -ne "\rProgress: [$i/70] seconds elapsed"
     sleep 1
@@ -138,25 +169,21 @@ echo ""
 echo "$(date +%s),benign_end,Benign traffic phase completed" >> merged_outputs/test_timeline.txt
 log_info "Benign phase complete"
 
-# Gap period
 log_info "Gap period: Waiting 20 seconds for traffic to settle..."
 sleep 20
-
 echo ""
 
-# --- PHASE 4: DDoS Attack ---
+# --- PHASE 5: DDoS Attack ---
 echo "========================================="
-log_info "Phase 4: DDoS Attack (60 seconds)"
+log_info "Phase 5: DDoS Attack (60 seconds)"
 echo "========================================="
 
 echo "$(date +%s),attack_start,DDoS attack phase started (6000 pps total)" >> merged_outputs/test_timeline.txt
 
-# ===== CREATE ATTACK MARKER FILE =====
 touch merged_outputs/attack_started.flag
 
 log_info "Launching DDoS attack from h6, h7, h8..."
 
-# Launch attack traffic
 for i in {6..8}; do
     PID=$(pgrep -f "mininet:h${i}")
     sudo mnexec -a $PID bash -c \
@@ -165,8 +192,6 @@ for i in {6..8}; do
 done
 
 log_info "Attack in progress. Waiting 70 seconds..."
-
-# Wait with progress indicator
 for i in {1..70}; do
     echo -ne "\rProgress: [$i/70] seconds elapsed"
     sleep 1
@@ -174,31 +199,28 @@ done
 echo ""
 
 echo "$(date +%s),attack_end,DDoS attack phase completed" >> merged_outputs/test_timeline.txt
-# ===== REMOVE ATTACK MARKER FILE =====
 rm -f merged_outputs/attack_started.flag
 log_info "Attack phase complete"
 
-# Additional wait for final flow stats
 log_info "Waiting 10 seconds for final flow statistics..."
 sleep 10
-
 echo ""
 
-# --- PHASE 5: Analysis ---
+# --- PHASE 6: Analysis ---
 echo "========================================="
-log_info "Phase 5: Generating Analysis Report"
+log_info "Phase 6: Generating Analysis Report"
 echo "========================================="
 
 if [ -f merged_outputs/detections.log ]; then
     LOG_SIZE=$(wc -l < merged_outputs/detections.log)
     log_info "Detection log contains $LOG_SIZE entries"
-    
+
     if [ $LOG_SIZE -gt 0 ]; then
         python3 analyze_results.py | tee merged_outputs/analysis_report.txt
         log_info "Analysis complete"
     else
         log_warn "Detection log is empty! No analysis performed."
-        log_warn "Check merged_outputs/controller.log for issues"
+        log_warn "Check merged_outputs/controller.log and merged_outputs/ml_server.log"
     fi
 else
     log_error "Detection log not found!"
@@ -207,10 +229,13 @@ fi
 
 echo ""
 
-# --- PHASE 6: Cleanup ---
+# --- PHASE 7: Cleanup ---
 echo "========================================="
-log_info "Phase 6: Final Cleanup"
+log_info "Phase 7: Final Cleanup"
 echo "========================================="
+
+log_info "Stopping ML server (PID: $ML_PID)..."
+sudo kill -TERM $ML_PID 2>/dev/null || true
 
 log_info "Stopping Ryu controller (PID: $RYU_PID)..."
 sudo kill -TERM $RYU_PID 2>/dev/null || true
@@ -225,7 +250,7 @@ sudo mn -c > /dev/null 2>&1 || true
 
 echo ""
 
-# --- PHASE 7: Summary ---
+# --- PHASE 8: Summary ---
 echo "========================================="
 log_info "Test Complete - Summary"
 echo "========================================="
@@ -239,6 +264,7 @@ echo "  - merged_outputs/confusion_matrix.png (Visualization)"
 echo "  - merged_outputs/roc_curve.png        (ROC curve)"
 echo "  - merged_outputs/time_series.png      (Time series plot)"
 echo "  - merged_outputs/controller.log       (Controller logs)"
+echo "  - merged_outputs/ml_server.log        (ML server logs)"
 echo "  - merged_outputs/topology.log         (Topology logs)"
 echo ""
 
