@@ -107,11 +107,21 @@ def predict():
         Xt = preprocessor.transform(df)
         if hasattr(Xt, "toarray"):
             Xt = Xt.toarray()
+            
+        # FIX: Ensure Xt matches the selector's expected input
+        # We use the 'selected_features' list to filter the 80 columns down to the 39 required
+        # Note: Scikit-learn feature names in Xt often have a 'num__' prefix
+        all_feature_names = preprocessor.get_feature_names_out()
+        
+        # We need to map our 39 desired features to their indices in the 80-feature array
+        # This ensures the selector gets the correct 39 columns in the correct order
+        target_indices = [list(all_feature_names).index(f"num__{f}") for f in selected_features]
+        Xt_filtered = Xt[:, target_indices]
 
-        # 6. Apply SelectKBest (This picks the relevant features for the model)
-        Xt_sel = selector.transform(Xt)
+        # 6. Apply SelectKBest using the filtered 39-feature input
+        Xt_sel = selector.transform(Xt_filtered)
 
-        # 7. Reshape for CNN-TSA: (1, num_features) → (1, num_features, 1)
+        # 7. Reshape for CNN-TSA: (1, 39) -> (1, 39, 1)
         Xt_tensor = torch.tensor(Xt_sel, dtype=torch.float32).unsqueeze(-1)
 
         # 8. Model Inference
