@@ -43,6 +43,12 @@ def load_detection_data(log_file):
 
 
 def calculate_metrics(y_true, y_pred_proba):
+
+    # -------------------------------
+    # CRITICAL FIX: invert probability
+    # -------------------------------
+    y_pred_proba = 1.0 - y_pred_proba
+
     y_pred = (y_pred_proba >= DETECTION_THRESHOLD).astype(int)
 
     tn, fp, fn, tp = confusion_matrix(
