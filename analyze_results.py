@@ -44,23 +44,32 @@ def load_detection_data(log_file):
 
 def calculate_metrics(y_true, y_pred_proba):
 
-    # -------------------------------
-    # CRITICAL FIX: invert probability
-    # -------------------------------
-    y_pred_proba = 1.0 - y_pred_proba
-
+    # Threshold classification (DO NOT invert)
     y_pred = (y_pred_proba >= DETECTION_THRESHOLD).astype(int)
 
-    tn, fp, fn, tp = confusion_matrix(
-        y_true, y_pred, labels=[0, 1]
-    ).ravel()
+    # Compute confusion matrix safely
+    cm = confusion_matrix(y_true, y_pred)
 
-    accuracy = (tp + tn) / (tp + tn + fp + fn)
+    if cm.shape == (2, 2):
+        tn, fp, fn, tp = cm.ravel()
+    else:
+        # Handle edge case if only one class exists
+        tn = fp = fn = tp = 0
+        if y_true[0] == 0:
+            tn = cm[0][0]
+        else:
+            tp = cm[0][0]
+
+    total = tp + tn + fp + fn
+    accuracy = (tp + tn) / total if total > 0 else 0
     precision = tp / (tp + fp) if (tp + fp) > 0 else 0
     recall = tp / (tp + fn) if (tp + fn) > 0 else 0
-    f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0
+    f1 = (2 * precision * recall / (precision + recall)
+          if (precision + recall) > 0 else 0)
+
     fpr = fp / (fp + tn) if (fp + tn) > 0 else 0
 
+    # ROC-AUC (correct probability, no inversion)
     if len(np.unique(y_true)) > 1:
         fpr_curve, tpr_curve, _ = roc_curve(y_true, y_pred_proba)
         roc_auc = auc(fpr_curve, tpr_curve)
