@@ -50,6 +50,11 @@ class CNNTSA(nn.Module):
 # ── Load artifacts ─────────────────────────────────────────────────────────────
 with open(CONFIG_PATH) as f:
     cfg = json.load(f)
+    
+def sanitize_array(x):
+    # Placeholder implementation.
+    # This must match the original training logic if possible.
+    return x
 
 preprocessor = joblib.load(PREPROCESSOR_PATH)
 selector     = joblib.load(SELECTOR_PATH)
@@ -85,7 +90,7 @@ def predict():
             return jsonify({"error": "Missing 'features' key in request body"}), 400
 
         # Build DataFrame with exact training column names
-        df = pd.DataFrame([raw])
+        df = pd.DataFrame([raw])[selected_features]
 
         # Apply preprocessor (StandardScaler / ColumnTransformer)
         Xt = preprocessor.transform(df)
