@@ -196,61 +196,82 @@ class CNNTSAController(app_manager.RyuApp):
 
     # ── Feature extraction ────────────────────────────────────────────────────
     def extract_raw_features(self, flow):
-        """
-        Returns a raw feature dict with EXACT column names matching the training
-        preprocessor. Keys match selected_features in preprocess_metadata.json
-        (without the 'num__' prefix, added internally by ColumnTransformer).
-        """
-        dur_us  = max(flow.duration_sec * 1e6, 1)   # CICFlowMeter uses microseconds
+
+        dur_us  = max(flow.duration_sec * 1e6, 1)
         dur_sec = max(flow.duration_sec, 1e-6)
         pkts    = max(flow.packet_count, 1)
         bytes_  = max(flow.byte_count, 1)
 
-        flow_bytes_per_s = bytes_ / dur_sec
-        flow_pkts_per_s  = pkts   / dur_sec
-        avg_pkt_size     = bytes_ / pkts
-        fwd_header_len   = 20   # Min IPv4+TCP header bytes
+        # Bounded rates (prevents Mininet burst distortion)
+        flow_bytes_per_s = min(bytes_ / dur_sec, 1e7)
+        flow_pkts_per_s  = min(pkts / dur_sec, 1e4)
+
+        avg_pkt_size = bytes_ / pkts
+
+        # Extract TCP flags if present
+        syn_flag = 0.0
+        ack_flag = 0.0
+        urg_flag = 0.0
+
+        if hasattr(flow.match, 'get'):
+            flags = flow.match.get('tcp_flags', 0)
+            syn_flag = 1.0 if flags & 0x02 else 0.0
+            ack_flag = 1.0 if flags & 0x10 else 0.0
+            urg_flag = 1.0 if flags & 0x20 else 0.0
 
         return {
-            "ACK Flag Count":           0.0,
-            "CWE Flag Count":           0.0,
-            "SYN Flag Count":           0.0,
-            "URG Flag Count":           0.0,
-            "Fwd PSH Flags":            0.0,
-            "Average Packet Size":      avg_pkt_size,
-            "Max Packet Length":        avg_pkt_size,
-            "Fwd Packet Length Max":    avg_pkt_size,
-            "Fwd Packet Length Std":    0.0,
-            "Bwd Packet Length Max":    0.0,
-            "Bwd Packet Length Min":    0.0,
-            "Avg Bwd Segment Size":     0.0,
-            "Flow Duration":            dur_us,
-            "Flow IAT Max":             dur_us,
-            "Flow IAT Mean":            dur_us / max(pkts - 1, 1),
-            "Flow IAT Min":             0.0,
-            "Flow IAT Std":             0.0,
-            "Bwd IAT Total":            0.0,
-            "Bwd IAT Max":              0.0,
-            "Bwd IAT Mean":             0.0,
-            "Bwd IAT Min":              0.0,
-            "Fwd Header Length":        float(fwd_header_len * pkts),
-            "Bwd Header Length":        float(fwd_header_len),
-            "Flow Bytes/s":             flow_bytes_per_s,
-            "Flow Packets/s":           flow_pkts_per_s,
-            "Bwd Packets/s":            0.0,
-            "Subflow Fwd Packets":      float(pkts),
-            "Subflow Fwd Bytes":        float(bytes_),
-            "Subflow Bwd Bytes":        0.0,
-            "Init_Win_bytes_forward":   65535.0,
-            "Init_Win_bytes_backward":  65535.0,
-            "Active Max":               0.0,
-            "Active Mean":              0.0,
-            "Active Std":               0.0,
-            "Idle Std":                 0.0,
-            "Down/Up Ratio":            0.0,
-            "Protocol":                 6.0,
-            "act_data_pkt_fwd":         float(pkts),
-            "min_seg_size_forward":     20.0,
+            "ACK Flag Count": ack_flag,
+            "CWE Flag Count": 0.0,
+            "SYN Flag Count": syn_flag,
+            "URG Flag Count": urg_flag,
+            "Fwd PSH Flags": 0.0,
+
+            "Average Packet Size": avg_pkt_size,
+            "Max Packet Length": avg_pkt_size,
+            "Fwd Packet Length Max": avg_pkt_size,
+            "Fwd Packet Length Std": 0.0,
+
+            "Bwd Packet Length Max": avg_pkt_size * 0.5,
+            "Bwd Packet Length Min": avg_pkt_size * 0.5,
+            "Avg Bwd Segment Size": avg_pkt_size * 0.5,
+
+            "Flow Duration": dur_us,
+
+            "Flow IAT Max": dur_us,
+            "Flow IAT Mean": dur_us / max(pkts - 1, 1),
+            "Flow IAT Min": 0.0,
+            "Flow IAT Std": 0.0,
+
+            "Bwd IAT Total": dur_us * 0.3,
+            "Bwd IAT Max": dur_us * 0.3,
+            "Bwd IAT Mean": dur_us * 0.3,
+            "Bwd IAT Min": 0.0,
+
+            "Fwd Header Length": float(20 * pkts),
+            "Bwd Header Length": float(20 * pkts * 0.5),
+
+            "Flow Bytes/s": flow_bytes_per_s,
+            "Flow Packets/s": flow_pkts_per_s,
+            "Bwd Packets/s": flow_pkts_per_s * 0.3,
+
+            "Subflow Fwd Packets": float(pkts),
+            "Subflow Fwd Bytes": float(bytes_),
+            "Subflow Bwd Bytes": float(bytes_ * 0.3),
+
+            "Init_Win_bytes_forward": 65535.0,
+            "Init_Win_bytes_backward": 65535.0,
+
+            "Active Max": dur_us * 0.2,
+            "Active Mean": dur_us * 0.2,
+            "Active Std": dur_us * 0.05,
+
+            "Idle Std": dur_us * 0.05,
+
+            "Down/Up Ratio": 0.5,
+            "Protocol": 6.0,
+
+            "act_data_pkt_fwd": float(pkts),
+            "min_seg_size_forward": 20.0,
         }
 
     # ── Flow blocking ─────────────────────────────────────────────────────────
