@@ -12,676 +12,679 @@ Entropy: 0.00 | Total Pkts: 0 | Threshold: 6.0
 Entropy: 0.00 | Total Pkts: 0 | Threshold: 6.0
 Entropy: 0.00 | Total Pkts: 0 | Threshold: 6.0
 Entropy: 2.00 | Total Pkts: 7 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 16 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 32 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 22 | Threshold: 3.0
+Analyzed 2/8 flows
+Entropy: 2.00 | Total Pkts: 29 | Threshold: 3.0
+Analyzed 2/8 flows
 Entropy: 2.00 | Total Pkts: 44 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 56 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 66 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 82 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 94 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 106 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 52 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 64 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 74 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 92 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 100 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 102 | Threshold: 3.0
 Entropy: 2.00 | Total Pkts: 120 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 128 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 150 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 138 | Threshold: 3.0
 Entropy: 2.00 | Total Pkts: 158 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 164 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 178 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 194 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 166 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 174 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 182 | Threshold: 3.0
 Entropy: 2.00 | Total Pkts: 202 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 210 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 218 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 232 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 244 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 252 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 260 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 272 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 216 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 224 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 241 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 250 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 256 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 266 | Threshold: 3.0
 Entropy: 2.00 | Total Pkts: 280 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 300 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 310 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 322 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 338 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 346 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 354 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 358 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 296 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 304 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 320 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 330 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 340 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 356 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 368 | Threshold: 3.0
 Entropy: 2.00 | Total Pkts: 374 | Threshold: 3.0
 Entropy: 2.00 | Total Pkts: 390 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 402 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 414 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 434 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 404 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 420 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 426 | Threshold: 3.0
 Entropy: 2.00 | Total Pkts: 444 | Threshold: 3.0
 Entropy: 2.00 | Total Pkts: 456 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 462 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 482 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 492 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 508 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 520 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 464 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 474 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 486 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 498 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 510 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 518 | Threshold: 3.0
 Entropy: 2.00 | Total Pkts: 528 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 548 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 558 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 570 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 576 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 586 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 596 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 610 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 620 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 640 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 538 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 554 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 560 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 578 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 592 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 604 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 612 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 622 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 634 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 642 | Threshold: 3.0
 Entropy: 2.00 | Total Pkts: 652 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 660 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 672 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 688 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 664 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 680 | Threshold: 3.0
 Entropy: 2.00 | Total Pkts: 700 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 708 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 714 | Threshold: 3.0
 Entropy: 2.00 | Total Pkts: 716 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 726 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 732 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 736 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 738 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 738 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 738 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 738 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 738 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 738 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 738 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 738 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 738 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 738 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 738 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 738 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 738 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 738 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 738 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 738 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 738 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 738 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 738 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 738 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 738 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 738 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 738 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 738 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 738 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 738 | Threshold: 3.0
-Entropy: 2.00 | Total Pkts: 738 | Threshold: 3.0
-Entropy: 2.52 | Total Pkts: 3768 | Threshold: 3.0
-Analyzed 2/10 flows
-Entropy: 2.73 | Total Pkts: 25410 | Threshold: 3.0
-DDoS detected (score=0.537, rate=9418.0 pps) \u2014 blocking
-DDoS detected (score=0.532, rate=8428.0 pps) \u2014 blocking
-DDoS detected (score=0.518, rate=6826.0 pps) \u2014 blocking
+Entropy: 2.00 | Total Pkts: 718 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 718 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 718 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 718 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 718 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 718 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 718 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 718 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 718 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 718 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 718 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 718 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 718 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 718 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 718 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 718 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 718 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 718 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 718 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 718 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 718 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 718 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 718 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 718 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 718 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 718 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 718 | Threshold: 3.0
+Entropy: 2.00 | Total Pkts: 718 | Threshold: 3.0
+Entropy: 2.28 | Total Pkts: 2295 | Threshold: 3.0
+Analyzed 1/9 flows
+Entropy: 2.73 | Total Pkts: 22999 | Threshold: 3.0
+DDoS detected (score=0.534, rate=8917.0 pps) \u2014 blocking
+DDoS detected (score=0.501, rate=5459.0 pps) \u2014 blocking
+DDoS detected (score=0.528, rate=7905.0 pps) \u2014 blocking
 Analyzed 3/11 flows
-Entropy: 2.73 | Total Pkts: 48890 | Threshold: 3.0
-DDoS detected (score=0.560, rate=8879.5 pps) \u2014 blocking
-DDoS detected (score=0.557, rate=16046.0 pps) \u2014 blocking
-DDoS detected (score=0.554, rate=14347.0 pps) \u2014 blocking
+Entropy: 2.73 | Total Pkts: 46424 | Threshold: 3.0
+DDoS detected (score=0.557, rate=7969.5 pps) \u2014 blocking
+DDoS detected (score=0.553, rate=13682.0 pps) \u2014 blocking
+DDoS detected (score=0.558, rate=16085.0 pps) \u2014 blocking
 Analyzed 3/11 flows
-Entropy: 2.81 | Total Pkts: 69200 | Threshold: 3.0
-DDoS detected (score=0.563, rate=6795.7 pps) \u2014 blocking
-DDoS detected (score=0.562, rate=9744.0 pps) \u2014 blocking
-DDoS detected (score=0.562, rate=18558.0 pps) \u2014 blocking
+Entropy: 2.73 | Total Pkts: 69867 | Threshold: 3.0
+DDoS detected (score=0.565, rate=7735.0 pps) \u2014 blocking
+DDoS detected (score=0.567, rate=23989.0 pps) \u2014 blocking
+DDoS detected (score=0.565, rate=21955.0 pps) \u2014 blocking
+Analyzed 3/11 flows
+Entropy: 2.73 | Total Pkts: 93358 | Threshold: 3.0
+DDoS detected (score=0.570, rate=7683.0 pps) \u2014 blocking
+DDoS detected (score=0.572, rate=31776.0 pps) \u2014 blocking
+DDoS detected (score=0.571, rate=30132.0 pps) \u2014 blocking
+Analyzed 3/11 flows
+Entropy: 2.73 | Total Pkts: 116172 | Threshold: 3.0
+DDoS detected (score=0.573, rate=7714.4 pps) \u2014 blocking
+DDoS detected (score=0.574, rate=19571.5 pps) \u2014 blocking
+DDoS detected (score=0.574, rate=37739.0 pps) \u2014 blocking
+Analyzed 3/11 flows
+Entropy: 2.81 | Total Pkts: 137794 | Threshold: 3.0
+DDoS detected (score=0.573, rate=6618.8 pps) \u2014 blocking
+DDoS detected (score=0.575, rate=13946.7 pps) \u2014 blocking
+DDoS detected (score=0.575, rate=39585.0 pps) \u2014 blocking
+DDoS detected (score=0.513, rate=6317.0 pps) \u2014 blocking
 Analyzed 6/14 flows
-Entropy: 2.81 | Total Pkts: 91905 | Threshold: 3.0
-DDoS detected (score=0.562, rate=5096.8 pps) \u2014 blocking
-DDoS detected (score=0.562, rate=6496.0 pps) \u2014 blocking
-DDoS detected (score=0.561, rate=18558.0 pps) \u2014 blocking
-DDoS detected (score=0.548, rate=11883.0 pps) \u2014 blocking
-DDoS detected (score=0.543, rate=10497.0 pps) \u2014 blocking
-DDoS detected (score=0.542, rate=10354.0 pps) \u2014 blocking
+Entropy: 2.81 | Total Pkts: 159608 | Threshold: 3.0
+DDoS detected (score=0.573, rate=5673.3 pps) \u2014 blocking
+DDoS detected (score=0.574, rate=10460.0 pps) \u2014 blocking
+DDoS detected (score=0.574, rate=39585.0 pps) \u2014 blocking
+DDoS detected (score=0.550, rate=12495.0 pps) \u2014 blocking
+DDoS detected (score=0.553, rate=13585.0 pps) \u2014 blocking
+DDoS detected (score=0.547, rate=11672.0 pps) \u2014 blocking
 Analyzed 6/14 flows
-Entropy: 2.81 | Total Pkts: 111380 | Threshold: 3.0
-DDoS detected (score=0.562, rate=4077.4 pps) \u2014 blocking
-DDoS detected (score=0.561, rate=4872.0 pps) \u2014 blocking
-DDoS detected (score=0.561, rate=9279.0 pps) \u2014 blocking
-DDoS detected (score=0.561, rate=18315.0 pps) \u2014 blocking
-DDoS detected (score=0.559, rate=16973.0 pps) \u2014 blocking
-DDoS detected (score=0.559, rate=16921.0 pps) \u2014 blocking
+Entropy: 2.81 | Total Pkts: 180495 | Threshold: 3.0
+DDoS detected (score=0.573, rate=4964.1 pps) \u2014 blocking
+DDoS detected (score=0.574, rate=8368.0 pps) \u2014 blocking
+DDoS detected (score=0.574, rate=19792.5 pps) \u2014 blocking
+DDoS detected (score=0.563, rate=19439.0 pps) \u2014 blocking
+DDoS detected (score=0.564, rate=20675.0 pps) \u2014 blocking
+DDoS detected (score=0.562, rate=18525.0 pps) \u2014 blocking
 Analyzed 6/14 flows
-Entropy: 2.81 | Total Pkts: 135722 | Threshold: 3.0
-DDoS detected (score=0.561, rate=3397.8 pps) \u2014 blocking
-DDoS detected (score=0.561, rate=3897.6 pps) \u2014 blocking
-DDoS detected (score=0.560, rate=6186.0 pps) \u2014 blocking
-DDoS detected (score=0.569, rate=25993.0 pps) \u2014 blocking
-DDoS detected (score=0.568, rate=24737.0 pps) \u2014 blocking
-DDoS detected (score=0.569, rate=25821.0 pps) \u2014 blocking
+Entropy: 2.81 | Total Pkts: 198897 | Threshold: 3.0
+DDoS detected (score=0.573, rate=4412.6 pps) \u2014 blocking
+DDoS detected (score=0.574, rate=6973.3 pps) \u2014 blocking
+DDoS detected (score=0.574, rate=13195.0 pps) \u2014 blocking
+DDoS detected (score=0.568, rate=25728.0 pps) \u2014 blocking
+DDoS detected (score=0.569, rate=26586.0 pps) \u2014 blocking
+DDoS detected (score=0.568, rate=24727.0 pps) \u2014 blocking
 Analyzed 6/14 flows
-Entropy: 2.81 | Total Pkts: 162644 | Threshold: 3.0
-DDoS detected (score=0.561, rate=2912.4 pps) \u2014 blocking
-DDoS detected (score=0.560, rate=3248.0 pps) \u2014 blocking
-DDoS detected (score=0.560, rate=4639.5 pps) \u2014 blocking
-DDoS detected (score=0.573, rate=34646.0 pps) \u2014 blocking
-DDoS detected (score=0.573, rate=33741.0 pps) \u2014 blocking
-DDoS detected (score=0.573, rate=35086.0 pps) \u2014 blocking
+Entropy: 2.81 | Total Pkts: 225388 | Threshold: 3.0
+DDoS detected (score=0.573, rate=3971.3 pps) \u2014 blocking
+DDoS detected (score=0.574, rate=5977.1 pps) \u2014 blocking
+DDoS detected (score=0.574, rate=9896.2 pps) \u2014 blocking
+DDoS detected (score=0.573, rate=34667.0 pps) \u2014 blocking
+DDoS detected (score=0.573, rate=35634.0 pps) \u2014 blocking
+DDoS detected (score=0.572, rate=33231.0 pps) \u2014 blocking
 Analyzed 6/14 flows
-Entropy: 2.81 | Total Pkts: 186007 | Threshold: 3.0
-DDoS detected (score=0.561, rate=2548.4 pps) \u2014 blocking
-DDoS detected (score=0.560, rate=2784.0 pps) \u2014 blocking
-DDoS detected (score=0.559, rate=3711.6 pps) \u2014 blocking
-DDoS detected (score=0.576, rate=42979.0 pps) \u2014 blocking
-DDoS detected (score=0.575, rate=41014.0 pps) \u2014 blocking
-DDoS detected (score=0.576, rate=42843.0 pps) \u2014 blocking
+Entropy: 2.81 | Total Pkts: 251780 | Threshold: 3.0
+DDoS detected (score=0.572, rate=3610.3 pps) \u2014 blocking
+DDoS detected (score=0.574, rate=5230.0 pps) \u2014 blocking
+DDoS detected (score=0.574, rate=7917.0 pps) \u2014 blocking
+DDoS detected (score=0.576, rate=43447.0 pps) \u2014 blocking
+DDoS detected (score=0.576, rate=44163.0 pps) \u2014 blocking
+DDoS detected (score=0.575, rate=42314.0 pps) \u2014 blocking
 Analyzed 6/14 flows
-Entropy: 2.81 | Total Pkts: 213215 | Threshold: 3.0
-DDoS detected (score=0.560, rate=2265.2 pps) \u2014 blocking
-DDoS detected (score=0.559, rate=2436.0 pps) \u2014 blocking
-DDoS detected (score=0.559, rate=3093.0 pps) \u2014 blocking
-DDoS detected (score=0.577, rate=52169.0 pps) \u2014 blocking
-DDoS detected (score=0.577, rate=50044.0 pps) \u2014 blocking
-DDoS detected (score=0.577, rate=51831.0 pps) \u2014 blocking
+Entropy: 2.81 | Total Pkts: 271419 | Threshold: 3.0
+DDoS detected (score=0.572, rate=3309.4 pps) \u2014 blocking
+DDoS detected (score=0.573, rate=4648.9 pps) \u2014 blocking
+DDoS detected (score=0.573, rate=6597.5 pps) \u2014 blocking
+DDoS detected (score=0.577, rate=50209.0 pps) \u2014 blocking
+DDoS detected (score=0.577, rate=50717.0 pps) \u2014 blocking
+DDoS detected (score=0.577, rate=48637.0 pps) \u2014 blocking
 Analyzed 6/14 flows
-Entropy: 2.81 | Total Pkts: 236030 | Threshold: 3.0
-DDoS detected (score=0.560, rate=2038.7 pps) \u2014 blocking
-DDoS detected (score=0.559, rate=2165.3 pps) \u2014 blocking
-DDoS detected (score=0.558, rate=2651.1 pps) \u2014 blocking
-DDoS detected (score=0.578, rate=59877.0 pps) \u2014 blocking
-DDoS detected (score=0.578, rate=57448.0 pps) \u2014 blocking
-DDoS detected (score=0.578, rate=59534.0 pps) \u2014 blocking
+Entropy: 2.81 | Total Pkts: 297541 | Threshold: 3.0
+DDoS detected (score=0.572, rate=3054.8 pps) \u2014 blocking
+DDoS detected (score=0.573, rate=4184.0 pps) \u2014 blocking
+DDoS detected (score=0.573, rate=5655.0 pps) \u2014 blocking
+DDoS detected (score=0.578, rate=58681.0 pps) \u2014 blocking
+DDoS detected (score=0.578, rate=59613.0 pps) \u2014 blocking
+DDoS detected (score=0.578, rate=57391.0 pps) \u2014 blocking
 Analyzed 6/14 flows
-Entropy: 2.81 | Total Pkts: 263405 | Threshold: 3.0
-DDoS detected (score=0.559, rate=1853.4 pps) \u2014 blocking
-DDoS detected (score=0.558, rate=1948.8 pps) \u2014 blocking
-DDoS detected (score=0.558, rate=2319.8 pps) \u2014 blocking
-DDoS detected (score=0.579, rate=69391.0 pps) \u2014 blocking
-DDoS detected (score=0.579, rate=66488.0 pps) \u2014 blocking
-DDoS detected (score=0.579, rate=68355.0 pps) \u2014 blocking
+Entropy: 2.81 | Total Pkts: 323706 | Threshold: 3.0
+DDoS detected (score=0.572, rate=2836.6 pps) \u2014 blocking
+DDoS detected (score=0.573, rate=3803.6 pps) \u2014 blocking
+DDoS detected (score=0.573, rate=4948.1 pps) \u2014 blocking
+DDoS detected (score=0.579, rate=67679.0 pps) \u2014 blocking
+DDoS detected (score=0.579, rate=68208.0 pps) \u2014 blocking
+DDoS detected (score=0.579, rate=65963.0 pps) \u2014 blocking
 Analyzed 6/14 flows
-Entropy: 2.81 | Total Pkts: 284890 | Threshold: 3.0
-DDoS detected (score=0.559, rate=1698.9 pps) \u2014 blocking
-DDoS detected (score=0.558, rate=1771.6 pps) \u2014 blocking
-DDoS detected (score=0.558, rate=2062.0 pps) \u2014 blocking
-DDoS detected (score=0.580, rate=76835.0 pps) \u2014 blocking
-DDoS detected (score=0.580, rate=73374.0 pps) \u2014 blocking
-DDoS detected (score=0.580, rate=75510.0 pps) \u2014 blocking
+Entropy: 2.81 | Total Pkts: 347933 | Threshold: 3.0
+DDoS detected (score=0.572, rate=2647.5 pps) \u2014 blocking
+DDoS detected (score=0.573, rate=3486.7 pps) \u2014 blocking
+DDoS detected (score=0.573, rate=4398.3 pps) \u2014 blocking
+DDoS detected (score=0.580, rate=75587.0 pps) \u2014 blocking
+DDoS detected (score=0.580, rate=76399.0 pps) \u2014 blocking
+DDoS detected (score=0.580, rate=74091.0 pps) \u2014 blocking
 Analyzed 6/14 flows
-Entropy: 2.81 | Total Pkts: 308574 | Threshold: 3.0
-DDoS detected (score=0.558, rate=1568.2 pps) \u2014 blocking
-DDoS detected (score=0.558, rate=1624.0 pps) \u2014 blocking
-DDoS detected (score=0.557, rate=1855.8 pps) \u2014 blocking
-DDoS detected (score=0.581, rate=85106.0 pps) \u2014 blocking
-DDoS detected (score=0.580, rate=81303.0 pps) \u2014 blocking
-DDoS detected (score=0.580, rate=82994.0 pps) \u2014 blocking
+Entropy: 2.81 | Total Pkts: 372507 | Threshold: 3.0
+DDoS detected (score=0.571, rate=2482.1 pps) \u2014 blocking
+DDoS detected (score=0.573, rate=3218.5 pps) \u2014 blocking
+DDoS detected (score=0.573, rate=3958.5 pps) \u2014 blocking
+DDoS detected (score=0.580, rate=83882.0 pps) \u2014 blocking
+DDoS detected (score=0.581, rate=84451.0 pps) \u2014 blocking
+DDoS detected (score=0.580, rate=82318.0 pps) \u2014 blocking
 Analyzed 6/14 flows
-Entropy: 2.81 | Total Pkts: 335593 | Threshold: 3.0
-DDoS detected (score=0.558, rate=1456.2 pps) \u2014 blocking
-DDoS detected (score=0.557, rate=1499.1 pps) \u2014 blocking
-DDoS detected (score=0.557, rate=1687.1 pps) \u2014 blocking
-DDoS detected (score=0.581, rate=94332.0 pps) \u2014 blocking
-DDoS detected (score=0.581, rate=90396.0 pps) \u2014 blocking
-DDoS detected (score=0.581, rate=91694.0 pps) \u2014 blocking
+Entropy: 2.81 | Total Pkts: 398602 | Threshold: 3.0
+DDoS detected (score=0.571, rate=2336.1 pps) \u2014 blocking
+DDoS detected (score=0.572, rate=2988.6 pps) \u2014 blocking
+DDoS detected (score=0.572, rate=3598.6 pps) \u2014 blocking
+DDoS detected (score=0.581, rate=92936.0 pps) \u2014 blocking
+DDoS detected (score=0.581, rate=93124.0 pps) \u2014 blocking
+DDoS detected (score=0.581, rate=90686.0 pps) \u2014 blocking
 Analyzed 6/14 flows
-Entropy: 2.81 | Total Pkts: 361160 | Threshold: 3.0
-DDoS detected (score=0.558, rate=1359.1 pps) \u2014 blocking
-DDoS detected (score=0.557, rate=1392.0 pps) \u2014 blocking
-DDoS detected (score=0.556, rate=1546.5 pps) \u2014 blocking
-DDoS detected (score=0.581, rate=103432.0 pps) \u2014 blocking
-DDoS detected (score=0.581, rate=99046.0 pps) \u2014 blocking
-DDoS detected (score=0.581, rate=99511.0 pps) \u2014 blocking
+Entropy: 2.81 | Total Pkts: 421294 | Threshold: 3.0
+DDoS detected (score=0.571, rate=2206.3 pps) \u2014 blocking
+DDoS detected (score=0.572, rate=2789.3 pps) \u2014 blocking
+DDoS detected (score=0.572, rate=3298.8 pps) \u2014 blocking
+DDoS detected (score=0.581, rate=100768.0 pps) \u2014 blocking
+DDoS detected (score=0.581, rate=100835.0 pps) \u2014 blocking
+DDoS detected (score=0.581, rate=97835.0 pps) \u2014 blocking
 Analyzed 6/14 flows
-Entropy: 2.81 | Total Pkts: 385348 | Threshold: 3.0
-DDoS detected (score=0.557, rate=1274.2 pps) \u2014 blocking
-DDoS detected (score=0.556, rate=1299.2 pps) \u2014 blocking
-DDoS detected (score=0.556, rate=1427.5 pps) \u2014 blocking
-DDoS detected (score=0.582, rate=111164.0 pps) \u2014 blocking
-DDoS detected (score=0.582, rate=106996.0 pps) \u2014 blocking
-DDoS detected (score=0.582, rate=108017.0 pps) \u2014 blocking
+Entropy: 2.81 | Total Pkts: 447487 | Threshold: 3.0
+DDoS detected (score=0.571, rate=2090.2 pps) \u2014 blocking
+DDoS detected (score=0.572, rate=2615.0 pps) \u2014 blocking
+DDoS detected (score=0.572, rate=3045.0 pps) \u2014 blocking
+DDoS detected (score=0.582, rate=109198.0 pps) \u2014 blocking
+DDoS detected (score=0.582, rate=110028.0 pps) \u2014 blocking
+DDoS detected (score=0.582, rate=106405.0 pps) \u2014 blocking
 Analyzed 6/14 flows
-Entropy: 2.81 | Total Pkts: 409779 | Threshold: 3.0
-DDoS detected (score=0.557, rate=1199.2 pps) \u2014 blocking
-DDoS detected (score=0.556, rate=1218.0 pps) \u2014 blocking
-DDoS detected (score=0.555, rate=1325.6 pps) \u2014 blocking
-DDoS detected (score=0.582, rate=119360.0 pps) \u2014 blocking
-DDoS detected (score=0.582, rate=114687.0 pps) \u2014 blocking
-DDoS detected (score=0.582, rate=116561.0 pps) \u2014 blocking
+Entropy: 2.81 | Total Pkts: 472297 | Threshold: 3.0
+DDoS detected (score=0.570, rate=1985.7 pps) \u2014 blocking
+DDoS detected (score=0.572, rate=2461.2 pps) \u2014 blocking
+DDoS detected (score=0.572, rate=2827.5 pps) \u2014 blocking
+DDoS detected (score=0.582, rate=117306.0 pps) \u2014 blocking
+DDoS detected (score=0.582, rate=118412.0 pps) \u2014 blocking
+DDoS detected (score=0.582, rate=114723.0 pps) \u2014 blocking
 Analyzed 6/14 flows
-Entropy: 2.81 | Total Pkts: 436118 | Threshold: 3.0
-DDoS detected (score=0.556, rate=1132.6 pps) \u2014 blocking
-DDoS detected (score=0.555, rate=1146.4 pps) \u2014 blocking
-DDoS detected (score=0.555, rate=1237.2 pps) \u2014 blocking
-DDoS detected (score=0.582, rate=128453.0 pps) \u2014 blocking
-DDoS detected (score=0.582, rate=123685.0 pps) \u2014 blocking
-DDoS detected (score=0.582, rate=124809.0 pps) \u2014 blocking
+Entropy: 2.81 | Total Pkts: 501709 | Threshold: 3.0
+DDoS detected (score=0.570, rate=1891.1 pps) \u2014 blocking
+DDoS detected (score=0.572, rate=2324.4 pps) \u2014 blocking
+DDoS detected (score=0.571, rate=2639.0 pps) \u2014 blocking
+DDoS detected (score=0.582, rate=126668.0 pps) \u2014 blocking
+DDoS detected (score=0.582, rate=128776.0 pps) \u2014 blocking
+DDoS detected (score=0.582, rate=124409.0 pps) \u2014 blocking
 Analyzed 6/14 flows
-Entropy: 2.81 | Total Pkts: 460178 | Threshold: 3.0
-DDoS detected (score=0.556, rate=1073.0 pps) \u2014 blocking
-DDoS detected (score=0.555, rate=1082.7 pps) \u2014 blocking
-DDoS detected (score=0.554, rate=1159.9 pps) \u2014 blocking
-DDoS detected (score=0.582, rate=136330.0 pps) \u2014 blocking
-DDoS detected (score=0.582, rate=131774.0 pps) \u2014 blocking
-DDoS detected (score=0.582, rate=132903.0 pps) \u2014 blocking
+Entropy: 2.81 | Total Pkts: 522633 | Threshold: 3.0
+DDoS detected (score=0.570, rate=1805.1 pps) \u2014 blocking
+DDoS detected (score=0.571, rate=2202.1 pps) \u2014 blocking
+DDoS detected (score=0.571, rate=2474.1 pps) \u2014 blocking
+DDoS detected (score=0.582, rate=133683.0 pps) \u2014 blocking
+DDoS detected (score=0.582, rate=135599.0 pps) \u2014 blocking
+DDoS detected (score=0.582, rate=131495.0 pps) \u2014 blocking
 Analyzed 6/14 flows
-Entropy: 2.81 | Total Pkts: 489865 | Threshold: 3.0
-DDoS detected (score=0.556, rate=1019.4 pps) \u2014 blocking
-DDoS detected (score=0.555, rate=1025.7 pps) \u2014 blocking
-DDoS detected (score=0.554, rate=1091.6 pps) \u2014 blocking
-DDoS detected (score=0.583, rate=145903.0 pps) \u2014 blocking
-DDoS detected (score=0.583, rate=141879.0 pps) \u2014 blocking
-DDoS detected (score=0.583, rate=142912.0 pps) \u2014 blocking
+Entropy: 2.81 | Total Pkts: 548398 | Threshold: 3.0
+DDoS detected (score=0.570, rate=1726.7 pps) \u2014 blocking
+DDoS detected (score=0.571, rate=2092.0 pps) \u2014 blocking
+DDoS detected (score=0.571, rate=2328.5 pps) \u2014 blocking
+DDoS detected (score=0.583, rate=142205.0 pps) \u2014 blocking
+DDoS detected (score=0.583, rate=144409.0 pps) \u2014 blocking
+DDoS detected (score=0.583, rate=139928.0 pps) \u2014 blocking
 Analyzed 6/14 flows
-Entropy: 2.81 | Total Pkts: 512892 | Threshold: 3.0
-DDoS detected (score=0.555, rate=970.8 pps) \u2014 blocking
-DDoS detected (score=0.554, rate=974.4 pps) \u2014 blocking
-DDoS detected (score=0.553, rate=1031.0 pps) \u2014 blocking
-DDoS detected (score=0.583, rate=153983.0 pps) \u2014 blocking
-DDoS detected (score=0.583, rate=149473.0 pps) \u2014 blocking
-DDoS detected (score=0.583, rate=150265.0 pps) \u2014 blocking
+Entropy: 2.81 | Total Pkts: 583473 | Threshold: 3.0
+DDoS detected (score=0.570, rate=1654.7 pps) \u2014 blocking
+DDoS detected (score=0.571, rate=1992.4 pps) \u2014 blocking
+DDoS detected (score=0.571, rate=2199.2 pps) \u2014 blocking
+DDoS detected (score=0.583, rate=154157.0 pps) \u2014 blocking
+DDoS detected (score=0.583, rate=155844.0 pps) \u2014 blocking
+DDoS detected (score=0.583, rate=151616.0 pps) \u2014 blocking
 Analyzed 6/14 flows
-Entropy: 2.81 | Total Pkts: 534115 | Threshold: 3.0
-DDoS detected (score=0.555, rate=926.7 pps) \u2014 blocking
-DDoS detected (score=0.554, rate=928.0 pps) \u2014 blocking
-DDoS detected (score=0.553, rate=976.7 pps) \u2014 blocking
-DDoS detected (score=0.583, rate=160893.0 pps) \u2014 blocking
-DDoS detected (score=0.583, rate=157112.0 pps) \u2014 blocking
-DDoS detected (score=0.583, rate=156939.0 pps) \u2014 blocking
+Entropy: 2.81 | Total Pkts: 599216 | Threshold: 3.0
+DDoS detected (score=0.569, rate=1588.5 pps) \u2014 blocking
+DDoS detected (score=0.571, rate=1901.8 pps) \u2014 blocking
+DDoS detected (score=0.571, rate=2083.4 pps) \u2014 blocking
+DDoS detected (score=0.583, rate=159531.0 pps) \u2014 blocking
+DDoS detected (score=0.583, rate=161052.0 pps) \u2014 blocking
+DDoS detected (score=0.583, rate=156777.0 pps) \u2014 blocking
 Analyzed 6/14 flows
-Entropy: 2.81 | Total Pkts: 558147 | Threshold: 3.0
-DDoS detected (score=0.554, rate=886.4 pps) \u2014 blocking
-DDoS detected (score=0.553, rate=885.8 pps) \u2014 blocking
-DDoS detected (score=0.553, rate=927.9 pps) \u2014 blocking
-DDoS detected (score=0.583, rate=168779.0 pps) \u2014 blocking
-DDoS detected (score=0.583, rate=165450.0 pps) \u2014 blocking
-DDoS detected (score=0.583, rate=164747.0 pps) \u2014 blocking
+Entropy: 2.81 | Total Pkts: 625358 | Threshold: 3.0
+DDoS detected (score=0.569, rate=1527.4 pps) \u2014 blocking
+DDoS detected (score=0.571, rate=1819.1 pps) \u2014 blocking
+DDoS detected (score=0.570, rate=1979.2 pps) \u2014 blocking
+DDoS detected (score=0.583, rate=168412.0 pps) \u2014 blocking
+DDoS detected (score=0.583, rate=169650.0 pps) \u2014 blocking
+DDoS detected (score=0.583, rate=165440.0 pps) \u2014 blocking
 Analyzed 6/14 flows
-Entropy: 2.81 | Total Pkts: 585703 | Threshold: 3.0
-DDoS detected (score=0.554, rate=849.5 pps) \u2014 blocking
-DDoS detected (score=0.553, rate=847.3 pps) \u2014 blocking
-DDoS detected (score=0.552, rate=883.7 pps) \u2014 blocking
-DDoS detected (score=0.583, rate=178321.0 pps) \u2014 blocking
-DDoS detected (score=0.583, rate=174378.0 pps) \u2014 blocking
-DDoS detected (score=0.583, rate=173833.0 pps) \u2014 blocking
+Entropy: 2.81 | Total Pkts: 660606 | Threshold: 3.0
+DDoS detected (score=0.569, rate=1470.9 pps) \u2014 blocking
+DDoS detected (score=0.570, rate=1743.3 pps) \u2014 blocking
+DDoS detected (score=0.570, rate=1885.0 pps) \u2014 blocking
+DDoS detected (score=0.583, rate=179954.0 pps) \u2014 blocking
+DDoS detected (score=0.583, rate=181698.0 pps) \u2014 blocking
+DDoS detected (score=0.583, rate=177098.0 pps) \u2014 blocking
 Analyzed 6/14 flows
-Entropy: 2.81 | Total Pkts: 608729 | Threshold: 3.0
-DDoS detected (score=0.554, rate=815.5 pps) \u2014 blocking
-DDoS detected (score=0.552, rate=812.0 pps) \u2014 blocking
-DDoS detected (score=0.552, rate=843.5 pps) \u2014 blocking
-DDoS detected (score=0.583, rate=185849.0 pps) \u2014 blocking
-DDoS detected (score=0.583, rate=181943.0 pps) \u2014 blocking
-DDoS detected (score=0.583, rate=181766.0 pps) \u2014 blocking
+Entropy: 2.81 | Total Pkts: 673116 | Threshold: 3.0
+DDoS detected (score=0.569, rate=1418.3 pps) \u2014 blocking
+DDoS detected (score=0.570, rate=1673.6 pps) \u2014 blocking
+DDoS detected (score=0.570, rate=1799.3 pps) \u2014 blocking
+DDoS detected (score=0.583, rate=184047.0 pps) \u2014 blocking
+DDoS detected (score=0.583, rate=186062.0 pps) \u2014 blocking
+DDoS detected (score=0.583, rate=181151.0 pps) \u2014 blocking
 Analyzed 6/14 flows
-Entropy: 2.81 | Total Pkts: 632730 | Threshold: 3.0
-DDoS detected (score=0.553, rate=784.1 pps) \u2014 blocking
-DDoS detected (score=0.552, rate=779.5 pps) \u2014 blocking
-DDoS detected (score=0.551, rate=806.9 pps) \u2014 blocking
-DDoS detected (score=0.583, rate=193836.0 pps) \u2014 blocking
-DDoS detected (score=0.583, rate=189633.0 pps) \u2014 blocking
-DDoS detected (score=0.583, rate=190090.0 pps) \u2014 blocking
-Analyzed 6/14 flows
-Entropy: 2.81 | Total Pkts: 652684 | Threshold: 3.0
-DDoS detected (score=0.553, rate=755.1 pps) \u2014 blocking
-DDoS detected (score=0.552, rate=749.5 pps) \u2014 blocking
-DDoS detected (score=0.551, rate=773.2 pps) \u2014 blocking
-DDoS detected (score=0.583, rate=200454.0 pps) \u2014 blocking
-DDoS detected (score=0.583, rate=196014.0 pps) \u2014 blocking
-DDoS detected (score=0.583, rate=197045.0 pps) \u2014 blocking
-Analyzed 6/14 flows
-Entropy: 2.81 | Total Pkts: 690027 | Threshold: 3.0
-DDoS detected (score=0.552, rate=728.1 pps) \u2014 blocking
-DDoS detected (score=0.551, rate=721.8 pps) \u2014 blocking
-DDoS detected (score=0.550, rate=742.3 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=213095.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=207880.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=209881.0 pps) \u2014 blocking
-Analyzed 6/14 flows
-Entropy: 2.81 | Total Pkts: 704539 | Threshold: 3.0
-DDoS detected (score=0.552, rate=703.0 pps) \u2014 blocking
-DDoS detected (score=0.551, rate=696.0 pps) \u2014 blocking
-DDoS detected (score=0.550, rate=713.8 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=217918.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=212482.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=214968.0 pps) \u2014 blocking
-Analyzed 6/14 flows
-Entropy: 2.69 | Total Pkts: 729803 | Threshold: 3.0
-DDoS detected (score=0.552, rate=679.6 pps) \u2014 blocking
-DDoS detected (score=0.550, rate=672.0 pps) \u2014 blocking
-DDoS detected (score=0.549, rate=687.3 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=226957.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=220592.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=223261.0 pps) \u2014 blocking
+Entropy: 2.69 | Total Pkts: 699095 | Threshold: 3.0
+DDoS detected (score=0.569, rate=1369.4 pps) \u2014 blocking
+DDoS detected (score=0.570, rate=1609.2 pps) \u2014 blocking
+DDoS detected (score=0.570, rate=1721.1 pps) \u2014 blocking
+DDoS detected (score=0.583, rate=192987.0 pps) \u2014 blocking
+DDoS detected (score=0.583, rate=194907.0 pps) \u2014 blocking
+DDoS detected (score=0.583, rate=189533.0 pps) \u2014 blocking
 Analyzed 6/12 flows
-Entropy: 2.52 | Total Pkts: 754608 | Threshold: 3.0
-DDoS detected (score=0.551, rate=657.6 pps) \u2014 blocking
-DDoS detected (score=0.550, rate=649.6 pps) \u2014 blocking
-DDoS detected (score=0.549, rate=662.8 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=235268.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=228813.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=231704.0 pps) \u2014 blocking
-Analyzed 6/10 flows
-Entropy: 2.25 | Total Pkts: 777942 | Threshold: 3.0
-DDoS detected (score=0.551, rate=637.1 pps) \u2014 blocking
-DDoS detected (score=0.550, rate=628.6 pps) \u2014 blocking
-DDoS detected (score=0.549, rate=639.9 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=243266.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=236754.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=239303.0 pps) \u2014 blocking
+Entropy: 2.25 | Total Pkts: 728214 | Threshold: 3.0
+DDoS detected (score=0.568, rate=1323.8 pps) \u2014 blocking
+DDoS detected (score=0.570, rate=1549.6 pps) \u2014 blocking
+DDoS detected (score=0.570, rate=1649.4 pps) \u2014 blocking
+DDoS detected (score=0.583, rate=202965.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=204819.0 pps) \u2014 blocking
+DDoS detected (score=0.583, rate=199096.0 pps) \u2014 blocking
 Analyzed 6/8 flows
-Entropy: 1.58 | Total Pkts: 802423 | Threshold: 3.0
-DDoS detected (score=0.551, rate=617.8 pps) \u2014 blocking
-DDoS detected (score=0.549, rate=609.0 pps) \u2014 blocking
-DDoS detected (score=0.548, rate=618.6 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=251739.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=244716.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=247535.0 pps) \u2014 blocking
+Entropy: 2.25 | Total Pkts: 748352 | Threshold: 3.0
+DDoS detected (score=0.568, rate=1281.1 pps) \u2014 blocking
+DDoS detected (score=0.570, rate=1494.3 pps) \u2014 blocking
+DDoS detected (score=0.569, rate=1583.4 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=209932.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=211137.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=205949.0 pps) \u2014 blocking
+Analyzed 6/8 flows
+Entropy: 1.58 | Total Pkts: 779175 | Threshold: 3.0
+DDoS detected (score=0.568, rate=1241.0 pps) \u2014 blocking
+DDoS detected (score=0.570, rate=1442.8 pps) \u2014 blocking
+DDoS detected (score=0.569, rate=1522.5 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=220240.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=221578.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=216219.0 pps) \u2014 blocking
 Analyzed 6/6 flows
-Entropy: 1.58 | Total Pkts: 830044 | Threshold: 3.0
-DDoS detected (score=0.550, rate=599.6 pps) \u2014 blocking
-DDoS detected (score=0.549, rate=590.5 pps) \u2014 blocking
-DDoS detected (score=0.548, rate=598.6 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=260953.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=254052.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=256606.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 799245 | Threshold: 3.0
+DDoS detected (score=0.568, rate=1203.4 pps) \u2014 blocking
+DDoS detected (score=0.569, rate=1394.7 pps) \u2014 blocking
+DDoS detected (score=0.569, rate=1466.1 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=226838.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=228425.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=222844.0 pps) \u2014 blocking
 Analyzed 6/6 flows
-Entropy: 1.58 | Total Pkts: 851427 | Threshold: 3.0
-DDoS detected (score=0.550, rate=582.5 pps) \u2014 blocking
-DDoS detected (score=0.549, rate=573.2 pps) \u2014 blocking
-DDoS detected (score=0.547, rate=579.9 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=267648.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=261647.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=263699.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 827170 | Threshold: 3.0
+DDoS detected (score=0.568, rate=1168.0 pps) \u2014 blocking
+DDoS detected (score=0.569, rate=1349.7 pps) \u2014 blocking
+DDoS detected (score=0.569, rate=1413.8 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=236418.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=237692.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=231922.0 pps) \u2014 blocking
 Analyzed 6/6 flows
-Entropy: 1.58 | Total Pkts: 876520 | Threshold: 3.0
-DDoS detected (score=0.550, rate=566.3 pps) \u2014 blocking
-DDoS detected (score=0.548, rate=556.8 pps) \u2014 blocking
-DDoS detected (score=0.547, rate=562.4 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=276322.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=269721.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=272044.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 850004 | Threshold: 3.0
+DDoS detected (score=0.567, rate=1134.7 pps) \u2014 blocking
+DDoS detected (score=0.569, rate=1307.5 pps) \u2014 blocking
+DDoS detected (score=0.569, rate=1365.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=244624.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=245092.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=239150.0 pps) \u2014 blocking
 Analyzed 6/6 flows
-Entropy: 1.58 | Total Pkts: 904025 | Threshold: 3.0
-DDoS detected (score=0.549, rate=551.0 pps) \u2014 blocking
-DDoS detected (score=0.548, rate=541.3 pps) \u2014 blocking
-DDoS detected (score=0.547, rate=545.8 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=285830.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=278823.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=280939.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 874629 | Threshold: 3.0
+DDoS detected (score=0.567, rate=1103.1 pps) \u2014 blocking
+DDoS detected (score=0.569, rate=1267.9 pps) \u2014 blocking
+DDoS detected (score=0.568, rate=1319.5 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=253128.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=253411.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=246952.0 pps) \u2014 blocking
 Analyzed 6/6 flows
-Entropy: 1.58 | Total Pkts: 926871 | Threshold: 3.0
-DDoS detected (score=0.549, rate=536.5 pps) \u2014 blocking
-DDoS detected (score=0.548, rate=526.7 pps) \u2014 blocking
-DDoS detected (score=0.546, rate=530.2 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=293374.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=286320.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=288744.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 899996 | Threshold: 3.0
+DDoS detected (score=0.567, rate=1073.3 pps) \u2014 blocking
+DDoS detected (score=0.569, rate=1230.6 pps) \u2014 blocking
+DDoS detected (score=0.568, rate=1276.9 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=262023.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=261660.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=255175.0 pps) \u2014 blocking
 Analyzed 6/6 flows
-Entropy: 1.58 | Total Pkts: 950577 | Threshold: 3.0
-DDoS detected (score=0.549, rate=522.7 pps) \u2014 blocking
-DDoS detected (score=0.547, rate=512.8 pps) \u2014 blocking
-DDoS detected (score=0.546, rate=515.5 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=301331.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=293928.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=296885.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 927435 | Threshold: 3.0
+DDoS detected (score=0.567, rate=1045.1 pps) \u2014 blocking
+DDoS detected (score=0.568, rate=1195.4 pps) \u2014 blocking
+DDoS detected (score=0.568, rate=1237.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=271204.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=270923.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=264170.0 pps) \u2014 blocking
 Analyzed 6/6 flows
-Entropy: 1.58 | Total Pkts: 975160 | Threshold: 3.0
-DDoS detected (score=0.548, rate=509.7 pps) \u2014 blocking
-DDoS detected (score=0.547, rate=499.7 pps) \u2014 blocking
-DDoS detected (score=0.546, rate=501.6 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=309525.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=302235.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=304967.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 953287 | Threshold: 3.0
+DDoS detected (score=0.567, rate=1018.3 pps) \u2014 blocking
+DDoS detected (score=0.568, rate=1162.2 pps) \u2014 blocking
+DDoS detected (score=0.568, rate=1199.5 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=280218.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=279314.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=272617.0 pps) \u2014 blocking
 Analyzed 6/6 flows
-Entropy: 1.58 | Total Pkts: 1000650 | Threshold: 3.0
-DDoS detected (score=0.548, rate=497.2 pps) \u2014 blocking
-DDoS detected (score=0.547, rate=487.2 pps) \u2014 blocking
-DDoS detected (score=0.545, rate=488.4 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=317691.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=310379.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=314147.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 977493 | Threshold: 3.0
+DDoS detected (score=0.566, rate=992.8 pps) \u2014 blocking
+DDoS detected (score=0.568, rate=1130.8 pps) \u2014 blocking
+DDoS detected (score=0.568, rate=1164.3 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=288265.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=287612.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=280478.0 pps) \u2014 blocking
 Analyzed 6/6 flows
-Entropy: 1.58 | Total Pkts: 1026542 | Threshold: 3.0
-DDoS detected (score=0.548, rate=485.4 pps) \u2014 blocking
-DDoS detected (score=0.546, rate=475.3 pps) \u2014 blocking
-DDoS detected (score=0.545, rate=475.8 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=326392.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=318862.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=322855.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1002005 | Threshold: 3.0
+DDoS detected (score=0.566, rate=968.6 pps) \u2014 blocking
+DDoS detected (score=0.568, rate=1101.1 pps) \u2014 blocking
+DDoS detected (score=0.567, rate=1131.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=296449.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=296057.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=288361.0 pps) \u2014 blocking
 Analyzed 6/6 flows
-Entropy: 1.58 | Total Pkts: 1053868 | Threshold: 3.0
-DDoS detected (score=0.547, rate=474.1 pps) \u2014 blocking
-DDoS detected (score=0.546, rate=464.0 pps) \u2014 blocking
-DDoS detected (score=0.545, rate=463.9 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=335917.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=328091.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=331427.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1024748 | Threshold: 3.0
+DDoS detected (score=0.566, rate=945.5 pps) \u2014 blocking
+DDoS detected (score=0.568, rate=1072.8 pps) \u2014 blocking
+DDoS detected (score=0.567, rate=1099.6 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=303906.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=303734.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=295970.0 pps) \u2014 blocking
 Analyzed 6/6 flows
-Entropy: 1.58 | Total Pkts: 1074884 | Threshold: 3.0
-DDoS detected (score=0.547, rate=463.3 pps) \u2014 blocking
-DDoS detected (score=0.546, rate=453.2 pps) \u2014 blocking
-DDoS detected (score=0.544, rate=452.6 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=342620.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=335474.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=338357.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1052110 | Threshold: 3.0
+DDoS detected (score=0.566, rate=923.6 pps) \u2014 blocking
+DDoS detected (score=0.567, rate=1046.0 pps) \u2014 blocking
+DDoS detected (score=0.567, rate=1069.9 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=313391.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=312909.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=304672.0 pps) \u2014 blocking
 Analyzed 6/6 flows
-Entropy: 1.58 | Total Pkts: 1101411 | Threshold: 3.0
-DDoS detected (score=0.547, rate=453.0 pps) \u2014 blocking
-DDoS detected (score=0.545, rate=442.9 pps) \u2014 blocking
-DDoS detected (score=0.544, rate=441.9 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=351733.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=344264.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=346981.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1074053 | Threshold: 3.0
+DDoS detected (score=0.566, rate=902.6 pps) \u2014 blocking
+DDoS detected (score=0.567, rate=1020.5 pps) \u2014 blocking
+DDoS detected (score=0.567, rate=1041.7 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=320979.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=320258.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=311678.0 pps) \u2014 blocking
 Analyzed 6/6 flows
-Entropy: 1.58 | Total Pkts: 1126741 | Threshold: 3.0
-DDoS detected (score=0.546, rate=443.2 pps) \u2014 blocking
-DDoS detected (score=0.545, rate=433.1 pps) \u2014 blocking
-DDoS detected (score=0.544, rate=431.6 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=360755.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=352151.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=355402.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1102848 | Threshold: 3.0
+DDoS detected (score=0.565, rate=882.5 pps) \u2014 blocking
+DDoS detected (score=0.567, rate=996.2 pps) \u2014 blocking
+DDoS detected (score=0.567, rate=1015.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=330635.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=329923.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=321152.0 pps) \u2014 blocking
 Analyzed 6/6 flows
-Entropy: 1.58 | Total Pkts: 1150254 | Threshold: 3.0
-DDoS detected (score=0.546, rate=433.8 pps) \u2014 blocking
-DDoS detected (score=0.545, rate=423.7 pps) \u2014 blocking
-DDoS detected (score=0.543, rate=421.8 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=368285.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=360629.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=362907.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1127312 | Threshold: 3.0
+DDoS detected (score=0.565, rate=863.3 pps) \u2014 blocking
+DDoS detected (score=0.567, rate=973.0 pps) \u2014 blocking
+DDoS detected (score=0.566, rate=989.6 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=338623.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=337935.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=329616.0 pps) \u2014 blocking
 Analyzed 6/6 flows
-Entropy: 1.58 | Total Pkts: 1179225 | Threshold: 3.0
-DDoS detected (score=0.546, rate=424.7 pps) \u2014 blocking
-DDoS detected (score=0.544, rate=414.6 pps) \u2014 blocking
-DDoS detected (score=0.543, rate=412.4 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=378318.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=369945.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=372529.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1150070 | Threshold: 3.0
+DDoS detected (score=0.565, rate=845.0 pps) \u2014 blocking
+DDoS detected (score=0.567, rate=950.9 pps) \u2014 blocking
+DDoS detected (score=0.566, rate=965.5 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=346270.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=345611.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=337051.0 pps) \u2014 blocking
 Analyzed 6/6 flows
-Entropy: 1.58 | Total Pkts: 1211418 | Threshold: 3.0
-DDoS detected (score=0.545, rate=416.1 pps) \u2014 blocking
-DDoS detected (score=0.544, rate=406.0 pps) \u2014 blocking
-DDoS detected (score=0.542, rate=403.4 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=389248.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=380472.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=383265.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1175079 | Threshold: 3.0
+DDoS detected (score=0.565, rate=827.4 pps) \u2014 blocking
+DDoS detected (score=0.566, rate=929.8 pps) \u2014 blocking
+DDoS detected (score=0.566, rate=942.5 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=354378.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=354281.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=345282.0 pps) \u2014 blocking
 Analyzed 6/6 flows
-Entropy: 1.58 | Total Pkts: 1225832 | Threshold: 3.0
-DDoS detected (score=0.545, rate=407.7 pps) \u2014 blocking
-DDoS detected (score=0.544, rate=397.7 pps) \u2014 blocking
-DDoS detected (score=0.542, rate=394.9 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=394164.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=385143.0 pps) \u2014 blocking
-DDoS detected (score=0.584, rate=388092.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1198662 | Threshold: 3.0
+DDoS detected (score=0.565, rate=810.5 pps) \u2014 blocking
+DDoS detected (score=0.566, rate=909.6 pps) \u2014 blocking
+DDoS detected (score=0.566, rate=920.6 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=362388.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=361703.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=353433.0 pps) \u2014 blocking
 Analyzed 6/6 flows
-Entropy: 1.58 | Total Pkts: 1256786 | Threshold: 3.0
-DDoS detected (score=0.545, rate=399.7 pps) \u2014 blocking
-DDoS detected (score=0.543, rate=389.8 pps) \u2014 blocking
-DDoS detected (score=0.542, rate=386.6 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=404594.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=395884.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=397875.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1225744 | Threshold: 3.0
+DDoS detected (score=0.564, rate=794.3 pps) \u2014 blocking
+DDoS detected (score=0.566, rate=890.2 pps) \u2014 blocking
+DDoS detected (score=0.565, rate=899.7 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=371073.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=370874.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=362659.0 pps) \u2014 blocking
 Analyzed 6/6 flows
-Entropy: 1.58 | Total Pkts: 1278155 | Threshold: 3.0
-DDoS detected (score=0.544, rate=392.1 pps) \u2014 blocking
-DDoS detected (score=0.543, rate=382.1 pps) \u2014 blocking
-DDoS detected (score=0.541, rate=378.7 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=411528.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=403149.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=405045.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1251595 | Threshold: 3.0
+DDoS detected (score=0.564, rate=778.7 pps) \u2014 blocking
+DDoS detected (score=0.566, rate=871.7 pps) \u2014 blocking
+DDoS detected (score=0.565, rate=879.7 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=380274.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=379008.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=371175.0 pps) \u2014 blocking
 Analyzed 6/6 flows
-Entropy: 1.58 | Total Pkts: 1301055 | Threshold: 3.0
-DDoS detected (score=0.544, rate=384.7 pps) \u2014 blocking
-DDoS detected (score=0.543, rate=374.8 pps) \u2014 blocking
-DDoS detected (score=0.541, rate=371.2 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=418912.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=411022.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=412688.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1288148 | Threshold: 3.0
+DDoS detected (score=0.564, rate=763.7 pps) \u2014 blocking
+DDoS detected (score=0.566, rate=853.9 pps) \u2014 blocking
+DDoS detected (score=0.565, rate=860.5 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=392746.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=390838.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=383426.0 pps) \u2014 blocking
 Analyzed 6/6 flows
-Entropy: 1.58 | Total Pkts: 1323680 | Threshold: 3.0
-DDoS detected (score=0.544, rate=377.5 pps) \u2014 blocking
-DDoS detected (score=0.542, rate=367.7 pps) \u2014 blocking
-DDoS detected (score=0.541, rate=363.9 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=426043.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=418519.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=420685.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1301889 | Threshold: 3.0
+DDoS detected (score=0.564, rate=749.3 pps) \u2014 blocking
+DDoS detected (score=0.565, rate=836.8 pps) \u2014 blocking
+DDoS detected (score=0.565, rate=842.2 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=397190.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=395348.0 pps) \u2014 blocking
+DDoS detected (score=0.584, rate=388213.0 pps) \u2014 blocking
 Analyzed 6/6 flows
-Entropy: 1.58 | Total Pkts: 1351351 | Threshold: 3.0
-DDoS detected (score=0.543, rate=370.7 pps) \u2014 blocking
-DDoS detected (score=0.542, rate=360.9 pps) \u2014 blocking
-DDoS detected (score=0.540, rate=356.9 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=435707.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=427509.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=429702.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1327438 | Threshold: 3.0
+DDoS detected (score=0.564, rate=735.4 pps) \u2014 blocking
+DDoS detected (score=0.565, rate=820.4 pps) \u2014 blocking
+DDoS detected (score=0.565, rate=824.7 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=405487.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=404009.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=396804.0 pps) \u2014 blocking
 Analyzed 6/6 flows
-Entropy: 1.58 | Total Pkts: 1375695 | Threshold: 3.0
-DDoS detected (score=0.543, rate=364.1 pps) \u2014 blocking
-DDoS detected (score=0.541, rate=354.3 pps) \u2014 blocking
-DDoS detected (score=0.540, rate=350.2 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=444069.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=435388.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=437805.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1353135 | Threshold: 3.0
+DDoS detected (score=0.564, rate=722.1 pps) \u2014 blocking
+DDoS detected (score=0.565, rate=804.6 pps) \u2014 blocking
+DDoS detected (score=0.565, rate=807.9 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=414587.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=412424.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=404986.0 pps) \u2014 blocking
 Analyzed 6/6 flows
-Entropy: 1.58 | Total Pkts: 1402883 | Threshold: 3.0
-DDoS detected (score=0.543, rate=357.7 pps) \u2014 blocking
-DDoS detected (score=0.541, rate=348.0 pps) \u2014 blocking
-DDoS detected (score=0.540, rate=343.7 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=453068.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=444116.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=447266.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1377958 | Threshold: 3.0
+DDoS detected (score=0.563, rate=709.2 pps) \u2014 blocking
+DDoS detected (score=0.565, rate=789.4 pps) \u2014 blocking
+DDoS detected (score=0.564, rate=791.7 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=422654.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=420786.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=413380.0 pps) \u2014 blocking
 Analyzed 6/6 flows
-Entropy: 1.58 | Total Pkts: 1424825 | Threshold: 3.0
-DDoS detected (score=0.542, rate=351.5 pps) \u2014 blocking
-DDoS detected (score=0.541, rate=341.9 pps) \u2014 blocking
-DDoS detected (score=0.539, rate=337.4 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=460535.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=451382.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=454475.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1400068 | Threshold: 3.0
+DDoS detected (score=0.563, rate=696.7 pps) \u2014 blocking
+DDoS detected (score=0.565, rate=774.8 pps) \u2014 blocking
+DDoS detected (score=0.564, rate=776.2 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=429970.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=428055.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=420905.0 pps) \u2014 blocking
 Analyzed 6/6 flows
-Entropy: 1.58 | Total Pkts: 1450810 | Threshold: 3.0
-DDoS detected (score=0.542, rate=345.5 pps) \u2014 blocking
-DDoS detected (score=0.540, rate=336.0 pps) \u2014 blocking
-DDoS detected (score=0.539, rate=331.4 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=468614.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=460503.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=463260.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1425769 | Threshold: 3.0
+DDoS detected (score=0.563, rate=684.7 pps) \u2014 blocking
+DDoS detected (score=0.565, rate=760.7 pps) \u2014 blocking
+DDoS detected (score=0.564, rate=761.2 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=438289.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=436675.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=429667.0 pps) \u2014 blocking
 Analyzed 6/6 flows
-Entropy: 1.58 | Total Pkts: 1477214 | Threshold: 3.0
-DDoS detected (score=0.542, rate=339.8 pps) \u2014 blocking
-DDoS detected (score=0.540, rate=330.3 pps) \u2014 blocking
-DDoS detected (score=0.539, rate=325.6 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=477220.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=468586.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=472975.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1453110 | Threshold: 3.0
+DDoS detected (score=0.563, rate=673.1 pps) \u2014 blocking
+DDoS detected (score=0.565, rate=747.1 pps) \u2014 blocking
+DDoS detected (score=0.564, rate=746.9 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=447179.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=445878.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=438915.0 pps) \u2014 blocking
 Analyzed 6/6 flows
-Entropy: 1.58 | Total Pkts: 1480245 | Threshold: 3.0
-DDoS detected (score=0.541, rate=334.2 pps) \u2014 blocking
-DDoS detected (score=0.540, rate=324.8 pps) \u2014 blocking
-DDoS detected (score=0.538, rate=320.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=478144.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=469517.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=474151.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1475562 | Threshold: 3.0
+DDoS detected (score=0.563, rate=661.9 pps) \u2014 blocking
+DDoS detected (score=0.564, rate=734.0 pps) \u2014 blocking
+DDoS detected (score=0.564, rate=733.1 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=454797.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=453322.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=446305.0 pps) \u2014 blocking
 Analyzed 6/6 flows
-Entropy: 1.58 | Total Pkts: 1480245 | Threshold: 3.0
-DDoS detected (score=0.541, rate=328.8 pps) \u2014 blocking
-DDoS detected (score=0.539, rate=319.5 pps) \u2014 blocking
-DDoS detected (score=0.538, rate=314.5 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=478144.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=469517.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=474151.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1483607 | Threshold: 3.0
+DDoS detected (score=0.563, rate=651.0 pps) \u2014 blocking
+DDoS detected (score=0.564, rate=721.4 pps) \u2014 blocking
+DDoS detected (score=0.564, rate=719.7 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=457502.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=455876.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=449091.0 pps) \u2014 blocking
 Analyzed 6/6 flows
-Entropy: 1.58 | Total Pkts: 1421812 | Threshold: 3.0
-DDoS detected (score=0.585, rate=478144.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=469517.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=474151.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1483607 | Threshold: 3.0
+DDoS detected (score=0.562, rate=640.5 pps) \u2014 blocking
+DDoS detected (score=0.564, rate=709.2 pps) \u2014 blocking
+DDoS detected (score=0.563, rate=706.9 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=457502.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=455876.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=449091.0 pps) \u2014 blocking
+Analyzed 6/6 flows
+Entropy: 1.58 | Total Pkts: 1483607 | Threshold: 3.0
+DDoS detected (score=0.562, rate=630.4 pps) \u2014 blocking
+DDoS detected (score=0.564, rate=697.3 pps) \u2014 blocking
+DDoS detected (score=0.563, rate=694.5 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=457502.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=455876.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=449091.0 pps) \u2014 blocking
+Analyzed 6/6 flows
+Entropy: 1.58 | Total Pkts: 1483607 | Threshold: 3.0
+DDoS detected (score=0.562, rate=620.5 pps) \u2014 blocking
+DDoS detected (score=0.564, rate=685.9 pps) \u2014 blocking
+DDoS detected (score=0.563, rate=682.5 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=457502.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=455876.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=449091.0 pps) \u2014 blocking
+Analyzed 6/6 flows
+Entropy: 1.58 | Total Pkts: 1483607 | Threshold: 3.0
+DDoS detected (score=0.562, rate=611.0 pps) \u2014 blocking
+DDoS detected (score=0.564, rate=674.8 pps) \u2014 blocking
+DDoS detected (score=0.563, rate=670.9 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=457502.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=455876.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=449091.0 pps) \u2014 blocking
+Analyzed 6/6 flows
+Entropy: 1.58 | Total Pkts: 1362469 | Threshold: 3.0
+DDoS detected (score=0.585, rate=457502.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=455876.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=449091.0 pps) \u2014 blocking
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1421812 | Threshold: 3.0
-DDoS detected (score=0.585, rate=478144.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=469517.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=474151.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1362469 | Threshold: 3.0
+DDoS detected (score=0.585, rate=457502.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=455876.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=449091.0 pps) \u2014 blocking
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1421812 | Threshold: 3.0
-DDoS detected (score=0.585, rate=478144.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=469517.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=474151.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1362469 | Threshold: 3.0
+DDoS detected (score=0.585, rate=457502.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=455876.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=449091.0 pps) \u2014 blocking
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1421812 | Threshold: 3.0
-DDoS detected (score=0.585, rate=478144.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=469517.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=474151.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1362469 | Threshold: 3.0
+DDoS detected (score=0.585, rate=457502.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=455876.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=449091.0 pps) \u2014 blocking
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1421812 | Threshold: 3.0
-DDoS detected (score=0.585, rate=478144.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=469517.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=474151.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1362469 | Threshold: 3.0
+DDoS detected (score=0.585, rate=457502.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=455876.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=449091.0 pps) \u2014 blocking
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1421812 | Threshold: 3.0
-DDoS detected (score=0.585, rate=478144.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=469517.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=474151.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1362469 | Threshold: 3.0
+DDoS detected (score=0.585, rate=457502.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=455876.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=449091.0 pps) \u2014 blocking
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1421812 | Threshold: 3.0
-DDoS detected (score=0.585, rate=478144.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=469517.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=474151.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1362469 | Threshold: 3.0
+DDoS detected (score=0.585, rate=457502.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=455876.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=449091.0 pps) \u2014 blocking
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1421812 | Threshold: 3.0
-DDoS detected (score=0.585, rate=478144.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=469517.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=474151.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1362469 | Threshold: 3.0
+DDoS detected (score=0.585, rate=457502.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=455876.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=449091.0 pps) \u2014 blocking
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1421812 | Threshold: 3.0
-DDoS detected (score=0.585, rate=478144.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=469517.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=474151.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1362469 | Threshold: 3.0
+DDoS detected (score=0.585, rate=457502.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=455876.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=449091.0 pps) \u2014 blocking
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1421812 | Threshold: 3.0
-DDoS detected (score=0.585, rate=478144.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=469517.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=474151.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1362469 | Threshold: 3.0
+DDoS detected (score=0.585, rate=457502.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=455876.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=449091.0 pps) \u2014 blocking
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1421812 | Threshold: 3.0
-DDoS detected (score=0.585, rate=478144.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=469517.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=474151.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1362469 | Threshold: 3.0
+DDoS detected (score=0.585, rate=457502.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=455876.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=449091.0 pps) \u2014 blocking
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1421812 | Threshold: 3.0
-DDoS detected (score=0.585, rate=478144.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=469517.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=474151.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1362469 | Threshold: 3.0
+DDoS detected (score=0.585, rate=457502.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=455876.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=449091.0 pps) \u2014 blocking
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1421812 | Threshold: 3.0
-DDoS detected (score=0.585, rate=478144.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=469517.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=474151.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1362469 | Threshold: 3.0
+DDoS detected (score=0.585, rate=457502.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=455876.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=449091.0 pps) \u2014 blocking
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1421812 | Threshold: 3.0
-DDoS detected (score=0.585, rate=478144.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=469517.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=474151.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1362469 | Threshold: 3.0
+DDoS detected (score=0.585, rate=457502.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=455876.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=449091.0 pps) \u2014 blocking
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1421812 | Threshold: 3.0
-DDoS detected (score=0.585, rate=478144.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=469517.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=474151.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1362469 | Threshold: 3.0
+DDoS detected (score=0.585, rate=457502.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=455876.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=449091.0 pps) \u2014 blocking
 Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1421812 | Threshold: 3.0
-DDoS detected (score=0.585, rate=478144.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=469517.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=474151.0 pps) \u2014 blocking
-Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1421812 | Threshold: 3.0
-DDoS detected (score=0.585, rate=478144.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=469517.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=474151.0 pps) \u2014 blocking
-Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1421812 | Threshold: 3.0
-DDoS detected (score=0.585, rate=478144.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=469517.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=474151.0 pps) \u2014 blocking
-Analyzed 3/3 flows
-Entropy: 1.58 | Total Pkts: 1421812 | Threshold: 3.0
-DDoS detected (score=0.585, rate=478144.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=469517.0 pps) \u2014 blocking
-DDoS detected (score=0.585, rate=474151.0 pps) \u2014 blocking
+Entropy: 1.58 | Total Pkts: 1362469 | Threshold: 3.0
+DDoS detected (score=0.585, rate=457502.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=455876.0 pps) \u2014 blocking
+DDoS detected (score=0.585, rate=449091.0 pps) \u2014 blocking
 Analyzed 3/3 flows
