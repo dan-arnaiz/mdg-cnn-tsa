@@ -1,4 +1,4 @@
-1771860028,benign_start,Benign traffic phase started
-1771860099,benign_end,Benign traffic phase completed
-1771860119,attack_start,DDoS attack phase started (6000 pps total)
-1771860189,attack_end,DDoS attack phase completed
+1771870504,benign_start,Benign traffic phase started
+1771870574,benign_end,Benign traffic phase completed
+1771870594,attack_start,DDoS attack phase started (6000 pps total)
+1771870665,attack_end,DDoS attack phase completed
