@@ -62,7 +62,7 @@ log_info "Phase 1: Starting ML Inference Server (Python 3.10 / sklearn 1.7)"
 echo "========================================="
 
 # Use pyenv ml_env Python directly via its absolute path
-ML_PYTHON="$HOME/.pyenv/versions/ml_env/bin/python"
+ML_PYTHON="/home/mininet/.pyenv/versions/ml_env/bin/python"
 
 if [ ! -f "$ML_PYTHON" ]; then
     log_error "Cannot find pyenv ml_env Python at: $ML_PYTHON"
