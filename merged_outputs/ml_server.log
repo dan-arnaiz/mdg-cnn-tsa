@@ -1,0 +1,1280 @@
+[ml_server] Model loaded - features=39, hidden=64, heads=2
+ * Serving Flask app 'ml_server'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [23/Feb/2026 21:21:30] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [23/Feb/2026 21:21:31] "GET /health HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:32] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:35] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:35] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:35] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:35] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:35] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:35] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:36] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:36] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:36] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:36] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:36] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:36] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:36] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:36] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:36] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:36] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:36] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:37] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:37] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:37] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:37] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:37] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:37] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:37] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:37] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:37] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:38] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:38] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:38] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:38] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:38] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:38] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:38] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:39] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:39] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:39] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:39] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:39] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:39] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:40] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:40] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:40] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:40] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:40] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:41] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:41] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:41] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:41] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:41] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:41] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:41] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:42] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:42] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:42] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:42] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:42] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:43] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:43] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:43] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:43] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:43] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:43] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:43] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:44] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:44] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:44] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:44] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:44] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:44] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:45] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:45] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:45] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:45] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:45] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:45] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:46] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:46] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:46] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:46] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:46] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:47] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:47] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:47] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:47] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:47] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:47] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:47] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:48] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:48] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:48] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:48] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:48] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:48] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:49] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:49] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:49] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:49] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:49] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:49] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:50] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:50] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:50] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:50] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:50] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:51] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:51] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:51] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:51] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:51] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:52] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:52] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:52] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:52] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:52] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:52] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:52] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:53] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:53] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:53] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:53] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:53] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:53] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:53] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:54] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:54] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:54] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:54] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:54] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:55] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:55] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:55] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:55] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:55] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:56] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:56] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:56] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:56] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:56] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:56] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:56] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:56] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:57] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:57] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:57] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:57] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:57] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:57] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:58] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:58] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:58] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:58] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:58] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:59] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:59] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:59] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:59] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:59] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:23:59] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:00] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:00] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:00] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:00] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:00] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:00] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:01] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:01] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:01] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:01] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:01] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:01] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:02] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:02] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:02] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:02] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:02] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:03] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:03] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:03] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:03] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:03] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:03] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:03] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:03] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:04] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:04] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:04] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:04] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:04] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:04] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:05] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:05] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:05] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:05] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:05] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:06] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:06] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:06] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:06] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:06] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:06] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:06] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:07] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:07] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:07] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:07] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:07] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:08] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:08] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:08] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:08] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:08] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:08] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:09] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:09] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:09] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:09] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:09] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:09] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:09] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:10] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:10] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:10] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:10] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:10] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:11] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:11] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:11] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:11] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:11] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:11] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:11] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:12] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:12] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:12] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:12] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:12] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:12] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:13] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:13] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:13] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:13] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:13] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:13] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:14] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:14] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:14] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:14] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:14] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:15] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:15] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:15] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:15] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:15] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:15] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:15] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:16] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:16] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:16] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:16] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:16] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:17] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:17] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:17] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:17] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:17] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:17] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:18] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:18] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:18] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:18] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:18] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:18] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:18] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:19] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:19] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:19] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:19] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:20] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:20] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:20] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:20] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:20] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:20] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:20] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:21] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:21] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:21] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:21] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:21] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:21] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:21] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:22] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:22] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:22] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:22] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:23] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:23] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:23] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:23] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:23] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:23] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:24] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:24] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:24] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:24] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:24] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:24] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:24] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:25] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:25] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:25] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:25] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:25] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:25] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:26] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:26] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:26] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:26] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:26] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:26] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:26] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:27] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:27] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:27] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:27] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:27] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:28] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:28] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:28] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:28] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:28] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:28] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:29] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:29] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:29] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:29] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:29] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:29] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:30] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:30] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:30] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:30] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:30] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:30] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:30] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:31] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:31] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:31] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:31] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:31] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:31] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:32] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:32] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:32] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:32] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:32] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:32] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:33] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:33] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:33] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:33] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:33] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:33] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:34] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:34] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:34] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:34] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:34] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:34] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:35] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:35] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:35] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:35] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:35] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:35] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:36] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:36] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:36] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:37] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:37] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:37] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:38] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:38] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:38] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:39] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:39] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:39] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:40] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:40] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:40] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:41] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:41] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:41] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:42] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:42] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:42] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:43] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:43] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:43] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:44] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:44] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:44] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:45] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:45] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:45] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:46] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:46] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:46] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:47] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:47] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:47] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:48] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:48] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:48] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:49] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:49] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:49] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:50] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:50] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:50] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:51] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:51] "POST /predict HTTP/1.1" 200 -
+/home/mininet/.pyenv/versions/ml_env/lib/python3.10/site-packages/sklearn/utils/validation.py:2742: UserWarning: X has feature names, but SimpleImputer was fitted without feature names
+  warnings.warn(
+127.0.0.1 - - [23/Feb/2026 21:24:51] "POST /predict HTTP/1.1" 200 -
