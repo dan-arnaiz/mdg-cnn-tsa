@@ -61,7 +61,7 @@ selector     = joblib.load(SELECTOR_PATH)
 
 with open(METADATA_PATH) as f:
     metadata = json.load(f)
-selected_features = metadata["selected_features"]
+selected_features = [f.replace("num__", "") for f in metadata["selected_features"]]
 
 model = CNNTSA(
     num_features=cfg["num_features"],
